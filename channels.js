@@ -109,8 +109,8 @@ const CHANNELS = [
     logo: "BBS",
     logoUrl: "",
     stream: "https://bbstv.ug/hls/ch01/index.m3u8"
-  }
-];
+  },
+
   {
     id: "africa-24",
     name: "Africa 24",
@@ -330,3 +330,4 @@ const CHANNELS = [
     logoUrl: "",
     stream: "https://tv.localstreamgh.com/fishtv/index.m3u8"
   }
+];
