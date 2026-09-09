@@ -668,3 +668,30 @@ main{
   right: 20px;
   bottom: 20px;
 }
+/* ===== Channel Metadata ===== */
+
+.channel-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.channel-country,
+.channel-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.channel-country {
+  font-weight: 600;
+}
+
+.channel-category {
+  padding: 3px 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 11px;
+}
