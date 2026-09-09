@@ -73,7 +73,7 @@ nowMeta.textContent =
 
 if (channel.logoUrl) {
   nowLogo.innerHTML =
-    `<img src="${escapeHTML(channel.logoUrl)}" alt="${escapeHTML(channel.name)} logo">`;
+   `<img src="${escapeHTML(channel.logoUrl)}" alt="${escapeHTML(channel.name)} logo" width="64" height="64">`
 } else {
   nowLogo.textContent = channel.logo || "TV";
 }
@@ -180,7 +180,7 @@ function channelCard(channel) {
       <div class="channel-logo">
   ${
     channel.logoUrl
-      ? `<img src="${escapeHTML(channel.logoUrl)}" alt="${escapeHTML(channel.name)} logo" loading="lazy">`
+      ? `<img src="${escapeHTML(channel.logoUrl)}" alt="${escapeHTML(channel.name)} logo" width="160" height="160" loading="lazy">`
       : `<span>${escapeHTML(channel.logo || "TV")}</span>`
   }
 </div>
