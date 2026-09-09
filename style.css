@@ -695,3 +695,47 @@ main{
   border-radius: 999px;
   font-size: 11px;
 }
+/* ===== Favorite Button Polish ===== */
+
+.favorite-btn {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  border: 1px solid var(--line);
+
+  background: var(--panel2);
+  color: var(--muted);
+
+  font-size: 19px;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.favorite-btn.active {
+  color: #ffd166;
+  background: rgba(255, 209, 102, 0.12);
+  border-color: rgba(255, 209, 102, 0.35);
+}
+
+.favorite-btn:active {
+  transform: scale(0.95);
+}
+
+.favorite-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
