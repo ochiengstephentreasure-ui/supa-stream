@@ -201,7 +201,10 @@ function channelCard(channel) {
       <div class="channel-name">
         ${escapeHTML(channel.name)}
       </div>
-
+<div class="channel-status">
+  <span class="status-dot"></span>
+  <span>Live stream</span>
+</div>
       <div class="channel-meta">
   <span class="channel-country">
     ${escapeHTML(channel.countryCode || "🌐")}
