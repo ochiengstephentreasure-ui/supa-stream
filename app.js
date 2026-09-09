@@ -5,7 +5,7 @@ const overlay = $("playerOverlay");
 const statusBox = $("playerStatus");
 const nowTitle = $("nowTitle");
 const liveIndicator = $("liveIndicator");
-
+const fullscreenBtn = $("fullscreenBtn");
 let hls = null;
 let currentChannel = null;
 
@@ -285,3 +285,18 @@ $("themeToggle").addEventListener("click", () => {
 populateCategories();
 renderChannels();
 renderFavorites();
+fullscreenBtn.addEventListener("click", async () => {
+  const screen = document.querySelector(".screen-frame");
+
+  if (!document.fullscreenElement) {
+    await screen.requestFullscreen();
+    fullscreenBtn.textContent = "✕";
+    fullscreenBtn.setAttribute("aria-label", "Exit fullscreen");
+    fullscreenBtn.setAttribute("title", "Exit fullscreen");
+  } else {
+    await document.exitFullscreen();
+    fullscreenBtn.textContent = "⛶";
+    fullscreenBtn.setAttribute("aria-label", "Enter fullscreen");
+    fullscreenBtn.setAttribute("title", "Fullscreen");
+  }
+});
