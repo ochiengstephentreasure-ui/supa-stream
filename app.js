@@ -13,6 +13,7 @@ const nextChannelBtn = $("nextChannel");
 const fullscreenBtn = $("fullscreenBtn");
 let hls = null;
 let currentChannel = null;
+let currentChannelIndex = -1;
 
 const FAVORITES_KEY = "supa-stream-favorites";
 
