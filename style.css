@@ -952,3 +952,38 @@ body.light .icon-btn {
 body.light .footer {
   border-top-color: var(--line);
 }
+/* ===== Toast Notification ===== */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 100;
+
+  padding: 10px 16px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  background: var(--panel);
+  color: var(--text);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translate(-50%, 12px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
