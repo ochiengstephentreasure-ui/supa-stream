@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Supa-stream — live TV streaming hub">
+  <title>Supa-stream — Live TV</title>
 
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Supa-stream home">
+      <span class="brand-mark">S</span>
+      <span>Supa<span>-stream</span></span>
+    </a>
+
+    <nav class="nav">
+      <a href="#live">Live TV</a>
+      <a href="#channels">Channels</a>
+      <a href="#favorites">Favorites</a>
+    </nav>
+
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+      ☾
+    </button>
+  </header>
+
+  <main>
+
+    <section class="hero" id="live">
+
+      <div class="hero-copy">
+        <span class="live-badge">
+          <i></i> LIVE TV
+        </span>
+
+        <h1>Watch live.<br><span>Stay connected.</span></h1>
+
+        <p>
+          Your simple hub for live television, news, entertainment,
+          sports and more.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="startWatching">
+            ▶ Start watching
+          </button>
+
+          <a class="secondary-btn" href="#channels">
+            Browse channels
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-screen">
+        <div class="screen-frame">
+
+          <video
+            id="videoPlayer"
+            controls
+            playsinline
+            preload="metadata"
+            poster=""
+          ></video>
+
+          <div class="player-overlay" id="playerOverlay">
+            <div class="play-icon">▶</div>
+            <p>Select a channel to begin</p>
+          </div>
+
+          <div class="player-status" id="playerStatus">
+            Ready
+          </div>
+
+        </div>
+
+        <div class="now-playing">
+          <div>
+            <span class="muted">NOW PLAYING</span>
+            <h2 id="nowTitle">No channel selected</h2>
+          </div>
+
+          <span class="live-dot" id="liveIndicator">
+            ● OFFLINE
+          </span>
+        </div>
+      </div>
+
+    </section>
+
+
+    <section class="content-section" id="channels">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">EXPLORE</span>
+          <h2>Live channels</h2>
+        </div>
+
+        <div class="channel-tools">
+
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              type="search"
+              id="channelSearch"
+              placeholder="Search channels..."
+              autocomplete="off"
+            >
+          </label>
+
+          <select id="categoryFilter" class="category-filter">
+            <option value="all">All categories</option>
+          </select>
+
+        </div>
+      </div>
+
+      <div id="channelGrid" class="channel-grid">
+        <!-- Channels are inserted by app.js -->
+      </div>
+
+      <div id="emptyState" class="empty-state" hidden>
+        <div>📺</div>
+        <h3>No channels found</h3>
+        <p>Try another search or category.</p>
+      </div>
+
+    </section>
+
+
+    <section class="content-section" id="favorites">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR LIST</span>
+          <h2>Favorites</h2>
+        </div>
+      </div>
+
+      <div id="favoriteGrid" class="channel-grid">
+        <!-- Favorite channels -->
+      </div>
+
+      <div id="favoriteEmpty" class="empty-state">
+        <div>♡</div>
+        <h3>No favorites yet</h3>
+        <p>
+          Add channels to your favorites and they'll appear here.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <div>
+      <strong>Supa-stream</strong>
+      <span> — Safe live TV hub</span>
+    </div>
+
+    <div>
+      <span>Live streaming platform</span>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.15/dist/hls.min.js"></script>
+  <script src="channels.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
