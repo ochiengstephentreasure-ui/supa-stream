@@ -5,6 +5,8 @@ const overlay = $("playerOverlay");
 const statusBox = $("playerStatus");
 const nowTitle = $("nowTitle");
 const liveIndicator = $("liveIndicator");
+const nowLogo = $("nowLogo");
+const nowMeta = $("nowMeta");
 const countryFilter = $("countryFilter");
 const fullscreenBtn = $("fullscreenBtn");
 let hls = null;
@@ -64,9 +66,20 @@ function playChannel(channel) {
 
   stopPlayer();
 
-  nowTitle.textContent = channel.name;
-  liveIndicator.textContent = "● CONNECTING";
-  liveIndicator.classList.remove("active");
+ nowTitle.textContent = channel.name;
+
+nowMeta.textContent =
+  `${channel.category} · ${channel.country}`;
+
+if (channel.logoUrl) {
+  nowLogo.innerHTML =
+    `<img src="${escapeHTML(channel.logoUrl)}" alt="${escapeHTML(channel.name)} logo">`;
+} else {
+  nowLogo.textContent = channel.logo || "TV";
+}
+
+liveIndicator.textContent = "● CONNECTING";
+liveIndicator.classList.remove("active");
 
   overlay.classList.remove("hidden");
   setStatus("Connecting...");
