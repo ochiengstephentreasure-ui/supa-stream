@@ -5,6 +5,7 @@ const overlay = $("playerOverlay");
 const statusBox = $("playerStatus");
 const nowTitle = $("nowTitle");
 const liveIndicator = $("liveIndicator");
+const countryFilter = $("countryFilter");
 const fullscreenBtn = $("fullscreenBtn");
 let hls = null;
 let currentChannel = null;
@@ -136,7 +137,7 @@ player.addEventListener("error", () => {
   liveIndicator.classList.remove("active");
 });
 
-function channelMatches(channel, search, category) {
+function channelMatches(channel, search, category, country) {
   const text = [
     channel.name,
     channel.category,
@@ -145,7 +146,8 @@ function channelMatches(channel, search, category) {
 
   return (
     (!search || text.includes(search)) &&
-    (category === "all" || channel.category === category)
+    (category === "all" || channel.category === category) &&
+    (country === "all" || channel.country === country)
   );
 }
 
@@ -193,9 +195,9 @@ function renderChannels() {
 
   const search = $("channelSearch").value.trim().toLowerCase();
   const category = $("categoryFilter").value;
-
+const country = $("countryFilter").value;
   const results = CHANNELS.filter(channel =>
-    channelMatches(channel, search, category)
+   channelMatches(channel, search, category, country)
   );
 
   grid.innerHTML = results.map(channelCard).join("");
@@ -262,7 +264,21 @@ function populateCategories() {
       )
       .join("");
 }
+function populateCountries() {
+  const select = $("countryFilter");
 
+  const countries = [
+    ...new Set(CHANNELS.map(channel => channel.country))
+  ].sort();
+
+  select.innerHTML =
+    `<option value="all">All countries</option>` +
+    countries
+      .map(country =>
+        `<option value="${escapeHTML(country)}">${escapeHTML(country)}</option>`
+      )
+      .join("");
+}
 function escapeHTML(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -275,7 +291,7 @@ function escapeHTML(value) {
 $("channelSearch").addEventListener("input", renderChannels);
 
 $("categoryFilter").addEventListener("change", renderChannels);
-
+countryFilter.addEventListener("change", renderChannels);
 $("startWatching").addEventListener("click", () => {
   const first = CHANNELS[0];
 
@@ -295,6 +311,7 @@ $("themeToggle").addEventListener("click", () => {
 });
 
 populateCategories();
+populateCountries();
 renderChannels();
 renderFavorites();
 fullscreenBtn.addEventListener("click", async () => {
