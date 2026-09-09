@@ -1,16 +1,5 @@
 const CHANNELS = [
   {
-    id: "mtv-lebanon",
-    name: "MTV Lebanon",
-    category: "Entertainment",
-    country: "Lebanon",
-    countryCode: "🇱🇧",
-    logo: "MTV",
-    logoUrl: "",
-    stream: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mtv-lebanon/b8ebb2a5affb812f1541712adde10e26/index.m3u8"
-  },
-
-  {
     id: "demo-news",
     name: "Supa News",
     category: "News",
