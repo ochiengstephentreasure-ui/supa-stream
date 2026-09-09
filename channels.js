@@ -55,27 +55,6 @@ const CHANNELS = [
     stream: "https://amtv.tulixcdn.com/amtv2/am2abr/index.m3u8"
   },
 
-  {
-    id: "abu-dhabi-tv",
-    name: "Abu Dhabi TV",
-    category: "Entertainment",
-    country: "United Arab Emirates",
-    countryCode: "🇦🇪",
-    logo: "AD",
-    logoUrl: "",
-    stream: "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_tv/abudhabi_tv_hls_nd/index.m3u8"
-  },
-
-  {
-    id: "rta-news",
-    name: "RTA News",
-    category: "News",
-    country: "Afghanistan",
-    countryCode: "🇦🇫",
-    logo: "RTA",
-    logoUrl: "",
-    stream: "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA2)/index.m3u8"
-  },
 
   {
     id: "red-plus",
