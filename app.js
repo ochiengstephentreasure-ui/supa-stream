@@ -153,7 +153,12 @@ player.addEventListener("waiting", () => {
 });
 
 player.addEventListener("error", () => {
-  setStatus("Playback unavailable");
+  setStatus(
+    currentChannel
+      ? `${currentChannel.name} is currently unavailable`
+      : "Playback unavailable"
+  );
+
   liveIndicator.textContent = "● OFFLINE";
   liveIndicator.classList.remove("active");
 });
