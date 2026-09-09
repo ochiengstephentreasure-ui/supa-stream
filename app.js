@@ -365,6 +365,15 @@ document.addEventListener("keydown", event => {
     event.preventDefault();
     nextChannelBtn.click();
   }
+  if (event.code === "Space") {
+  event.preventDefault();
+
+  if (player.paused) {
+    player.play().catch(() => {});
+  } else {
+    player.pause();
+  }
+}
 });
 populateCategories();
 populateCountries();
