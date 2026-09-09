@@ -149,7 +149,7 @@ player.addEventListener("playing", () => {
 });
 
 player.addEventListener("waiting", () => {
-  setStatus("Buffering...");
+  setStatus(`Buffering ${currentChannel?.name || "stream"}...`);
 });
 
 player.addEventListener("error", () => {
