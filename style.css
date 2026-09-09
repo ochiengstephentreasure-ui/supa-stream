@@ -613,3 +613,58 @@ main{
   opacity: 1;
   transform: translateY(0);
 }
+/* ===== Fullscreen Player Button ===== */
+
+.fullscreen-btn {
+  position: absolute;
+  right: 14px;
+  bottom: 58px;
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.fullscreen-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.05);
+}
+
+.fullscreen-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.screen-frame:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+
+.screen-frame:fullscreen #videoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.screen-frame:fullscreen .fullscreen-btn {
+  right: 20px;
+  bottom: 20px;
+}
