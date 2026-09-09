@@ -900,3 +900,55 @@ main{
   background: rgba(34, 197, 94, 0.1);
   box-shadow: 0 0 12px rgba(34, 197, 94, 0.12);
 }
+/* ===== Light Theme ===== */
+
+body.light {
+  --bg: #f4f6fb;
+  --panel: #ffffff;
+  --panel2: #eef1f7;
+  --text: #111827;
+  --muted: #667085;
+  --line: #d9dee8;
+  --accent: #6c63ff;
+  --accent2: #5148d8;
+  --danger: #dc2626;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.light .topbar {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom-color: var(--line);
+}
+
+body.light .channel-card,
+body.light .now-playing {
+  background: var(--panel);
+  border-color: var(--line);
+}
+
+body.light .search-box,
+body.light .category-filter {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+body.light .search-box input {
+  color: var(--text);
+}
+
+body.light .search-box input::placeholder {
+  color: var(--muted);
+}
+
+body.light .icon-btn {
+  background: var(--panel2);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+body.light .footer {
+  border-top-color: var(--line);
+}
