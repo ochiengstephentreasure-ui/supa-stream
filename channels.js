@@ -32,17 +32,7 @@ const CHANNELS = [
     stream: "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8"
   },
 
-  {
-    id: "addis-tv",
-    name: "Addis TV",
-    category: "Entertainment",
-    country: "Ethiopia",
-    countryCode: "🇪🇹",
-    logo: "AT",
-    logoUrl: "",
-    stream: "https://rrsatrtmp.tulix.tv/addis1/addis1multi.smil/playlist.m3u8"
-  },
-
+  
   {
     id: "ada-tv",
     name: "Ada TV",
