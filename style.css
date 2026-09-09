@@ -537,3 +537,79 @@ main{
     border-radius:13px;
   }
 }
+/* ===== Enhanced Channel Cards ===== */
+
+.channel-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.channel-card::before {
+  content: "LIVE";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(220, 38, 38, 0.95);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.channel-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.channel-card:active {
+  transform: translateY(-2px);
+}
+
+.channel-logo {
+  transition: transform 0.2s ease;
+}
+
+.channel-card:hover .channel-logo {
+  transform: scale(1.05);
+}
+
+.channel-name {
+  font-weight: 700;
+}
+
+.channel-meta {
+  opacity: 0.8;
+}
+
+.favorite-btn {
+  z-index: 2;
+}
+
+.channel-card::after {
+  content: "▶ Watch";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: var(--panel2);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.2s ease;
+}
+
+.channel-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
