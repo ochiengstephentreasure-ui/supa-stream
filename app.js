@@ -175,8 +175,14 @@ function channelCard(channel) {
       </div>
 
       <div class="channel-meta">
-        ${escapeHTML(channel.category)} · ${escapeHTML(channel.country)}
-      </div>
+  <span class="channel-country">
+    ${escapeHTML(channel.countryCode || "🌐")}
+    ${escapeHTML(channel.country)}
+  </span>
+  <span class="channel-category">
+    ${escapeHTML(channel.category)}
+  </span>
+</div>
     </article>
   `;
 }
