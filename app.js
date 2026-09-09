@@ -162,7 +162,13 @@ function channelCard(channel) {
         ${favorite ? "★" : "☆"}
       </button>
 
-      <div class="channel-logo">${escapeHTML(channel.logo || "TV")}</div>
+      <div class="channel-logo">
+  ${
+    channel.logoUrl
+      ? `<img src="${escapeHTML(channel.logoUrl)}" alt="${escapeHTML(channel.name)} logo" loading="lazy">`
+      : `<span>${escapeHTML(channel.logo || "TV")}</span>`
+  }
+</div>
 
       <div class="channel-name">
         ${escapeHTML(channel.name)}
