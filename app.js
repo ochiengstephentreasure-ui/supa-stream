@@ -118,20 +118,23 @@ liveIndicator.classList.remove("active");
     });
 
     hls.on(Hls.Events.ERROR, (_, data) => {
-      if (!data.fatal) return;
+  if (!data.fatal) return;
 
-      setStatus("Stream error");
+  if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+    setStatus("Connection lost — retrying...");
+    hls.startLoad();
+  } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+    setStatus("Playback issue — recovering...");
+    hls.recoverMediaError();
+  } else {
+    setStatus("Stream unavailable");
+    liveIndicator.textContent = "● OFFLINE";
+    liveIndicator.classList.remove("active");
 
-      if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
-        setStatus("Retrying...");
-        hls.startLoad();
-      } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
-        hls.recoverMediaError();
-      } else {
-        hls.destroy();
-        hls = null;
-      }
-    });
+    hls.destroy();
+    hls = null;
+  }
+});
 
   } else {
     setStatus("HLS is not supported");
