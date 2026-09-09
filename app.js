@@ -328,7 +328,27 @@ $("startWatching").addEventListener("click", () => {
 $("themeToggle").addEventListener("click", () => {
   document.body.classList.toggle("light");
 });
+previousChannelBtn.addEventListener("click", () => {
+  if (!CHANNELS.length) return;
 
+  currentChannelIndex =
+    currentChannelIndex <= 0
+      ? CHANNELS.length - 1
+      : currentChannelIndex - 1;
+
+  playChannel(CHANNELS[currentChannelIndex]);
+});
+
+nextChannelBtn.addEventListener("click", () => {
+  if (!CHANNELS.length) return;
+
+  currentChannelIndex =
+    currentChannelIndex >= CHANNELS.length - 1
+      ? 0
+      : currentChannelIndex + 1;
+
+  playChannel(CHANNELS[currentChannelIndex]);
+});
 populateCategories();
 populateCountries();
 renderChannels();
