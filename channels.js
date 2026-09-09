@@ -19,5 +19,126 @@ const CHANNELS = [
     logo: "ST",
     logoUrl: "https://placehold.co/160x160/png?text=ST",
     stream: "https://test-streams.mux.dev/test_001/stream.m3u8"
+  },
+
+  {
+    id: "5-minute-craft",
+    name: "5-Minute Craft",
+    category: "Entertainment",
+    country: "Finland",
+    countryCode: "🇫🇮",
+    logo: "5M",
+    logoUrl: "",
+    stream: "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8"
+  },
+
+  {
+    id: "addis-tv",
+    name: "Addis TV",
+    category: "Entertainment",
+    country: "Ethiopia",
+    countryCode: "🇪🇹",
+    logo: "AT",
+    logoUrl: "",
+    stream: "https://rrsatrtmp.tulix.tv/addis1/addis1multi.smil/playlist.m3u8"
+  },
+
+  {
+    id: "ada-tv",
+    name: "Ada TV",
+    category: "Entertainment",
+    country: "Cyprus",
+    countryCode: "🇨🇾",
+    logo: "ADA",
+    logoUrl: "",
+    stream: "https://yayin1.canlitv.fun/live/kibrisadatv.stream/playlist.m3u8"
+  },
+
+  {
+    id: "armenia-1",
+    name: "Armenia 1",
+    category: "Entertainment",
+    country: "Armenia",
+    countryCode: "🇦🇲",
+    logo: "A1",
+    logoUrl: "",
+    stream: "https://amtv.tulixcdn.com/amtv2/am2abr/index.m3u8"
+  },
+
+  {
+    id: "abu-dhabi-tv",
+    name: "Abu Dhabi TV",
+    category: "Entertainment",
+    country: "United Arab Emirates",
+    countryCode: "🇦🇪",
+    logo: "AD",
+    logoUrl: "",
+    stream: "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_tv/abudhabi_tv_hls_nd/index.m3u8"
+  },
+
+  {
+    id: "rta-news",
+    name: "RTA News",
+    category: "News",
+    country: "Afghanistan",
+    countryCode: "🇦🇫",
+    logo: "RTA",
+    logoUrl: "",
+    stream: "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA2)/index.m3u8"
+  },
+
+  {
+    id: "red-plus",
+    name: "Red+",
+    category: "News",
+    country: "Colombia",
+    countryCode: "🇨🇴",
+    logo: "RED+",
+    logoUrl: "",
+    stream: "https://inforedvos.lcdn.claro.net.co/Content/HLS_HLS_DIR/Live/channel(REDMASHDWEB)/master.m3u8"
+  },
+
+  {
+    id: "canal-24-horas",
+    name: "Canal 24 Horas",
+    category: "News",
+    country: "Spain",
+    countryCode: "🇪🇸",
+    logo: "24H",
+    logoUrl: "",
+    stream: "https://ztnr.rtve.es/ztnr/1694255.m3u8"
+  },
+
+  {
+    id: "nhk-world-japan",
+    name: "NHK World-Japan",
+    category: "News",
+    country: "Japan",
+    countryCode: "🇯🇵",
+    logo: "NHK",
+    logoUrl: "",
+    stream: "https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8"
+  },
+
+  {
+    id: "arirang-tv",
+    name: "Arirang TV",
+    category: "Entertainment",
+    country: "South Korea",
+    countryCode: "🇰🇷",
+    logo: "AR",
+    logoUrl: "",
+    stream: "https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8"
+  },
+
+  {
+    id: "bbs-tv",
+    name: "BBS TV",
+    category: "News",
+    country: "Uganda",
+    countryCode: "🇺🇬",
+    logo: "BBS",
+    logoUrl: "",
+    stream: "https://bbstv.ug/hls/ch01/index.m3u8"
   }
 ];
