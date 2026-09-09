@@ -5,6 +5,7 @@ const CHANNELS = [
     category: "News",
     country: "Demo",
     logo: "SN",
+    logoUrl: "https://placehold.co/160x160/png?text=SN",
     stream: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
   },
   {
@@ -13,6 +14,7 @@ const CHANNELS = [
     category: "Entertainment",
     country: "Demo",
     logo: "ST",
+    logoUrl: "https://placehold.co/160x160/png?text=ST",
     stream: "https://test-streams.mux.dev/test_001/stream.m3u8"
   }
 ];
