@@ -88,8 +88,7 @@ liveIndicator.textContent = "● CONNECTING";
 liveIndicator.classList.remove("active");
 
   overlay.classList.remove("hidden");
-  setStatus("Connecting...");
-
+  setStatus(`Connecting to ${channel.name}...`);
   const url = channel.stream;
 
   if (player.canPlayType("application/vnd.apple.mpegurl")) {
