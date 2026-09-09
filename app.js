@@ -35,16 +35,25 @@ function isFavorite(id) {
 
 function toggleFavorite(id) {
   let favorites = getFavorites();
+  const channel = CHANNELS.find(x => x.id === id);
+
+  if (!channel) return;
+
+  let message;
 
   if (favorites.includes(id)) {
     favorites = favorites.filter(x => x !== id);
+    message = `${channel.name} removed from favorites`;
   } else {
     favorites.push(id);
+    message = `${channel.name} added to favorites`;
   }
 
   saveFavorites(favorites);
   renderChannels();
   renderFavorites();
+
+  showToast(message);
 }
 
 function setStatus(text) {
