@@ -349,6 +349,23 @@ nextChannelBtn.addEventListener("click", () => {
 
   playChannel(CHANNELS[currentChannelIndex]);
 });
+document.addEventListener("keydown", event => {
+  const tag = event.target.tagName.toLowerCase();
+
+  if (tag === "input" || tag === "select" || tag === "textarea") {
+    return;
+  }
+
+  if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+    event.preventDefault();
+    previousChannelBtn.click();
+  }
+
+  if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+    event.preventDefault();
+    nextChannelBtn.click();
+  }
+});
 populateCategories();
 populateCountries();
 renderChannels();
