@@ -107,7 +107,7 @@ const CHANNELS = [
     country: "Uganda",
     countryCode: "🇺🇬",
     logo: "BBS",
-    logoUrl: "https://bbstv.ug/favicon.ico",
+    logoUrl: "",
     stream: "https://bbstv.ug/hls/ch01/index.m3u8"
   }
 ];
