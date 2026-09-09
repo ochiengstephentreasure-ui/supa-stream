@@ -32,7 +32,22 @@ function saveFavorites(list) {
 function isFavorite(id) {
   return getFavorites().includes(id);
 }
+let toastTimer;
 
+function showToast(message) {
+  const toast = $("toast");
+
+  if (!toast) return;
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2200);
+}
 function toggleFavorite(id) {
   let favorites = getFavorites();
   const channel = CHANNELS.find(x => x.id === id);
