@@ -67,6 +67,9 @@ function playChannel(channel) {
 
   currentChannel = channel;
 
+currentChannelIndex = CHANNELS.findIndex(
+  channelItem => channelItem.id === channel.id
+);
   stopPlayer();
 
  nowTitle.textContent = channel.name;
