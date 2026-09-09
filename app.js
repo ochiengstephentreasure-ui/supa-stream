@@ -335,8 +335,22 @@ $("startWatching").addEventListener("click", () => {
   }
 });
 
+const THEME_KEY = "supa-stream-theme";
+
+const savedTheme = localStorage.getItem(THEME_KEY);
+
+if (savedTheme === "light") {
+  document.body.classList.add("light");
+}
+
 $("themeToggle").addEventListener("click", () => {
   document.body.classList.toggle("light");
+
+  const theme = document.body.classList.contains("light")
+    ? "light"
+    : "dark";
+
+  localStorage.setItem(THEME_KEY, theme);
 });
 previousChannelBtn.addEventListener("click", () => {
   if (!CHANNELS.length) return;
