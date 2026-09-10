@@ -220,17 +220,6 @@ const CHANNELS = [
   },
 
   {
-    id: "trace-naija",
-    name: "Trace Naija",
-    category: "Entertainment",
-    country: "Nigeria",
-    countryCode: "🇳🇬",
-    logo: "TN",
-    logoUrl: "",
-    stream: "https://channels.trace.plus/Traceprod/NAIJA_hd/index.m3u8"
-  },
-
-  {
     id: "trace-urban-africa",
     name: "Trace Urban Africa",
     category: "Entertainment",
