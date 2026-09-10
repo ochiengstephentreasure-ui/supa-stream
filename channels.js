@@ -328,15 +328,15 @@ const CHANNELS = [
   stream: "https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8"
 },
   
-  {
-  id: "arb-24",
-  name: "ARB 24",
+{
+  id: "rtv-zenica",
+  name: "RTV Zenica",
   category: "News",
-  country: "Azerbaijan",
-  countryCode: "🇦🇿",
-  logo: "ARB",
+  country: "Bosnia and Herzegovina",
+  countryCode: "🇧🇦",
+  logo: "RTV",
   logoUrl: "",
-  stream: "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/arb-24.m3u8"
+  stream: "https://stream.rtvze.ba/live/123/123.m3u8"
 }
   
 ];
