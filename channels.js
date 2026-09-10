@@ -480,7 +480,206 @@ const CHANNELS = [
     logo: "GO",
     logoUrl: "",
     stream: "https://rds3.desdeparaguay.net/gotv/gotv/playlist.m3u8"
-  }
+  },
+  
+  {
+  id: "atv-hungary",
+  name: "ATV",
+  category: "News",
+  country: "Hungary",
+  countryCode: "🇭🇺",
+  logo: "ATV",
+  logoUrl: "",
+  stream: "https://stream.atv.hu/atvlive/atvstream_2_aac/playlist.m3u8"
+},
+  
+{
+  id: "fix-tv",
+  name: "FIX TV",
+  category: "Entertainment",
+  country: "Hungary",
+  countryCode: "🇭🇺",
+  logo: "FIX",
+  logoUrl: "",
+  stream: "https://fixhd.tv:8082/fix/1080i/playlist.m3u8"
+},
+  
+{
+  id: "nhk-general-tv",
+  name: "NHK General TV",
+  category: "News",
+  country: "Japan",
+  countryCode: "🇯🇵",
+  logo: "NHK",
+  logoUrl: "",
+  stream: "https://nhk4.mov3.co/hls/nhk.m3u8"
+},
+  
+{
+  id: "shop-channel-japan",
+  name: "Shop Channel",
+  category: "Shopping",
+  country: "Japan",
+  countryCode: "🇯🇵",
+  logo: "SHOP",
+  logoUrl: "",
+  stream: "https://stream3.shopch.jp/HLS/master.m3u8"
+},
+  
+{
+  id: "korea-tv",
+  name: "Korea TV",
+  category: "News",
+  country: "South Korea",
+  countryCode: "🇰🇷",
+  logo: "KTV",
+  logoUrl: "",
+  stream: "https://hlive.ktv.go.kr/live/klive_h.stream/playlist.m3u8"
+},
+  
+{
+  id: "bukedde-tv-1",
+  name: "Bukedde TV 1",
+  category: "Entertainment",
+  country: "Uganda",
+  countryCode: "🇺🇬",
+  logo: "BTV",
+  logoUrl: "",
+  stream: "https://stream.hydeinnovations.com/bukedde1flussonic/index.m3u8"
+},
+  
+{
+  id: "tv-west-uganda",
+  name: "TV West",
+  category: "Entertainment",
+  country: "Uganda",
+  countryCode: "🇺🇬",
+  logo: "TVW",
+  logoUrl: "",
+  stream: "https://stream.hydeinnovations.com/tvwest-flussonic/index.m3u8"
+},
+  
+{
+  id: "cbc-drama",
+  name: "CBC Drama",
+  category: "Entertainment",
+  country: "Egypt",
+  countryCode: "🇪🇬",
+  logo: "CBC",
+  logoUrl: "",
+  stream: "https://flu.systemnet.tv/CBCDrama/index.m3u8"
+},
+{
+  id: "watan-tv",
+  name: "Watan TV",
+  category: "News",
+  country: "Egypt",
+  countryCode: "🇪🇬",
+  logo: "WATAN",
+  logoUrl: "",
+  stream: "https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8"
+},
+{
+  id: "television-canaria",
+  name: "Televisión Canaria",
+  category: "News",
+  country: "Spain",
+  countryCode: "🇪🇸",
+  logo: "TV CAN",
+  logoUrl: "",
+  stream: "https://d1oyt3v08gcy18.cloudfront.net/index-events.m3u8"
+},
+{
+  id: "rtk-3",
+  name: "RTK 3",
+  category: "News",
+  country: "Kosovo",
+  countryCode: "🇽🇰",
+  logo: "RTK 3",
+  logoUrl: "",
+  stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-livestream/rtk3/index.m3u8"
+},
+{
+  id: "tv-arta",
+  name: "TV Arta",
+  category: "Entertainment",
+  country: "Kosovo",
+  countryCode: "🇽🇰",
+  logo: "ARTA",
+  logoUrl: "",
+  stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-live/mps-vgx-u9p-qv1/index.m3u8"
+},
+{
+  id: "arte-hd",
+  name: "arte HD",
+  category: "Entertainment",
+  country: "France",
+  countryCode: "🇫🇷",
+  logo: "arte",
+  logoUrl: "",
+  stream: "https://viamotionhsi.netplus.ch/live/eds/artehd/browser-HLS8/artehd.m3u8"
+},
+{
+  id: "bfm2",
+  name: "BFM2",
+  category: "News",
+  country: "France",
+  countryCode: "🇫🇷",
+  logo: "BFM2",
+  logoUrl: "",
+  stream: "https://d1ib1gsg71oarf.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-scp7wda722jph/BFM2_FR.m3u8"
+},
+{
+  id: "otv-lebanon",
+  name: "OTV",
+  category: "Entertainment",
+  country: "Lebanon",
+  countryCode: "🇱🇧",
+  logo: "OTV",
+  logoUrl: "",
+  stream: "https://otv.hibridcdn.net/otv/tv_abr/playlist.m3u8"
+},
+{
+  id: "wgn-dt1",
+  name: "WGN-DT1",
+  category: "Entertainment",
+  country: "United States",
+  countryCode: "🇺🇸",
+  logo: "WGN",
+  logoUrl: "",
+  stream: "https://fl1.moveonjoy.com/WGN/index.m3u8"
+},
+{
+  id: "revry-news",
+  name: "Revry News",
+  category: "News",
+  country: "United States",
+  countryCode: "🇺🇸",
+  logo: "REVRY",
+  logoUrl: "",
+  stream: "https://linear-44.frequency.stream/dist/plex/44/hls/master/playlist.m3u8"
+},
+{
+  id: "telearuba",
+  name: "Telearuba",
+  category: "Entertainment",
+  country: "Aruba",
+  countryCode: "🇦🇼",
+  logo: "TA",
+  logoUrl: "",
+  stream: "https://cdn01.setar.aw/Telearuba/telearuba/playlist.m3u8"
+},
+
+{
+  id: "arb-24",
+  name: "ARB 24",
+  category: "News",
+  country: "Azerbaijan",
+  countryCode: "🇦🇿",
+  logo: "ARB 24",
+  logoUrl: "",
+  stream: "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/arb-24.m3u8"
+}
 ];
 
 
