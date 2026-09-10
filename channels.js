@@ -250,8 +250,19 @@ const CHANNELS = [
     logo: "TG",
     logoUrl: "",
     stream: "https://channels.trace.plus/Traceprod/GOSPEL_ROA_hd/index.m3u8"
-  }
+  },
 
+{
+  id: "9xm",
+  name: "9XM",
+  category: "Entertainment",
+  country: "India",
+  countryCode: "🇮🇳",
+  logo: "9XM",
+  logoUrl: "",
+  stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
+}
+  
 ];
 
 
