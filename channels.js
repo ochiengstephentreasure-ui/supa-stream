@@ -326,6 +326,17 @@ const CHANNELS = [
   logo: "TU",
   logoUrl: "",
   stream: "https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8"
+},
+  
+  {
+  id: "arb-24",
+  name: "ARB 24",
+  category: "News",
+  country: "Azerbaijan",
+  countryCode: "🇦🇿",
+  logo: "ARB",
+  logoUrl: "",
+  stream: "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/arb-24.m3u8"
 }
   
 ];
