@@ -1294,3 +1294,73 @@ body.light .channel-category {
 .retry-btn[hidden] {
   display: none;
 }
+/* ===== Playback Error Overlay ===== */
+
+.playback-error {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+
+  display: grid;
+  place-content: center;
+  justify-items: center;
+
+  padding: 30px;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(20, 27, 42, 0.92),
+      rgba(0, 0, 0, 0.94)
+    );
+}
+
+.playback-error[hidden] {
+  display: none;
+}
+
+.playback-error-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 14px;
+
+  border: 1px solid rgba(255, 77, 103, 0.35);
+  border-radius: 50%;
+
+  background: rgba(255, 77, 103, 0.12);
+  color: #ff7184;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.playback-error h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.playback-error p {
+  max-width: 340px;
+  margin-bottom: 18px;
+
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.playback-error .retry-btn {
+  position: static;
+  transform: none;
+}
+
+.playback-error .retry-btn:hover {
+  transform: translateY(-1px);
+}
+
+.playback-error .retry-btn:active {
+  transform: translateY(0);
+}
