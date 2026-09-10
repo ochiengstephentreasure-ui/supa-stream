@@ -261,19 +261,8 @@ const CHANNELS = [
   logo: "9XM",
   logoUrl: "",
   stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
-},
-
-{
-  id: "btv-uganda",
-  name: "BTV",
-  category: "Entertainment",
-  country: "Uganda",
-  countryCode: "🇺🇬",
-  logo: "BTV",
-  logoUrl: "",
-  stream: "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8"
 }
-  
+
 ];
 
 
