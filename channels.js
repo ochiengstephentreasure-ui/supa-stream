@@ -283,8 +283,19 @@ const CHANNELS = [
   logo: "AB",
   logoUrl: "",
   stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
-}
+},
 
+  {
+  id: "ebs-hd",
+  name: "EBS HD",
+  category: "Entertainment",
+  country: "Ethiopia",
+  countryCode: "🇪🇹",
+  logo: "EBS",
+  logoUrl: "",
+  stream: "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8"
+}
+  
 ];
 
 
