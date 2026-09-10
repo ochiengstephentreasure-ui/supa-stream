@@ -505,6 +505,7 @@ document.addEventListener("keydown", event => {
 });
 populateCategories();
 populateCountries();
+renderRecentlyWatched();
 renderChannels();
 renderFavorites();
 fullscreenBtn.addEventListener("click", async () => {
