@@ -14,12 +14,25 @@ const previousChannelBtn = $("previousChannel");
 const nextChannelBtn = $("nextChannel");
 const fullscreenBtn = $("fullscreenBtn");
 const retryPlaybackBtn = $("retryPlayback");
+const playbackError = $("playbackError");
+const playbackErrorTitle = $("playbackErrorTitle");
+const playbackErrorMessage = $("playbackErrorMessage");
 let hls = null;
 let currentChannel = null;
 let currentChannelIndex = -1;
 function showRetryButton(show) {
-  if (!retryPlaybackBtn) return;
-  retryPlaybackBtn.hidden = !show;
+  if (!retryPlaybackBtn || !playbackError) return;
+
+  playbackError.hidden = !show;
+}
+
+function showPlaybackError(title, message) {
+  if (!playbackError) return;
+
+  playbackErrorTitle.textContent = title;
+  playbackErrorMessage.textContent = message;
+
+  showRetryButton(true);
 }
 
 const FAVORITES_KEY = "supa-stream-favorites";
@@ -240,6 +253,8 @@ player.addEventListener("playing", () => {
   setStatus("LIVE");
   liveIndicator.textContent = "● LIVE";
   liveIndicator.classList.add("active");
+  
+  showRetryButton(false);
 });
 
 player.addEventListener("waiting", () => {
@@ -257,6 +272,13 @@ player.addEventListener("error", () => {
   liveIndicator.classList.remove("active");
 
   showRetryButton(true);
+  
+  showPlaybackError(
+  "Stream unavailable",
+  currentChannel
+    ? `${currentChannel.name} could not be played right now.`
+    : "This channel could not be played right now."
+);
 });
 
 function channelMatches(channel, search, category, country) {
