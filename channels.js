@@ -337,6 +337,17 @@ const CHANNELS = [
   logo: "RTV",
   logoUrl: "",
   stream: "https://stream.rtvze.ba/live/123/123.m3u8"
+},
+  
+  {
+  id: "euronews-albania",
+  name: "Euronews Albania",
+  category: "News",
+  country: "Albania",
+  countryCode: "🇦🇱",
+  logo: "EA",
+  logoUrl: "",
+  stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-live/2dw-zuf-1c9-pxu/index.m3u8"
 }
   
 ];
