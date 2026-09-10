@@ -277,17 +277,6 @@ const CHANNELS = [
   },
 
   {
-    id: "caritas-tv",
-    name: "Cáritas TV",
-    category: "Entertainment",
-    country: "Paraguay",
-    countryCode: "🇵🇾",
-    logo: "CTV",
-    logoUrl: "",
-    stream: "https://rds3.desdeparaguay.net/caritastv/caritastv/playlist.m3u8"
-  },
-
-  {
     id: "mrtv-news",
     name: "MRTV News",
     category: "News",
@@ -310,28 +299,6 @@ const CHANNELS = [
   },
 
   {
-    id: "meridiano-tv",
-    name: "Meridiano TV",
-    category: "Sports",
-    country: "Venezuela",
-    countryCode: "🇻🇪",
-    logo: "MTV",
-    logoUrl: "",
-    stream: "https://e1.viginet.vectormax.com:5210/quickstart/114-934-21/index.m3u8"
-  },
-
-  {
-    id: "fish-tv",
-    name: "Fish TV",
-    category: "Entertainment",
-    country: "Ghana",
-    countryCode: "🇬🇭",
-    logo: "FTV",
-    logoUrl: "",
-    stream: "https://tv.localstreamgh.com/fishtv/index.m3u8"
-  },
-  
-  {
     id: "abc-news",
     name: "ABC News",
     category: "News",
@@ -339,16 +306,6 @@ const CHANNELS = [
     stream: "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
     logoUrl: "",
     fallbackLogo: "ABC"
-  },
-  
-  {
-    id: "france-24",
-    name: "France 24 English",
-    category: "News",
-    country: "France",
-    stream: "https://live.france24.com/hls/live/2037218/F24_EN_HI_HLS/master_5000.m3u8",
-    logoUrl: "",
-    fallbackLogo: "F24"
   },
   
   {
@@ -371,37 +328,6 @@ const CHANNELS = [
     fallbackLogo: "AJ"
   },
   
-  {
-    id: "trt-world",
-    name: "TRT World",
-    category: "News",
-    country: "Türkiye",
-    stream: "https://api.trtworld.com/livestream/v1/WcM3Oa2LHD9iUjWDSRUI335NkMWVTUV351H56dqC/master.m3u8",
-    logoUrl: "",
-    fallbackLogo: "TRT"
-  },
-  
-  {
-    id: "cgtn-documentary",
-    name: "CGTN Documentary",
-    category: "Documentary",
-    country: "China",
-    stream: "https://news.cgtn.com/resource/live/documentary/cgtn-documentary.m3u8",
-    logoUrl: "",
-    fallbackLogo: "CD"
-  },
-  
-   {
-    id: "reuters-tv",
-    name: "Reuters TV",
-    category: "News",
-    country: "International",
-    countryCode: "🌍",
-    logo: "RT",
-    logoUrl: "",
-    stream: "https://reuters-reutersnow-1-eu.rakuten.wurl.com/manifest/playlist.m3u8"
-  },
-  
    {
     id: "bloomberg-tv",
     name: "Bloomberg TV",
@@ -413,35 +339,4 @@ const CHANNELS = [
     stream: "https://bloomberg.com/media-manifest/streams/asia.m3u8"
   },
   
-    {
-    id: "cnn-international",
-    name: "CNN International",
-    category: "News",
-    country: "International",
-    countryCode: "🌍",
-    logo: "CNN",
-    logoUrl: "",
-    stream: "https://cnn-cnninternational-1-eu.rakuten.wurl.com/manifest/playlist.m3u8"
-  },
-
-   {
-    id: "cbs-news",
-    name: "CBS News",
-    category: "News",
-    country: "United States",
-    countryCode: "🇺🇸",
-    logo: "CBS",
-    logoUrl: "",
-    stream: "https://cbsnewshd-lh.akamaihd.net/i/CBSNHD_7@199302/master.m3u8"
-  },
-  
-  {
-    id: "nbc-news-now",
-    name: "NBC News NOW",
-    category: "News",
-    country: "United States",
-    stream: "https://dai2.xumo.com/amagi_hls_data_xumo1212A-xumo-nbcnewsnow/CDN/master.m3u8",
-    logoUrl: "",
-    fallbackLogo: "NBC"
-  }
 ];
