@@ -112,17 +112,6 @@ const CHANNELS = [
   },
 
   {
-    id: "africa-24",
-    name: "Africa 24",
-    category: "News",
-    country: "France",
-    countryCode: "🇫🇷",
-    logo: "A24",
-    logoUrl: "",
-    stream: "https://africa24.vedge.infomaniak.com/livecast/ik:africa24/manifest.m3u8"
-  },
-
-  {
     id: "gb-news",
     name: "GB News",
     category: "News",
@@ -131,17 +120,6 @@ const CHANNELS = [
     logo: "GB",
     logoUrl: "",
     stream: "https://hlspackager.akamaized.net/live/DB/GB_NEWS/HLS/GB_NEWS.m3u8"
-  },
-
-  {
-    id: "al-ghad-tv",
-    name: "Al Ghad TV",
-    category: "News",
-    country: "Egypt",
-    countryCode: "🇪🇬",
-    logo: "AG",
-    logoUrl: "",
-    stream: "https://eazyvwqssi.erbvr.com/alghadtv/alghadtv.m3u8"
   },
 
   {
@@ -156,72 +134,6 @@ const CHANNELS = [
   },
 
   {
-    id: "kohavision",
-    name: "Kohavision",
-    category: "News",
-    country: "Kosovo",
-    countryCode: "🇽🇰",
-    logo: "KTV",
-    logoUrl: "",
-    stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-livestream/lj9-pxm-o53-rp0/tracks-v4a1/mono.m3u8"
-  },
-
-  {
-    id: "teleamazonas",
-    name: "Teleamazonas",
-    category: "News",
-    country: "Ecuador",
-    countryCode: "🇪🇨",
-    logo: "TA",
-    logoUrl: "",
-    stream: "https://teleamazonas-live.cdn.vustreams.com/live/fd4ab346-b4e3-4628-abf0-b5a1bc192428/live.isml/playlist.m3u8"
-  },
-
-  {
-    id: "nation-tv",
-    name: "Nation TV",
-    category: "News",
-    country: "Thailand",
-    countryCode: "🇹🇭",
-    logo: "NT",
-    logoUrl: "",
-    stream: "https://nationtv-1jdcjo.cdn.byteark.com/fleetstream/nationtvlive/index.m3u8"
-  },
-
-  {
-    id: "iqraa-quran",
-    name: "Iqraa Quran",
-    category: "Entertainment",
-    country: "Saudi Arabia",
-    countryCode: "🇸🇦",
-    logo: "IQ",
-    logoUrl: "",
-    stream: "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv2/playlist.m3u8"
-  },
-
-  {
-    id: "telebarn",
-    name: "TeleBarn",
-    category: "News",
-    country: "Switzerland",
-    countryCode: "🇨🇭",
-    logo: "TB",
-    logoUrl: "",
-    stream: "https://viamotionhsi.netplus.ch/live/eds/telebaern/browser-HLS8/telebaern.m3u8"
-  },
-
-  {
-    id: "tv-tabalong",
-    name: "TV Tabalong",
-    category: "Entertainment",
-    country: "Indonesia",
-    countryCode: "🇮🇩",
-    logo: "TVT",
-    logoUrl: "",
-    stream: "https://5bf7b725107e5.streamlock.net/tvtabalong/tvtabalong/playlist.m3u8"
-  },
-
-  {
     id: "janta-tv",
     name: "Janta TV",
     category: "News",
@@ -230,50 +142,6 @@ const CHANNELS = [
     logo: "JT",
     logoUrl: "",
     stream: "https://live.jswk.online/IK_RTPM/live/index.m3u8"
-  },
-
-  {
-    id: "hamdard-tv",
-    name: "Hamdard TV",
-    category: "News",
-    country: "Canada",
-    countryCode: "🇨🇦",
-    logo: "HT",
-    logoUrl: "",
-    stream: "https://tv.hamdardtv.com/hamdard/index.m3u8"
-  },
-
-  {
-    id: "vostok-24",
-    name: "Восток 24 (Владивосток)",
-    category: "News",
-    country: "Russia",
-    countryCode: "🇷🇺",
-    logo: "В24",
-    logoUrl: "",
-    stream: "https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladivostok/vostok24-hd/index.m3u8"
-  },
-
-  {
-    id: "dm-sat",
-    name: "DM Sat",
-    category: "Entertainment",
-    country: "Serbia",
-    countryCode: "🇷🇸",
-    logo: "DM",
-    logoUrl: "",
-    stream: "https://viamotionhsi.netplus.ch/live/eds/dmsat/browser-HLS8/dmsat.m3u8"
-  },
-
-  {
-    id: "comedy-play",
-    name: "Comedy Play",
-    category: "Entertainment",
-    country: "Romania",
-    countryCode: "🇷🇴",
-    logo: "CP",
-    logoUrl: "",
-    stream: "https://stream1.antenaplay.ro/live/ComedyPlay/playlist.m3u8"
   },
 
   {
@@ -287,16 +155,6 @@ const CHANNELS = [
     stream: "https://mrtvott.com/cache/MRTV-NEWS-HD/master.m3u8"
   },
 
-  {
-    id: "cgtn",
-    name: "CGTN",
-    category: "News",
-    country: "China",
-    countryCode: "🇨🇳",
-    logo: "CGTN",
-    logoUrl: "",
-    stream: "https://news.cgtn.com/resource/live/english/cgtn-news.m3u8"
-  },
 
   {
     id: "abc-news",
