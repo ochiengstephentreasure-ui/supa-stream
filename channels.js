@@ -391,6 +391,50 @@ const CHANNELS = [
     fallbackLogo: "CD"
   },
   
+   {
+    id: "reuters-tv",
+    name: "Reuters TV",
+    category: "News",
+    country: "International",
+    countryCode: "🌍",
+    logo: "RT",
+    logoUrl: "",
+    stream: "https://reuters-reutersnow-1-eu.rakuten.wurl.com/manifest/playlist.m3u8"
+  },
+  
+   {
+    id: "bloomberg-tv",
+    name: "Bloomberg TV",
+    category: "Business",
+    country: "United States",
+    countryCode: "🇺🇸",
+    logo: "B",
+    logoUrl: "",
+    stream: "https://bloomberg.com/media-manifest/streams/asia.m3u8"
+  },
+  
+    {
+    id: "cnn-international",
+    name: "CNN International",
+    category: "News",
+    country: "International",
+    countryCode: "🌍",
+    logo: "CNN",
+    logoUrl: "",
+    stream: "https://cnn-cnninternational-1-eu.rakuten.wurl.com/manifest/playlist.m3u8"
+  },
+
+   {
+    id: "cbs-news",
+    name: "CBS News",
+    category: "News",
+    country: "United States",
+    countryCode: "🇺🇸",
+    logo: "CBS",
+    logoUrl: "",
+    stream: "https://cbsnewshd-lh.akamaihd.net/i/CBSNHD_7@199302/master.m3u8"
+  },
+  
   {
     id: "nbc-news-now",
     name: "NBC News NOW",
