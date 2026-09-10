@@ -381,6 +381,17 @@ const CHANNELS = [
   logo: "CSA",
   logoUrl: "",
   stream: "https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8"
+},
+
+{
+  id: "al-mayadeen",
+  name: "Al Mayadeen",
+  category: "News",
+  country: "Lebanon",
+  countryCode: "🇱🇧",
+  logo: "AM",
+  logoUrl: "",
+  stream: "https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8"
 }
   
 ];
