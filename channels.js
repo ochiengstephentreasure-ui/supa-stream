@@ -577,7 +577,86 @@ const CHANNELS = [
   logoUrl: "",
   stream: "https://otv.hibridcdn.net/otv/tv_abr/playlist.m3u8"
 },
-
+{
+  id: "a2-cnn-albania",
+  name: "A2 CNN Albania",
+  category: "News",
+  country: "Albania",
+  countryCode: "🇦🇱",
+  logo: "A2 CNN",
+  logoUrl: "",
+  stream: "https://tv.a2news.com/live/smil:a2cnnweb.stream.smil/playlist.m3u8"
+},
+{
+  id: "cna-albania",
+  name: "CNA",
+  category: "News",
+  country: "Albania",
+  countryCode: "🇦🇱",
+  logo: "CNA",
+  logoUrl: "",
+  stream: "https://live1.mediadesk.al/cnatvlive.m3u8"
+},
+{
+  id: "ora-news-albania",
+  name: "Ora News",
+  category: "News",
+  country: "Albania",
+  countryCode: "🇦🇱",
+  logo: "ORA",
+  logoUrl: "",
+  stream: "https://live1.mediadesk.al/oranews.m3u8"
+},
+{
+  id: "andorra-tv",
+  name: "Andorra TV",
+  category: "Entertainment",
+  country: "Andorra",
+  countryCode: "🇦🇩",
+  logo: "ATV",
+  logoUrl: "",
+  stream: "https://livesg1.rtva.hiway.media/11a6d6f4-ee13-47c7-9c27-7313cf5424e2/manifest.m3u8"
+},
+{
+  id: "cine-ar",
+  name: "Cine.AR",
+  category: "Movies",
+  country: "Argentina",
+  countryCode: "🇦🇷",
+  logo: "Cine.AR",
+  logoUrl: "",
+  stream: "https://5fb24b460df87.streamlock.net/live-cont.ar/cinear/playlist.m3u8"
+},
+{
+  id: "tec-tv-argentina",
+  name: "Tec TV",
+  category: "Education",
+  country: "Argentina",
+  countryCode: "🇦🇷",
+  logo: "TEC TV",
+  logoUrl: "",
+  stream: "https://tv.initium.net.ar:3939/live/tectvmainlive.m3u8"
+},
+{
+  id: "canal-26-argentina",
+  name: "Canal 26",
+  category: "News",
+  country: "Argentina",
+  countryCode: "🇦🇷",
+  logo: "C26",
+  logoUrl: "",
+  stream: "https://stream-gtlc.telecentro.net.ar/hls/canal26hls/main.m3u8"
+},
+{
+  id: "net-tv-argentina",
+  name: "Net TV",
+  category: "Entertainment",
+  country: "Argentina",
+  countryCode: "🇦🇷",
+  logo: "NET",
+  logoUrl: "",
+  stream: "https://unlimited1-us.dps.live/nettv/nettv.smil/playlist.m3u8"
+}
 ];
 
 
