@@ -34,6 +34,65 @@ function saveFavorites(list) {
 function isFavorite(id) {
   return getFavorites().includes(id);
 }
+const RECENTLY_WATCHED_KEY = "supa-stream-recently-watched";
+const MAX_RECENTLY_WATCHED = 8;
+
+function getRecentlyWatched() {
+  try {
+    const saved = JSON.parse(
+      localStorage.getItem(RECENTLY_WATCHED_KEY)
+    );
+
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveRecentlyWatched(list) {
+  localStorage.setItem(
+    RECENTLY_WATCHED_KEY,
+    JSON.stringify(list)
+  );
+}
+
+function addRecentlyWatched(id) {
+  if (!id) return;
+
+  let recent = getRecentlyWatched();
+
+  // Remove the channel if it already exists.
+  recent = recent.filter(channelId => channelId !== id);
+
+  // Put the newest channel first.
+  recent.unshift(id);
+
+  // Keep only the latest channels.
+  recent = recent.slice(0, MAX_RECENTLY_WATCHED);
+
+  saveRecentlyWatched(recent);
+
+  renderRecentlyWatched();
+}
+
+function renderRecentlyWatched() {
+  const grid = $("recentGrid");
+  const empty = $("recentEmpty");
+
+  if (!grid || !empty) return;
+
+  const recentIds = getRecentlyWatched();
+
+  const channels = recentIds
+    .map(id => CHANNELS.find(channel => channel.id === id))
+    .filter(Boolean);
+
+  grid.innerHTML = channels.map(channelCard).join("");
+
+  empty.hidden = channels.length !== 0;
+
+  bindChannelEvents(grid);
+}
 let toastTimer;
 
 function showToast(message) {
@@ -92,7 +151,8 @@ function playChannel(channel) {
   if (!channel || !channel.stream) return;
 
   currentChannel = channel;
-
+addRecentlyWatched(channel.id);
+  
 currentChannelIndex = CHANNELS.findIndex(
   channelItem => channelItem.id === channel.id
 );
