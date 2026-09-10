@@ -392,8 +392,19 @@ const CHANNELS = [
   logo: "AM",
   logoUrl: "",
   stream: "https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8"
-}
+},
   
+  {
+  id: "oromar-tv",
+  name: "Oromar TV",
+  category: "News",
+  country: "Ecuador",
+  countryCode: "🇪🇨",
+  logo: "OTV",
+  logoUrl: "",
+  stream: "https://stream.oromar.tv/hls/oromartv_hi/index.m3u8"
+}
 ];
+
 
 
