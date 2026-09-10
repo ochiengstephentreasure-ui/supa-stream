@@ -263,15 +263,15 @@ const CHANNELS = [
   stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
 },
 
-  {
-  id: "9x-jhakaas",
-  name: "9X Jhakaas",
+ {
+  id: "dd-national",
+  name: "DD National",
   category: "Entertainment",
   country: "India",
   countryCode: "🇮🇳",
-  logo: "9XJ",
+  logo: "DDN",
   logoUrl: "",
-  stream: "https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/playlist/amg01281-9xmediapvtltd-9xjhakaas-samsungin/playlist.m3u8"
+  stream: "https://d2t1l2t1s8z3q.cloudfront.net/out/v1/9b2e5c5e2b5b4d0a9c8e0f8b7c6d5e4f/index.m3u8"
 }
   
 ];
