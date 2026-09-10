@@ -407,6 +407,15 @@ $("channelSearch").addEventListener("input", renderChannels);
 
 $("categoryFilter").addEventListener("change", renderChannels);
 countryFilter.addEventListener("change", renderChannels);
+
+$("clearFilters").addEventListener("click", () => {
+  $("channelSearch").value = "";
+  $("categoryFilter").value = "all";
+  countryFilter.value = "all";
+
+  renderChannels();
+});
+
 $("startWatching").addEventListener("click", () => {
   const first = CHANNELS[0];
 
