@@ -359,6 +359,17 @@ const CHANNELS = [
   logo: "KOT",
   logoUrl: "",
   stream: "https://live.artidijitalmedya.com/artidijital_konyaolaytv/konyaolaytv/playlist.m3u8"
+},
+  
+  {
+  id: "sportsgrid",
+  name: "SportsGrid",
+  category: "Sports",
+  country: "United States",
+  countryCode: "🇺🇸",
+  logo: "SG",
+  logoUrl: "",
+  stream: "https://sportsgrid-plex.amagi.tv/playlist.m3u8"
 }
   
 ];
