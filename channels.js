@@ -263,15 +263,15 @@ const CHANNELS = [
   stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
 },
   
-{
-  id: "mastiii",
-  name: "Mastiii",
+  {
+  id: "3abn-kids-network",
+  name: "3ABN Kids Network",
   category: "Entertainment",
-  country: "India",
-  countryCode: "🇮🇳",
-  logo: "M3",
+  country: "United States",
+  countryCode: "🇺🇸",
+  logo: "3K",
   logoUrl: "",
-  stream: "https://mastiii.wiseplayout.com/mastiii/master.m3u8"
+  stream: "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8"
 }
   
 ];
