@@ -13,9 +13,14 @@ const mainNav = $("mainNav");
 const previousChannelBtn = $("previousChannel");
 const nextChannelBtn = $("nextChannel");
 const fullscreenBtn = $("fullscreenBtn");
+const retryPlaybackBtn = $("retryPlayback");
 let hls = null;
 let currentChannel = null;
 let currentChannelIndex = -1;
+function showRetryButton(show) {
+  if (!retryPlaybackBtn) return;
+  retryPlaybackBtn.hidden = !show;
+}
 
 const FAVORITES_KEY = "supa-stream-favorites";
 
@@ -156,8 +161,10 @@ addRecentlyWatched(channel.id);
 currentChannelIndex = CHANNELS.findIndex(
   channelItem => channelItem.id === channel.id
 );
+  
   stopPlayer();
-
+showRetryButton(false);
+  
  nowTitle.textContent = channel.name;
 
 nowMeta.textContent =
@@ -212,9 +219,10 @@ liveIndicator.classList.remove("active");
     setStatus("Playback issue — recovering...");
     hls.recoverMediaError();
   } else {
-    setStatus("Stream unavailable");
-    liveIndicator.textContent = "● OFFLINE";
-    liveIndicator.classList.remove("active");
+  setStatus("Stream unavailable");
+liveIndicator.textContent = "● OFFLINE";
+liveIndicator.classList.remove("active");
+showRetryButton(true);
 
     hls.destroy();
     hls = null;
@@ -247,6 +255,8 @@ player.addEventListener("error", () => {
 
   liveIndicator.textContent = "● OFFLINE";
   liveIndicator.classList.remove("active");
+
+  showRetryButton(true);
 });
 
 function channelMatches(channel, search, category, country) {
@@ -578,4 +588,14 @@ mainNav.querySelectorAll("a").forEach(link => {
     menuToggle.setAttribute("aria-label", "Open navigation menu");
     menuToggle.textContent = "☰";
   });
+});
+retryPlaybackBtn.addEventListener("click", () => {
+  if (!currentChannel) return;
+
+  showRetryButton(false);
+  setStatus(`Retrying ${currentChannel.name}...`);
+  liveIndicator.textContent = "● CONNECTING";
+  liveIndicator.classList.remove("active");
+
+  playChannel(currentChannel);
 });
