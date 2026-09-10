@@ -340,6 +340,7 @@ const CHANNELS = [
     logoUrl: "",
     fallbackLogo: "ABC"
   },
+  
   {
     id: "france-24",
     name: "France 24 English",
@@ -349,6 +350,7 @@ const CHANNELS = [
     logoUrl: "",
     fallbackLogo: "F24"
   },
+  
   {
     id: "dw-english",
     name: "DW English",
@@ -358,6 +360,7 @@ const CHANNELS = [
     logoUrl: "",
     fallbackLogo: "DW"
   },
+  
   {
     id: "al-jazeera-english",
     name: "Al Jazeera English",
@@ -367,6 +370,7 @@ const CHANNELS = [
     logoUrl: "",
     fallbackLogo: "AJ"
   },
+  
   {
     id: "trt-world",
     name: "TRT World",
@@ -376,6 +380,7 @@ const CHANNELS = [
     logoUrl: "",
     fallbackLogo: "TRT"
   },
+  
   {
     id: "cgtn-documentary",
     name: "CGTN Documentary",
@@ -385,6 +390,7 @@ const CHANNELS = [
     logoUrl: "",
     fallbackLogo: "CD"
   },
+  
   {
     id: "nbc-news-now",
     name: "NBC News NOW",
