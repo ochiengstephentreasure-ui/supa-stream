@@ -372,15 +372,15 @@ const CHANNELS = [
   stream: "https://sportsgrid-plex.amagi.tv/playlist.m3u8"
 },
   
- {
-  id: "bfm-business",
-  name: "BFM Business",
-  category: "Business",
-  country: "France",
-  countryCode: "🇫🇷",
-  logo: "BFM",
+{
+  id: "canal-sur-andalucia",
+  name: "Canal Sur Andalucía",
+  category: "News",
+  country: "Spain",
+  countryCode: "🇪🇸",
+  logo: "CSA",
   logoUrl: "",
-  stream: "https://live-cdn-stream-euw1.bfmb.bct.nextradiotv.com/master.m3u8"
+  stream: "https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8"
 }
   
 ];
