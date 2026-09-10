@@ -372,15 +372,15 @@ const CHANNELS = [
   stream: "https://sportsgrid-plex.amagi.tv/playlist.m3u8"
 },
   
-  {
-  id: "korea-tv",
-  name: "Korea TV",
+ {
+  id: "weathernews-japan",
+  name: "Weathernews",
   category: "News",
-  country: "South Korea",
-  countryCode: "🇰🇷",
-  logo: "KTV",
+  country: "Japan",
+  countryCode: "🇯🇵",
+  logo: "WN",
   logoUrl: "",
-  stream: "https://hlive.ktv.go.kr/live/klive_h.stream/playlist.m3u8"
+  stream: "https://rch01e-alive-hls.akamaized.net/38fb45b25cdb05a1/out/v1/4e907bfabc684a1dae10df8431a84d21/index.m3u8"
 }
   
 ];
