@@ -32,7 +32,6 @@ const CHANNELS = [
     stream: "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8"
   },
 
-  
   {
     id: "ada-tv",
     name: "Ada TV",
@@ -54,7 +53,6 @@ const CHANNELS = [
     logoUrl: "",
     stream: "https://amtv.tulixcdn.com/amtv2/am2abr/index.m3u8"
   },
-
 
   {
     id: "red-plus",
@@ -123,11 +121,11 @@ const CHANNELS = [
   },
 
   {
-    id: "bloomberg-tv-asia",
-    name: "Bloomberg TV Asia",
+    id: "bloomberg-tv",
+    name: "Bloomberg TV",
     category: "Business",
-    country: "Hong Kong",
-    countryCode: "🇭🇰",
+    country: "United States",
+    countryCode: "🇺🇸",
     logo: "B",
     logoUrl: "",
     stream: "https://bloomberg.com/media-manifest/streams/asia.m3u8"
@@ -155,46 +153,39 @@ const CHANNELS = [
     stream: "https://mrtvott.com/cache/MRTV-NEWS-HD/master.m3u8"
   },
 
-
   {
     id: "abc-news",
     name: "ABC News",
     category: "News",
     country: "United States",
-    stream: "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
+    countryCode: "🇺🇸",
+    logo: "ABC",
     logoUrl: "",
-    fallbackLogo: "ABC"
+    stream: "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8"
   },
-  
+
   {
     id: "dw-english",
     name: "DW English",
     category: "News",
     country: "Germany",
-    stream: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
+    countryCode: "🇩🇪",
+    logo: "DW",
     logoUrl: "",
-    fallbackLogo: "DW"
+    stream: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8"
   },
-  
+
   {
     id: "al-jazeera-english",
     name: "Al Jazeera English",
     category: "News",
     country: "Qatar",
-    stream: "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+    countryCode: "🇶🇦",
+    logo: "AJ",
     logoUrl: "",
-    fallbackLogo: "AJ"
-  },
-  
-   {
-    id: "bloomberg-tv",
-    name: "Bloomberg TV",
-    category: "Business",
-    country: "United States",
-    countryCode: "🇺🇸",
-    logo: "B",
-    logoUrl: "",
-    stream: "https://bloomberg.com/media-manifest/streams/asia.m3u8"
+    stream: "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8"
   }
-
+  
 ];
+
+
