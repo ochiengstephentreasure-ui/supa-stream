@@ -184,6 +184,61 @@ const CHANNELS = [
     logo: "AJ",
     logoUrl: "",
     stream: "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8"
+  },
+
+  {
+    id: "bplus-tv",
+    name: "B+ TV",
+    category: "Entertainment",
+    country: "Rwanda",
+    countryCode: "🇷🇼",
+    logo: "B+",
+    logoUrl: "",
+    stream: "https://tv.btnrwanda.com:3432/live/bpluslive.m3u8"
+  },
+
+  {
+    id: "btm-tv",
+    name: "BTM TV",
+    category: "Entertainment",
+    country: "Uganda",
+    countryCode: "🇺🇬",
+    logo: "BTM",
+    logoUrl: "",
+    stream: "https://btmug.zerocdn.org/hls/stream.m3u8"
+  },
+
+  {
+    id: "kingsview-tv",
+    name: "Kingsview TV",
+    category: "Entertainment",
+    country: "Nigeria",
+    countryCode: "🇳🇬",
+    logo: "KV",
+    logoUrl: "",
+    stream: "https://j78dp6reyq5r-hls-live.5centscdn.com/4896_push_1963_001/00cb1f2e4ff89048f2e77e26940c00e6.sdp/playlist.m3u8"
+  },
+
+  {
+    id: "otv-ghana",
+    name: "OTV",
+    category: "Entertainment",
+    country: "Ghana",
+    countryCode: "🇬🇭",
+    logo: "OTV",
+    logoUrl: "",
+    stream: "https://5dcabf026b188.streamlock.net/OceansTV/livestream/playlist.m3u8"
+  },
+
+  {
+    id: "omide-iran-tv",
+    name: "Omide Iran TV",
+    category: "Entertainment",
+    country: "Iran",
+    countryCode: "🇮🇷",
+    logo: "OI",
+    logoUrl: "",
+    stream: "https://oitnhls.wns.live/hls/stream.m3u8"
   }
   
 ];
