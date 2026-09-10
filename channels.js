@@ -208,17 +208,6 @@ const CHANNELS = [
     stream: "https://oitnhls.wns.live/hls/stream.m3u8"
   },
 
-  {
-    id: "trace-gospel-east-africa",
-    name: "Trace Gospel Nigeria & East Africa",
-    category: "Entertainment",
-    country: "Nigeria",
-    countryCode: "🇳🇬",
-    logo: "TG",
-    logoUrl: "",
-    stream: "https://channels.trace.plus/Traceprod/GOSPEL_ROA_hd/index.m3u8"
-  },
-
 {
   id: "9xm",
   name: "9XM",
