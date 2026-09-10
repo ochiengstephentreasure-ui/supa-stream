@@ -231,17 +231,6 @@ const CHANNELS = [
   },
 
   {
-    id: "trace-mziki",
-    name: "Trace Mziki",
-    category: "Entertainment",
-    country: "Kenya",
-    countryCode: "🇰🇪",
-    logo: "TM",
-    logoUrl: "",
-    stream: "https://channels.trace.plus/Traceprod/MZIKI_hd/index.m3u8"
-  },
-
-  {
     id: "trace-urban-africa",
     name: "Trace Urban Africa",
     category: "Entertainment",
