@@ -1157,3 +1157,34 @@ body.light .clear-filters:hover {
     min-height: 43px;
   }
 }
+/* ===== Accessibility & Focus Polish ===== */
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.channel-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-color: var(--accent);
+}
+
+.channel-card:focus-visible .channel-logo {
+  transform: scale(1.05);
+}
+
+/* Make keyboard focus easy to see without affecting mouse users */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
