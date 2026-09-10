@@ -336,7 +336,7 @@ const CHANNELS = [
     name: "ABC News",
     category: "News",
     country: "United States",
-    streamUrl: "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
+    stream: "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
     logoUrl: "",
     fallbackLogo: "ABC"
   },
@@ -346,7 +346,7 @@ const CHANNELS = [
     name: "France 24 English",
     category: "News",
     country: "France",
-    streamUrl: "https://live.france24.com/hls/live/2037218/F24_EN_HI_HLS/master_5000.m3u8",
+    stream: "https://live.france24.com/hls/live/2037218/F24_EN_HI_HLS/master_5000.m3u8",
     logoUrl: "",
     fallbackLogo: "F24"
   },
@@ -356,7 +356,7 @@ const CHANNELS = [
     name: "DW English",
     category: "News",
     country: "Germany",
-    streamUrl: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
+    stream: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
     logoUrl: "",
     fallbackLogo: "DW"
   },
@@ -366,7 +366,7 @@ const CHANNELS = [
     name: "Al Jazeera English",
     category: "News",
     country: "Qatar",
-    streamUrl: "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+    stream: "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
     logoUrl: "",
     fallbackLogo: "AJ"
   },
@@ -376,7 +376,7 @@ const CHANNELS = [
     name: "TRT World",
     category: "News",
     country: "Türkiye",
-    streamUrl: "https://api.trtworld.com/livestream/v1/WcM3Oa2LHD9iUjWDSRUI335NkMWVTUV351H56dqC/master.m3u8",
+    stream: "https://api.trtworld.com/livestream/v1/WcM3Oa2LHD9iUjWDSRUI335NkMWVTUV351H56dqC/master.m3u8",
     logoUrl: "",
     fallbackLogo: "TRT"
   },
@@ -386,7 +386,7 @@ const CHANNELS = [
     name: "CGTN Documentary",
     category: "Documentary",
     country: "China",
-    streamUrl: "https://news.cgtn.com/resource/live/documentary/cgtn-documentary.m3u8",
+    stream: "https://news.cgtn.com/resource/live/documentary/cgtn-documentary.m3u8",
     logoUrl: "",
     fallbackLogo: "CD"
   },
@@ -396,8 +396,8 @@ const CHANNELS = [
     name: "NBC News NOW",
     category: "News",
     country: "United States",
-    streamUrl: "https://dai2.xumo.com/amagi_hls_data_xumo1212A-xumo-nbcnewsnow/CDN/master.m3u8",
+    stream: "https://dai2.xumo.com/amagi_hls_data_xumo1212A-xumo-nbcnewsnow/CDN/master.m3u8",
     logoUrl: "",
     fallbackLogo: "NBC"
   }
-],
+];
