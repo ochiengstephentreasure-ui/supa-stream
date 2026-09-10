@@ -207,17 +207,6 @@ const CHANNELS = [
     logoUrl: "",
     stream: "https://oitnhls.wns.live/hls/stream.m3u8"
   },
-  
-  {
-    id: "trace-africa",
-    name: "Trace Africa",
-    category: "Entertainment",
-    country: "France",
-    countryCode: "🇫🇷",
-    logo: "TA",
-    logoUrl: "",
-    stream: "https://channels.trace.plus/Traceprod/AFRICA_FR_hd/index.m3u8"
-  },
 
   {
     id: "trace-gospel-east-africa",
