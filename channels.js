@@ -284,16 +284,15 @@ const CHANNELS = [
   logoUrl: "",
   stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
 },
-
   {
-  id: "aghapy-kids",
-  name: "Aghapy Kids",
+  id: "american-classics",
+  name: "American Classics",
   category: "Entertainment",
-  country: "Egypt",
-  countryCode: "🇪🇬",
-  logo: "AK",
+  country: "United States",
+  countryCode: "🇺🇸",
+  logo: "AC",
   logoUrl: "",
-  stream: "https://5b622f07944df.streamlock.net/aghapykids.tv/aghapykids2/playlist.m3u8"
+  stream: "https://dai2.xumo.com/xumocdn/p=redbox&deviceid=&is_lat=&subp=RedboxdesktopWebWindows/amagi_hls_data_xumo1212A-redboxamericanclassics/CDN/1280x720_5000000/index.m3u8"
 }
   
 ];
