@@ -304,6 +304,17 @@ const CHANNELS = [
   logo: "ATV",
   logoUrl: "",
   stream: "https://cdn01.setar.aw/Canal49/canal49/playlist.m3u8"
+},
+  
+  {
+  id: "tv-exitos",
+  name: "TV Éxitos",
+  category: "Entertainment",
+  country: "Dominican Republic",
+  countryCode: "🇩🇴",
+  logo: "TVE",
+  logoUrl: "",
+  stream: "https://streaming.grupomediosdelnorte.com:19360/tvexitos/tvexitos.m3u8"
 }
   
 ];
