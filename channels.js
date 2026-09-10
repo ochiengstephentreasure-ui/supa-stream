@@ -187,39 +187,6 @@ const CHANNELS = [
   },
 
   {
-    id: "bplus-tv",
-    name: "B+ TV",
-    category: "Entertainment",
-    country: "Rwanda",
-    countryCode: "🇷🇼",
-    logo: "B+",
-    logoUrl: "",
-    stream: "https://tv.btnrwanda.com:3432/live/bpluslive.m3u8"
-  },
-
-  {
-    id: "btm-tv",
-    name: "BTM TV",
-    category: "Entertainment",
-    country: "Uganda",
-    countryCode: "🇺🇬",
-    logo: "BTM",
-    logoUrl: "",
-    stream: "https://btmug.zerocdn.org/hls/stream.m3u8"
-  },
-
-  {
-    id: "kingsview-tv",
-    name: "Kingsview TV",
-    category: "Entertainment",
-    country: "Nigeria",
-    countryCode: "🇳🇬",
-    logo: "KV",
-    logoUrl: "",
-    stream: "https://j78dp6reyq5r-hls-live.5centscdn.com/4896_push_1963_001/00cb1f2e4ff89048f2e77e26940c00e6.sdp/playlist.m3u8"
-  },
-
-  {
     id: "otv-ghana",
     name: "OTV",
     category: "Entertainment",
