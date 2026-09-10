@@ -348,6 +348,17 @@ const CHANNELS = [
   logo: "C3",
   logoUrl: "",
   stream: "https://stream.arcast.com.ar/c3lapampa/ngrp:c3lapampa_all/playlist.m3u8"
+},
+  
+  {
+  id: "konya-olay-tv",
+  name: "Konya Olay TV",
+  category: "News",
+  country: "Türkiye",
+  countryCode: "🇹🇷",
+  logo: "KOT",
+  logoUrl: "",
+  stream: "https://live.artidijitalmedya.com/artidijital_konyaolaytv/konyaolaytv/playlist.m3u8"
 }
   
 ];
