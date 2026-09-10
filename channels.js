@@ -294,6 +294,16 @@ const CHANNELS = [
   logo: "EBS",
   logoUrl: "",
   stream: "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8"
+},
+  {
+  id: "aruba-tv",
+  name: "Aruba.TV",
+  category: "Entertainment",
+  country: "Aruba",
+  countryCode: "🇦🇼",
+  logo: "ATV",
+  logoUrl: "",
+  stream: "https://cdn01.setar.aw/Canal49/canal49/playlist.m3u8"
 }
   
 ];
