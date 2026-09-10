@@ -373,14 +373,14 @@ const CHANNELS = [
 },
   
  {
-  id: "weathernews-japan",
-  name: "Weathernews",
-  category: "News",
-  country: "Japan",
-  countryCode: "🇯🇵",
-  logo: "WN",
+  id: "bfm-business",
+  name: "BFM Business",
+  category: "Business",
+  country: "France",
+  countryCode: "🇫🇷",
+  logo: "BFM",
   logoUrl: "",
-  stream: "https://rch01e-alive-hls.akamaized.net/38fb45b25cdb05a1/out/v1/4e907bfabc684a1dae10df8431a84d21/index.m3u8"
+  stream: "https://live-cdn-stream-euw1.bfmb.bct.nextradiotv.com/master.m3u8"
 }
   
 ];
