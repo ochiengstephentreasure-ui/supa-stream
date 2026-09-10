@@ -1188,3 +1188,58 @@ input:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+/* ===== Channel Card Visual Polish ===== */
+
+.channel-card {
+  min-height: 165px;
+  padding: 17px;
+}
+
+.channel-card::before {
+  z-index: 1;
+}
+
+.channel-logo {
+  margin-top: 2px;
+  margin-bottom: 20px;
+}
+
+.channel-name {
+  padding-right: 42px;
+  line-height: 1.3;
+}
+
+.channel-meta {
+  margin-top: 7px;
+}
+
+.channel-category {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.channel-card:hover .channel-category {
+  border-color: rgba(108, 124, 255, 0.35);
+}
+
+body.light .channel-category {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+/* Keep the Watch hint from covering channel metadata */
+.channel-card::after {
+  pointer-events: none;
+}
+
+/* Slightly tighter cards on small screens */
+@media (max-width: 750px) {
+  .channel-card {
+    min-height: 155px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .channel-card {
+    min-height: 150px;
+  }
+}
