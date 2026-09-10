@@ -261,6 +261,17 @@ const CHANNELS = [
   logo: "9XM",
   logoUrl: "",
   stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
+},
+
+  {
+  id: "9x-jhakaas",
+  name: "9X Jhakaas",
+  category: "Entertainment",
+  country: "India",
+  countryCode: "🇮🇳",
+  logo: "9XJ",
+  logoUrl: "",
+  stream: "https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/playlist/amg01281-9xmediapvtltd-9xjhakaas-samsungin/playlist.m3u8"
 }
   
 ];
