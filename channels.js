@@ -370,6 +370,17 @@ const CHANNELS = [
   logo: "SG",
   logoUrl: "",
   stream: "https://sportsgrid-plex.amagi.tv/playlist.m3u8"
+},
+  
+  {
+  id: "korea-tv",
+  name: "Korea TV",
+  category: "News",
+  country: "South Korea",
+  countryCode: "🇰🇷",
+  logo: "KTV",
+  logoUrl: "",
+  stream: "https://hlive.ktv.go.kr/live/klive_h.stream/playlist.m3u8"
 }
   
 ];
