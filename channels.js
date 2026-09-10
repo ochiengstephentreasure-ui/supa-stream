@@ -263,15 +263,15 @@ const CHANNELS = [
   stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
 },
   
-{
-  id: "btv-uganda",
-  name: "BTV",
+  {
+  id: "4fun-kids",
+  name: "4 Fun Kids",
   category: "Entertainment",
-  country: "Uganda",
-  countryCode: "🇺🇬",
-  logo: "BTV",
+  country: "Poland",
+  countryCode: "🇵🇱",
+  logo: "4FK",
   logoUrl: "",
-  stream: "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8"
+  stream: "https://stream.4fun.tv:8889/hls/4fk_high/index.m3u8"
 }
   
 ];
