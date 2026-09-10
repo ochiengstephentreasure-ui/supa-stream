@@ -272,6 +272,17 @@ const CHANNELS = [
   logo: "3K",
   logoUrl: "",
   stream: "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8"
+},
+  
+  {
+  id: "afarin-baxcha",
+  name: "Afarin Baxcha",
+  category: "Entertainment",
+  country: "Iran",
+  countryCode: "🇮🇷",
+  logo: "AB",
+  logoUrl: "",
+  stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
 }
   
 ];
