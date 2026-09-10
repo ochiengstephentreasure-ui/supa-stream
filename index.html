@@ -116,15 +116,23 @@
             Ready
           </div>
          
-<button
-  class="retry-btn"
-  id="retryPlayback"
-  type="button"
-  hidden
->
-  ↻ Retry playback
-</button>
-        </div>
+<div class="playback-error" id="playbackError" hidden>
+  <div class="playback-error-icon">!</div>
+
+  <h3 id="playbackErrorTitle">Stream unavailable</h3>
+
+  <p id="playbackErrorMessage">
+    This channel could not be played right now.
+  </p>
+
+  <button
+    class="retry-btn"
+    id="retryPlayback"
+    type="button"
+  >
+    ↻ Retry playback
+  </button>
+</div>
 
        <div class="now-playing">
 
