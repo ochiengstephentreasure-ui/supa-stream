@@ -267,7 +267,13 @@ function channelCard(channel) {
   const favorite = isFavorite(channel.id);
 
   return `
-    <article class="channel-card" data-channel="${channel.id}">
+    <article
+  class="channel-card"
+  data-channel="${channel.id}"
+  tabindex="0"
+  role="button"
+  aria-label="Watch ${escapeHTML(channel.name)}"
+>
       <button
         class="favorite-btn ${favorite ? "active" : ""}"
         data-favorite="${channel.id}"
@@ -339,8 +345,10 @@ function renderFavorites() {
 
 function bindChannelEvents(container) {
   container.querySelectorAll("[data-channel]").forEach(card => {
-    card.addEventListener("click", event => {
-      if (event.target.closest("[data-favorite]")) return;
+    const openChannel = () => {
+      if (document.activeElement === card) {
+        card.blur();
+      }
 
       const channel = CHANNELS.find(
         x => x.id === card.dataset.channel
@@ -353,6 +361,20 @@ function bindChannelEvents(container) {
           behavior: "smooth",
           block: "center"
         });
+    };
+
+    card.addEventListener("click", event => {
+      if (event.target.closest("[data-favorite]")) return;
+      openChannel();
+    });
+
+    card.addEventListener("keydown", event => {
+      if (event.target.closest("[data-favorite]")) return;
+
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openChannel();
+      }
     });
   });
 
@@ -360,6 +382,10 @@ function bindChannelEvents(container) {
     button.addEventListener("click", event => {
       event.stopPropagation();
       toggleFavorite(button.dataset.favorite);
+    });
+
+    button.addEventListener("keydown", event => {
+      event.stopPropagation();
     });
   });
 }
