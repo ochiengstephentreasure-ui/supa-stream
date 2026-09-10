@@ -283,8 +283,19 @@ const CHANNELS = [
   logo: "AB",
   logoUrl: "",
   stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
+},
+
+  {
+  id: "filmrise-free-movies",
+  name: "FilmRise Free Movies",
+  category: "Entertainment",
+  country: "United States",
+  countryCode: "🇺🇸",
+  logo: "FR",
+  logoUrl: "",
+  stream: "https://dai2.xumo.com/amagi_hls_data_xumo1212A-filmrisefreemovies/CDN/playlist.m3u8"
 }
-  
+
 ];
 
 
