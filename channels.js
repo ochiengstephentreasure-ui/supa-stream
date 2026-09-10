@@ -315,6 +315,17 @@ const CHANNELS = [
   logo: "TVE",
   logoUrl: "",
   stream: "https://streaming.grupomediosdelnorte.com:19360/tvexitos/tvexitos.m3u8"
+},
+  
+  {
+  id: "trace-urban-australia",
+  name: "Trace Urban",
+  category: "Entertainment",
+  country: "Australia",
+  countryCode: "🇦🇺",
+  logo: "TU",
+  logoUrl: "",
+  stream: "https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8"
 }
   
 ];
