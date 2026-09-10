@@ -156,26 +156,35 @@
           <h2>Live channels</h2>
         </div>
 
-        <div class="channel-tools">
+      <div class="channel-tools">
 
-          <label class="search-box">
-            <span>⌕</span>
-            <input
-              type="search"
-              id="channelSearch"
-              placeholder="Search channels..."
-              autocomplete="off"
-            >
-          </label>
+  <label class="search-box">
+    <span>⌕</span>
+    <input
+      type="search"
+      id="channelSearch"
+      placeholder="Search channels..."
+      autocomplete="off"
+    >
+  </label>
 
-          <select id="categoryFilter" class="category-filter">
-            <option value="all">All categories</option>
-          </select>
-<select id="countryFilter" class="category-filter">
-  <option value="all">All countries</option>
-</select>
-        </div>
-      </div>
+  <select id="categoryFilter" class="category-filter">
+    <option value="all">All categories</option>
+  </select>
+
+  <select id="countryFilter" class="category-filter">
+    <option value="all">All countries</option>
+  </select>
+
+  <button
+    type="button"
+    id="clearFilters"
+    class="clear-filters"
+  >
+    Clear filters
+  </button>
+
+</div>
 
       <div id="channelGrid" class="channel-grid">
         <!-- Channels are inserted by app.js -->
