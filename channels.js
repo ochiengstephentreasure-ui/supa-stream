@@ -283,17 +283,6 @@ const CHANNELS = [
   logo: "AB",
   logoUrl: "",
   stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
-},
-  
-  {
-  id: "contv",
-  name: "CONtv",
-  category: "Entertainment",
-  country: "United States",
-  countryCode: "🇺🇸",
-  logo: "CTV",
-  logoUrl: "",
-  stream: "https://cinedigm.vo.llnwd.net/conssui/amagi_hls_data_xumo123-contv/CDN/master.m3u8"
 }
   
 ];
