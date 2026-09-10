@@ -263,15 +263,15 @@ const CHANNELS = [
   stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
 },
   
-  {
-  id: "4fun-kids",
-  name: "4 Fun Kids",
+{
+  id: "mastiii",
+  name: "Mastiii",
   category: "Entertainment",
-  country: "Poland",
-  countryCode: "🇵🇱",
-  logo: "4FK",
+  country: "India",
+  countryCode: "🇮🇳",
+  logo: "M3",
   logoUrl: "",
-  stream: "https://stream.4fun.tv:8889/hls/4fk_high/index.m3u8"
+  stream: "https://mastiii.wiseplayout.com/mastiii/master.m3u8"
 }
   
 ];
