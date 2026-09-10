@@ -439,17 +439,6 @@ const CHANNELS = [
   },
 
   {
-    id: "law-and-crime",
-    name: "Law & Crime",
-    category: "News",
-    country: "United States",
-    countryCode: "🇺🇸",
-    logo: "L&C",
-    logoUrl: "",
-    stream: "https://a-cdn.klowdtv.com/live3/law_720p/playlist.m3u8"
-  },
-
-  {
     id: "california-music-channel",
     name: "California Music Channel",
     category: "Entertainment",
@@ -461,28 +450,6 @@ const CHANNELS = [
   },
 
   {
-    id: "meateater",
-    name: "MeatEater",
-    category: "Entertainment",
-    country: "United States",
-    countryCode: "🇺🇸",
-    logo: "ME",
-    logoUrl: "",
-    stream: "https://amg01201-amg01201c35-cineverse-us-3139.playouts.now.amagi.tv/playlist/amg01201-cinedigmentertainment-meateater-cineverseus/playlist.m3u8"
-  },
-
-  {
-    id: "home-made-nation",
-    name: "Home.Made.Nation",
-    category: "Entertainment",
-    country: "United States",
-    countryCode: "🇺🇸",
-    logo: "HMN",
-    logoUrl: "",
-    stream: "https://3238c44f.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Um9rdV9MaXZlbHlQbGFjZV9ITFM/playlist.m3u8"
-  },
-
-  {
     id: "raj-tv",
     name: "Raj TV",
     category: "Entertainment",
@@ -491,72 +458,6 @@ const CHANNELS = [
     logo: "RTV",
     logoUrl: "",
     stream: "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/2839e3d1e0f84a2e821c1708d5fdfdf0/index.m3u8"
-  },
-
-  {
-    id: "gujarat-first",
-    name: "Gujarat First",
-    category: "News",
-    country: "India",
-    countryCode: "🇮🇳",
-    logo: "GF",
-    logoUrl: "",
-    stream: "https://live.legitpro.co.in/gujaratfirst/index.m3u8"
-  },
-
-  {
-    id: "one-31",
-    name: "One 31",
-    category: "Entertainment",
-    country: "Thailand",
-    countryCode: "🇹🇭",
-    logo: "31",
-    logoUrl: "",
-    stream: "https://bcovlive-a.akamaihd.net/b6603a14ea59440a95e9235e14bc9332/ap-southeast-1/6415628290001/9c3d7fc7d10840a69e48b5939ae886e0/playlist_ssaiM.m3u8"
-  },
-
-  {
-    id: "police-tv-thailand",
-    name: "Police TV",
-    category: "News",
-    country: "Thailand",
-    countryCode: "🇹🇭",
-    logo: "PTV",
-    logoUrl: "",
-    stream: "https://cdn-th-vip.livestreaming.in.th/policetv/policetv/playlist.m3u8"
-  },
-
-  {
-    id: "majid-al-mohandis",
-    name: "Majid Al Mohandis",
-    category: "Entertainment",
-    country: "Saudi Arabia",
-    countryCode: "🇸🇦",
-    logo: "MAM",
-    logoUrl: "",
-    stream: "https://shls-live-mood-ak.akamaized.net/out/v1/8e2419c6c7494dbba478be025af490ee/index.m3u8"
-  },
-
-  {
-    id: "tele-m1",
-    name: "Tele M1",
-    category: "News",
-    country: "Switzerland",
-    countryCode: "🇨🇭",
-    logo: "M1",
-    logoUrl: "",
-    stream: "https://cdnapisec.kaltura.com/p/1719221/sp/171922100/playManifest/entryId/1_ljzy3evp/format/applehttp/protocol/https/a.m3u8"
-  },
-
-  {
-    id: "rtv-bap",
-    name: "RTV Bap",
-    category: "Entertainment",
-    country: "Serbia",
-    countryCode: "🇷🇸",
-    logo: "BAP",
-    logoUrl: "",
-    stream: "https://53be5ef2d13aa8.streamlock.net/rtvbap/uzivo/playlist.m3u8"
   },
 
   {
@@ -579,17 +480,6 @@ const CHANNELS = [
     logo: "GO",
     logoUrl: "",
     stream: "https://rds3.desdeparaguay.net/gotv/gotv/playlist.m3u8"
-  },
-
-  {
-    id: "mrtv-farmer",
-    name: "MRTV Farmer",
-    category: "Education",
-    country: "Myanmar",
-    countryCode: "🇲🇲",
-    logo: "MF",
-    logoUrl: "",
-    stream: "https://mrtvott.com/cache/MRTV-FARMER/master.m3u8"
   }
 ];
 
