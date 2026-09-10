@@ -220,17 +220,6 @@ const CHANNELS = [
   },
 
   {
-    id: "trace-urban-africa",
-    name: "Trace Urban Africa",
-    category: "Entertainment",
-    country: "France",
-    countryCode: "🇫🇷",
-    logo: "TU",
-    logoUrl: "",
-    stream: "https://channels.trace.plus/Traceprod/URBAN_AFRIC_FR_hd/index.m3u8"
-  },
-
-  {
     id: "trace-gospel-east-africa",
     name: "Trace Gospel Nigeria & East Africa",
     category: "Entertainment",
