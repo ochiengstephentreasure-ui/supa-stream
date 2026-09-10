@@ -263,15 +263,15 @@ const CHANNELS = [
   stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
 },
 
- {
-  id: "dd-national",
-  name: "DD National",
+{
+  id: "btv-uganda",
+  name: "BTV",
   category: "Entertainment",
-  country: "India",
-  countryCode: "🇮🇳",
-  logo: "DDN",
+  country: "Uganda",
+  countryCode: "🇺🇬",
+  logo: "BTV",
   logoUrl: "",
-  stream: "https://d2t1l2t1s8z3q.cloudfront.net/out/v1/9b2e5c5e2b5b4d0a9c8e0f8b7c6d5e4f/index.m3u8"
+  stream: "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8"
 }
   
 ];
