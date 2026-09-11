@@ -663,15 +663,15 @@ function renderChannels() {
   const country =
     $("countryFilter").value;
 
-  const results =
-    getAllChannels().filter(channel =>
-      channelMatches(
-        channel,
-        search,
-        category,
-        country
-      )
-    );
+const results =
+  CHANNELS.filter(channel =>
+    channelMatches(
+      channel,
+      search,
+      category,
+      country
+    )
+  );
 
   grid.innerHTML =
     results.map(channelCard).join("");
@@ -689,11 +689,11 @@ function renderFavorites() {
   const favorites =
     getFavorites();
 
-  const channels =
-    getAllChannels().filter(
-      channel =>
-        favorites.includes(channel.id)
-    );
+ const channels =
+  CHANNELS.filter(
+    channel =>
+      favorites.includes(channel.id)
+  );
 
   grid.innerHTML =
     channels.map(channelCard).join("");
