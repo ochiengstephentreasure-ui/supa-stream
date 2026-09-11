@@ -28,45 +28,6 @@ const RECENTLY_WATCHED_KEY = "supa-stream-recently-watched";
 const MAX_RECENTLY_WATCHED = 8;
 
 /* =========================================================
-   PLAYLIST STORAGE
-========================================================= */
-
-function getImportedPlaylists() {
-  try {
-    const saved = JSON.parse(
-      localStorage.getItem(IMPORTED_PLAYLISTS_KEY)
-    );
-
-    return Array.isArray(saved) ? saved : [];
-  } catch {
-    return [];
-  }
-}
-
-function saveImportedPlaylists(playlists) {
-  localStorage.setItem(
-    IMPORTED_PLAYLISTS_KEY,
-    JSON.stringify(playlists)
-  );
-}
-
-function getImportedChannels() {
-  return getImportedPlaylists()
-    .flatMap(playlist =>
-      Array.isArray(playlist.channels)
-        ? playlist.channels
-        : []
-    );
-}
-
-function getAllChannels() {
-  return [
-    ...CHANNELS,
-    ...getImportedChannels()
-  ];
-}
-
-/* =========================================================
    HELPERS
 ========================================================= */
 
