@@ -28,7 +28,7 @@ const CHANNELS = [
     country: "Finland",
     countryCode: "🇫🇮",
     logo: "5M",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=5-Minute%20Craft",
     stream: "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8"
   },
 
@@ -39,7 +39,7 @@ const CHANNELS = [
     country: "Cyprus",
     countryCode: "🇨🇾",
     logo: "ADA",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=ADA",
     stream: "https://yayin1.canlitv.fun/live/kibrisadatv.stream/playlist.m3u8"
   },
 
@@ -105,7 +105,7 @@ const CHANNELS = [
     country: "Uganda",
     countryCode: "🇺🇬",
     logo: "BBS",
-    logoUrl: "",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Logo_BBS_TV_2018.png/1200px-Logo_BBS_TV_2018.png",
     stream: "https://bbstv.ug/hls/ch01/index.m3u8"
   },
 
@@ -149,7 +149,7 @@ const CHANNELS = [
     country: "Myanmar",
     countryCode: "🇲🇲",
     logo: "MN",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=MRTV%20NEWS",
     stream: "https://mrtvott.com/cache/MRTV-NEWS-HD/master.m3u8"
   },
 
@@ -193,7 +193,7 @@ const CHANNELS = [
     country: "Ghana",
     countryCode: "🇬🇭",
     logo: "OTV",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=OTV",
     stream: "https://5dcabf026b188.streamlock.net/OceansTV/livestream/playlist.m3u8"
   },
 
@@ -204,7 +204,7 @@ const CHANNELS = [
     country: "Iran",
     countryCode: "🇮🇷",
     logo: "OI",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=OMIDE",
     stream: "https://oitnhls.wns.live/hls/stream.m3u8"
   },
 
@@ -226,7 +226,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "🇺🇸",
     logo: "3K",
-    logoUrl: "",
+    logoUrl: "https://www.tvlogo.org/united-states/3abn-kids-network-us.png",
     stream: "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8"
   },
 
@@ -237,21 +237,21 @@ const CHANNELS = [
     country: "Iran",
     countryCode: "🇮🇷",
     logo: "AB",
-    logoUrl: "",
+    logoUrl: "https://i.postimg.cc/mTrjSq4N/baxcha.png",
     stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
   },
 
- {
-  id: "ebs-hd",
-  name: "EBS HD",
-  category: "Entertainment",
-  country: "Ethiopia",
-  countryCode: "🇪🇹",
-  logo: "EBS",
-  logoUrl: "assets/logos/ebs-tv.png",
-  stream: "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8"
-},
-  
+  {
+    id: "ebs-hd",
+    name: "EBS HD",
+    category: "Entertainment",
+    country: "Ethiopia",
+    countryCode: "🇪🇹",
+    logo: "EBS",
+    logoUrl: "assets/logos/ebs-tv.png",
+    stream: "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8"
+  },
+
   {
     id: "aruba-tv",
     name: "Aruba.TV",
@@ -259,7 +259,7 @@ const CHANNELS = [
     country: "Aruba",
     countryCode: "🇦🇼",
     logo: "ATV",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/9fWY09U.png",
     stream: "https://cdn01.setar.aw/Canal49/canal49/playlist.m3u8"
   },
 
@@ -270,7 +270,7 @@ const CHANNELS = [
     country: "Dominican Republic",
     countryCode: "🇩🇴",
     logo: "TVE",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=TV%20EXITOS",
     stream: "https://streaming.grupomediosdelnorte.com:19360/tvexitos/tvexitos.m3u8"
   },
 
@@ -292,7 +292,7 @@ const CHANNELS = [
     country: "Bosnia and Herzegovina",
     countryCode: "🇧🇦",
     logo: "RTV",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/TKUaflB.png",
     stream: "https://stream.rtvze.ba/live/123/123.m3u8"
   },
 
@@ -303,7 +303,7 @@ const CHANNELS = [
     country: "Argentina",
     countryCode: "🇦🇷",
     logo: "C3",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_Canal_3_La_Pampa.png",
     stream: "https://stream.arcast.com.ar/c3lapampa/ngrp:c3lapampa_all/playlist.m3u8"
   },
 
@@ -314,7 +314,7 @@ const CHANNELS = [
     country: "Türkiye",
     countryCode: "🇹🇷",
     logo: "KOT",
-    logoUrl: "",
+    logoUrl: "https://www.konyaolaytv.com/upload/tema/20230307__5154687762.jpg",
     stream: "https://live.artidijitalmedya.com/artidijital_konyaolaytv/konyaolaytv/playlist.m3u8"
   },
 
@@ -347,7 +347,7 @@ const CHANNELS = [
     country: "Lebanon",
     countryCode: "🇱🇧",
     logo: "AM",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/GtQOKeW.png",
     stream: "https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8"
   },
 
@@ -413,7 +413,7 @@ const CHANNELS = [
     country: "India",
     countryCode: "🇮🇳",
     logo: "RTV",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/4oF38ei.png",
     stream: "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/2839e3d1e0f84a2e821c1708d5fdfdf0/index.m3u8"
   },
 
@@ -424,7 +424,7 @@ const CHANNELS = [
     country: "Romania",
     countryCode: "🇷🇴",
     logo: "TVR",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/TVR_Cultural_Logo_2022.svg",
     stream: "https://tvr-cultural.lg.mncdn.com/tvrcultural/smil:tvrcultural.smil/chunklist_b5160000.m3u8"
   },
 
@@ -435,7 +435,7 @@ const CHANNELS = [
     country: "Paraguay",
     countryCode: "🇵🇾",
     logo: "GO",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=GO%20TV",
     stream: "https://rds3.desdeparaguay.net/gotv/gotv/playlist.m3u8"
   },
 
@@ -446,7 +446,7 @@ const CHANNELS = [
     country: "Japan",
     countryCode: "🇯🇵",
     logo: "SHOP",
-    logoUrl: "",
+    logoUrl: "https://www.shopch.jp/com/images/common/logo_2021.png",
     stream: "https://stream3.shopch.jp/HLS/master.m3u8"
   },
 
@@ -457,7 +457,7 @@ const CHANNELS = [
     country: "Uganda",
     countryCode: "🇺🇬",
     logo: "BTV",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/HFq5QlJ.png",
     stream: "https://stream.hydeinnovations.com/bukedde1flussonic/index.m3u8"
   },
 
@@ -468,7 +468,7 @@ const CHANNELS = [
     country: "Uganda",
     countryCode: "🇺🇬",
     logo: "TVW",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=TV%20WEST",
     stream: "https://stream.hydeinnovations.com/tvwest-flussonic/index.m3u8"
   },
 
@@ -479,7 +479,7 @@ const CHANNELS = [
     country: "Egypt",
     countryCode: "🇪🇬",
     logo: "WATAN",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/pZyKaUH.png",
     stream: "https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8"
   },
 
@@ -490,7 +490,7 @@ const CHANNELS = [
     country: "Spain",
     countryCode: "🇪🇸",
     logo: "TV CAN",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_de_Televisi%C3%B3n_Canaria.svg",
     stream: "https://d1oyt3v08gcy18.cloudfront.net/index-events.m3u8"
   },
 
@@ -501,7 +501,7 @@ const CHANNELS = [
     country: "Kosovo",
     countryCode: "🇽🇰",
     logo: "RTK 3",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/RTK3_logo_5ac42bcfd1a4d.png",
     stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-livestream/rtk3/index.m3u8"
   },
 
@@ -512,7 +512,7 @@ const CHANNELS = [
     country: "Kosovo",
     countryCode: "🇽🇰",
     logo: "ARTA",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/MAhJkK9.png",
     stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-live/mps-vgx-u9p-qv1/index.m3u8"
   },
 
@@ -523,7 +523,7 @@ const CHANNELS = [
     country: "France",
     countryCode: "🇫🇷",
     logo: "BFM2",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=BFM2",
     stream: "https://d1ib1gsg71oarf.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-scp7wda722jph/BFM2_FR.m3u8"
   },
 
@@ -534,7 +534,7 @@ const CHANNELS = [
     country: "Lebanon",
     countryCode: "🇱🇧",
     logo: "OTV",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=OTV",
     stream: "https://otv.hibridcdn.net/otv/tv_abr/playlist.m3u8"
   },
 
@@ -545,7 +545,7 @@ const CHANNELS = [
     country: "Albania",
     countryCode: "🇦🇱",
     logo: "CNA",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=CNA",
     stream: "https://live1.mediadesk.al/cnatvlive.m3u8"
   },
 
@@ -556,7 +556,7 @@ const CHANNELS = [
     country: "Argentina",
     countryCode: "🇦🇷",
     logo: "C26",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/LogoCanal26.png",
     stream: "https://stream-gtlc.telecentro.net.ar/hls/canal26hls/main.m3u8"
   },
 
@@ -567,7 +567,7 @@ const CHANNELS = [
     country: "Australia",
     countryCode: "🇦🇺",
     logo: "H&C",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=H%26C",
     stream: "https://hnc-free-viewlift.amagi.tv/HNC_AUSTRALIA.m3u8"
   },
 
@@ -589,7 +589,7 @@ const CHANNELS = [
     country: "Lebanon",
     countryCode: "🇱🇧",
     logo: "VOL",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=VOL",
     stream: "https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8"
   },
 
@@ -600,7 +600,7 @@ const CHANNELS = [
     country: "Serbia",
     countryCode: "🇷🇸",
     logo: "RK",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=RADIO%20KAROLINA",
     stream: "https://peer2.tdiradio.com/static/streaming-playlists/hls/4207de1d-52e8-4591-ad9e-218069b864d1/0.m3u8"
   },
 
@@ -644,7 +644,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "US",
     logo: "VOA",
-    logoUrl: "",
+    logoUrl: "https://placehold.co/160x160/png?text=VOA%20PERSIAN",
     stream: "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8"
   },
 
