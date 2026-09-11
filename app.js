@@ -18,7 +18,6 @@ const playbackError = $("playbackError");
 const playbackErrorTitle = $("playbackErrorTitle");
 const playbackErrorMessage = $("playbackErrorMessage");
 
-
 let hls = null;
 let currentChannel = null;
 let currentChannelIndex = -1;
@@ -47,6 +46,8 @@ function showPlaybackError(title, message) {
 }
 
 function setStatus(text) {
+  if (!statusBox) return;
+
   statusBox.textContent = text;
 }
 
@@ -57,33 +58,6 @@ function escapeHTML(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
-}
-
-  const name = String(channelName || "").toLowerCase();
-
-  const hints = [
-    ["uganda", "UG", "Uganda"],
-    ["australia", "AU", "Australia"],
-    ["uk", "GB", "United Kingdom"],
-    ["britain", "GB", "United Kingdom"],
-    ["american", "US", "United States"],
-    ["usa", "US", "United States"],
-    ["canada", "CA", "Canada"]
-  ];
-
-  for (const [hint, code, country] of hints) {
-    if (name.includes(hint)) {
-      return {
-        country,
-        countryCode: code
-      };
-    }
-  }
-
-  return {
-    country: "Imported",
-    countryCode: "🌐"
-  };
 }
 
 /* =========================================================
@@ -114,7 +88,7 @@ function isFavorite(id) {
 function toggleFavorite(id) {
   let favorites = getFavorites();
 
-  const channel = getAllChannels().find(
+  const channel = CHANNELS.find(
     channelItem => channelItem.id === id
   );
 
@@ -200,7 +174,7 @@ function renderRecentlyWatched() {
 
   const channels = recentIds
     .map(id =>
-      getAllChannels().find(
+      CHANNELS.find(
         channel => channel.id === id
       )
     )
@@ -257,10 +231,8 @@ function playChannel(channel) {
 
   addRecentlyWatched(channel.id);
 
-  const allChannels = getAllChannels();
-
   currentChannelIndex =
-    allChannels.findIndex(
+    CHANNELS.findIndex(
       channelItem =>
         channelItem.id === channel.id
     );
@@ -297,6 +269,10 @@ function playChannel(channel) {
 
   const url = channel.stream;
 
+  /* -------------------------------------------------------
+     Native HLS support
+  ------------------------------------------------------- */
+
   if (
     player.canPlayType(
       "application/vnd.apple.mpegurl"
@@ -311,6 +287,10 @@ function playChannel(channel) {
       },
       { once: true }
     );
+
+  /* -------------------------------------------------------
+     HLS.js support
+  ------------------------------------------------------- */
 
   } else if (
     window.Hls &&
@@ -386,6 +366,10 @@ function playChannel(channel) {
   }
 }
 
+/* =========================================================
+   PLAYER EVENTS
+========================================================= */
+
 player.addEventListener(
   "playing",
   () => {
@@ -453,9 +437,7 @@ function channelMatches(
   const text = [
     channel.name,
     channel.category,
-    channel.country,
-    channel.groupTitle || "",
-    channel.tvgId || ""
+    channel.country
   ]
     .join(" ")
     .toLowerCase();
@@ -483,11 +465,6 @@ function channelMatches(
 function channelCard(channel) {
   const favorite =
     isFavorite(channel.id);
-
-  const importedBadge =
-    channel.imported
-      ? `<span class="channel-source">IPTV</span>`
-      : "";
 
   return `
     <article
@@ -533,7 +510,6 @@ function channelCard(channel) {
       <div class="channel-status">
         <span class="status-dot"></span>
         <span>Live stream</span>
-        ${importedBadge}
       </div>
 
       <div class="channel-meta">
@@ -559,6 +535,8 @@ function renderChannels() {
   const grid = $("channelGrid");
   const empty = $("emptyState");
 
+  if (!grid || !empty) return;
+
   const search =
     $("channelSearch")
       .value
@@ -571,15 +549,15 @@ function renderChannels() {
   const country =
     $("countryFilter").value;
 
-const results =
-  CHANNELS.filter(channel =>
-    channelMatches(
-      channel,
-      search,
-      category,
-      country
-    )
-  );
+  const results =
+    CHANNELS.filter(channel =>
+      channelMatches(
+        channel,
+        search,
+        category,
+        country
+      )
+    );
 
   grid.innerHTML =
     results.map(channelCard).join("");
@@ -594,14 +572,16 @@ function renderFavorites() {
   const grid = $("favoriteGrid");
   const empty = $("favoriteEmpty");
 
+  if (!grid || !empty) return;
+
   const favorites =
     getFavorites();
 
- const channels =
-  CHANNELS.filter(
-    channel =>
-      favorites.includes(channel.id)
-  );
+  const channels =
+    CHANNELS.filter(
+      channel =>
+        favorites.includes(channel.id)
+    );
 
   grid.innerHTML =
     channels.map(channelCard).join("");
@@ -617,6 +597,8 @@ function renderFavorites() {
 ========================================================= */
 
 function bindChannelEvents(container) {
+  if (!container) return;
+
   container
     .querySelectorAll("[data-channel]")
     .forEach(card => {
@@ -629,11 +611,13 @@ function bindChannelEvents(container) {
         }
 
         const channel =
-          getAllChannels().find(
+          CHANNELS.find(
             x =>
               x.id ===
               card.dataset.channel
           );
+
+        if (!channel) return;
 
         playChannel(channel);
 
@@ -714,9 +698,11 @@ function populateCategories() {
   const select =
     $("categoryFilter");
 
+  if (!select) return;
+
   const categories = [
     ...new Set(
-      getAllChannels()
+      CHANNELS
         .map(channel =>
           channel.category
         )
@@ -738,9 +724,11 @@ function populateCountries() {
   const select =
     $("countryFilter");
 
+  if (!select) return;
+
   const countries = [
     ...new Set(
-      getAllChannels()
+      CHANNELS
         .map(channel =>
           channel.country
         )
@@ -756,437 +744,6 @@ function populateCountries() {
           `<option value="${escapeHTML(country)}">${escapeHTML(country)}</option>`
       )
       .join("");
-}
-
-/* =========================================================
-   M3U PARSER
-========================================================= */
-
-function parseAttributes(extinfLine) {
-  const attributes = {};
-
-  const attributeRegex =
-    /([\w-]+)="([^"]*)"/g;
-
-  let match;
-
-  while (
-    (match =
-      attributeRegex.exec(extinfLine)) !== null
-  ) {
-    attributes[
-      match[1].toLowerCase()
-    ] = match[2];
-  }
-
-  return attributes;
-}
-
-function parseM3U(text, playlistId) {
-  const lines =
-    text
-      .replace(/^\uFEFF/, "")
-      .split(/\r?\n/)
-      .map(line => line.trim())
-      .filter(Boolean);
-
-  const channels = [];
-
-  let pendingInfo = null;
-
-  for (const line of lines) {
-
-    if (
-      line.startsWith("#EXTINF:")
-    ) {
-      const commaIndex =
-        line.indexOf(",");
-
-      if (commaIndex === -1) {
-        pendingInfo = null;
-        continue;
-      }
-
-      const info =
-        line.slice(0, commaIndex);
-
-      const displayName =
-        line
-          .slice(commaIndex + 1)
-          .trim();
-
-      const attributes =
-        parseAttributes(info);
-
-      pendingInfo = {
-        attributes,
-        displayName
-      };
-
-      continue;
-    }
-
-    if (
-      line.startsWith("#")
-    ) {
-      continue;
-    }
-
-    if (!pendingInfo) {
-      continue;
-    }
-
-    const stream =
-      safeHttpUrl(line);
-
-    if (!stream) {
-      pendingInfo = null;
-      continue;
-    }
-
-    const attributes =
-      pendingInfo.attributes;
-
-    const name =
-      attributes["tvg-name"] ||
-      pendingInfo.displayName ||
-      "Unnamed channel";
-
-    const tvgId =
-      attributes["tvg-id"] || "";
-
-    const logoUrl =
-      safeHttpUrl(
-        attributes["tvg-logo"] || ""
-      );
-
-    const groupTitle =
-      attributes["group-title"] ||
-      "Imported";
-
-    const countryInfo =
-      inferCountry(
-        tvgId,
-        name
-      );
-
-    const idBase =
-      `${playlistId}|${tvgId}|${name}|${stream}`;
-
-    const channel = {
-      id: createStableId(idBase),
-
-      name,
-
-      category:
-        groupTitle ||
-        "Imported",
-
-      country:
-        countryInfo.country,
-
-      countryCode:
-        countryInfo.countryCode,
-
-      logo:
-        name
-          .split(/\s+/)
-          .slice(0, 2)
-          .map(word =>
-            word.charAt(0)
-          )
-          .join("")
-          .toUpperCase()
-          .slice(0, 4),
-
-      logoUrl,
-
-      stream,
-
-      source: "m3u",
-
-      imported: true,
-
-      playlistId,
-
-      tvgId,
-
-      groupTitle,
-
-      tvgName:
-        attributes["tvg-name"] || "",
-
-      language:
-        attributes["tvg-language"] || ""
-    };
-
-    channels.push(channel);
-
-    pendingInfo = null;
-  }
-
-  return channels;
-}
-
-/* =========================================================
-   PLAYLIST UI
-========================================================= */
-
-function renderImportedPlaylists() {
-  if (!importedPlaylistsContainer) {
-    return;
-  }
-
-  const playlists =
-    getImportedPlaylists();
-
-  if (!playlists.length) {
-    importedPlaylistsContainer.innerHTML =
-      "";
-
-    return;
-  }
-
-  importedPlaylistsContainer.innerHTML =
-    playlists
-      .map(playlist => `
-        <div
-          class="imported-playlist"
-          data-playlist="${escapeHTML(playlist.id)}"
-        >
-          <div class="imported-playlist-info">
-            <strong>
-              ${escapeHTML(playlist.name)}
-            </strong>
-
-            <span>
-              ${playlist.channels.length}
-              channel${playlist.channels.length === 1 ? "" : "s"}
-            </span>
-          </div>
-
-          <button
-            type="button"
-            class="remove-playlist"
-            data-remove-playlist="${escapeHTML(playlist.id)}"
-            aria-label="Remove ${escapeHTML(playlist.name)}"
-          >
-            Remove
-          </button>
-        </div>
-      `)
-      .join("");
-}
-
-function refreshChannelInterface() {
-  populateCategories();
-  populateCountries();
-  renderImportedPlaylists();
-  renderChannels();
-  renderFavorites();
-  renderRecentlyWatched();
-}
-
-function importPlaylistFile(file) {
-  if (!file) return;
-
-  const name =
-    file.name ||
-    "Imported playlist";
-
-  playlistStatus.textContent =
-    `Reading ${name}...`;
-
-  const reader =
-    new FileReader();
-
-  reader.onload = () => {
-    try {
-      const text =
-        String(reader.result || "");
-
-      const playlistId =
-        createStableId(
-          `${name}|${file.size}|${file.lastModified}`
-        );
-
-      const channels =
-        parseM3U(
-          text,
-          playlistId
-        );
-
-      if (!channels.length) {
-        playlistStatus.textContent =
-          "No playable channels were found in this playlist.";
-
-        showToast(
-          "No channels found in playlist"
-        );
-
-        return;
-      }
-
-      const playlists =
-        getImportedPlaylists();
-
-      const playlist = {
-        id: playlistId,
-        name,
-        importedAt:
-          new Date().toISOString(),
-        channels
-      };
-
-      const existingIndex =
-        playlists.findIndex(
-          item =>
-            item.id === playlistId
-        );
-
-      if (existingIndex >= 0) {
-        playlists[existingIndex] =
-          playlist;
-      } else {
-        playlists.push(playlist);
-      }
-
-      saveImportedPlaylists(
-        playlists
-      );
-
-      playlistStatus.textContent =
-        `${channels.length} channel${channels.length === 1 ? "" : "s"} imported from ${name}.`;
-
-      showToast(
-        `${channels.length} channels imported`
-      );
-
-      refreshChannelInterface();
-
-    } catch (error) {
-      console.error(
-        "Playlist import error:",
-        error
-      );
-
-      playlistStatus.textContent =
-        "The playlist could not be imported.";
-
-      showToast(
-        "Playlist import failed"
-      );
-    }
-  };
-
-  reader.onerror = () => {
-    playlistStatus.textContent =
-      "Could not read the selected file.";
-
-    showToast(
-      "Could not read playlist"
-    );
-  };
-
-  reader.readAsText(file);
-}
-if (choosePlaylistButton && playlistFileInput) {
-  choosePlaylistButton.addEventListener(
-    "click",
-    () => {
-      playlistFileInput.click();
-    }
-  );
-}
-
-if (playlistFileInput) {
-  playlistFileInput.addEventListener(
-    "change",
-    event => {
-      const file =
-        event.target.files?.[0];
-
-      importPlaylistFile(file);
-
-      event.target.value = "";
-    }
-  );
-}
-
-if (importedPlaylistsContainer) {
-  importedPlaylistsContainer.addEventListener(
-    "click",
-    event => {
-      const button =
-        event.target.closest(
-          "[data-remove-playlist]"
-        );
-
-      if (!button) return;
-
-      const playlistId =
-        button.dataset.removePlaylist;
-
-      const playlists =
-        getImportedPlaylists();
-
-      const playlist =
-        playlists.find(
-          item =>
-            item.id === playlistId
-        );
-
-      const updated =
-        playlists.filter(
-          item =>
-            item.id !== playlistId
-        );
-
-      saveImportedPlaylists(
-        updated
-      );
-
-      if (
-        currentChannel?.playlistId ===
-        playlistId
-      ) {
-        stopPlayer();
-
-        currentChannel = null;
-        currentChannelIndex = -1;
-
-        nowTitle.textContent =
-          "No channel selected";
-
-        nowMeta.textContent =
-          "Select a channel to begin";
-
-        nowLogo.textContent = "TV";
-
-        liveIndicator.textContent =
-          "● OFFLINE";
-
-        liveIndicator.classList.remove(
-          "active"
-        );
-
-        setStatus("Ready");
-      }
-
-      playlistStatus.textContent =
-        playlist
-          ? `${playlist.name} removed.`
-          : "Playlist removed.";
-
-      showToast(
-        playlist
-          ? `${playlist.name} removed`
-          : "Playlist removed"
-      );
-
-      refreshChannelInterface();
-    }
-  );
 }
 
 /* =========================================================
@@ -1227,7 +784,7 @@ $("startWatching").addEventListener(
   "click",
   () => {
     const first =
-      getAllChannels()[0];
+      CHANNELS[0];
 
     if (first) {
       playChannel(first);
@@ -1253,6 +810,8 @@ const themeToggle =
   $("themeToggle");
 
 function updateThemeButton() {
+  if (!themeToggle) return;
+
   const isLight =
     document.body.classList.contains(
       "light"
@@ -1320,7 +879,7 @@ previousChannelBtn.addEventListener(
   "click",
   () => {
     const channels =
-      getAllChannels();
+      CHANNELS;
 
     if (!channels.length) return;
 
@@ -1339,7 +898,7 @@ nextChannelBtn.addEventListener(
   "click",
   () => {
     const channels =
-      getAllChannels();
+      CHANNELS;
 
     if (!channels.length) return;
 
@@ -1407,7 +966,6 @@ document.addEventListener(
 
 populateCategories();
 populateCountries();
-renderImportedPlaylists();
 renderRecentlyWatched();
 renderChannels();
 renderFavorites();
