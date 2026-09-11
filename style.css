@@ -1202,56 +1202,267 @@ input:focus-visible {
 /* ===== Channel Card Visual Polish ===== */
 
 .channel-card {
-  min-height: 165px;
+  min-height: 185px;
   padding: 17px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(145deg, var(--panel), #0d131e);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .channel-card::before {
-  z-index: 1;
+  z-index: 2;
 }
+
+.channel-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow:
+    0 16px 35px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(108, 124, 255, 0.08);
+}
+
+/* Logo area */
 
 .channel-logo {
+  height: 105px;
   margin-top: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 13px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(108, 124, 255, 0.08),
+      transparent 65%
+    ),
+    var(--panel2);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
+
+.channel-logo img {
+  width: 88%;
+  height: 82px;
+  object-fit: contain;
+  object-position: center;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.channel-card:hover .channel-logo {
+  transform: scale(1.025);
+  border-color: rgba(108, 124, 255, 0.25);
+}
+
+.channel-card:hover .channel-logo img {
+  transform: scale(1.04);
+}
+
+/* Channel name */
 
 .channel-name {
-  padding-right: 42px;
+  padding-right: 44px;
+  font-size: 16px;
+  font-weight: 750;
   line-height: 1.3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Channel metadata */
+
 .channel-meta {
-  margin-top: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  margin-top: 8px;
+
+  color: var(--muted);
+  font-size: 12px;
+
+  flex-wrap: wrap;
+}
+
+.channel-country,
+.channel-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.channel-country {
+  font-weight: 600;
 }
 
 .channel-category {
+  padding: 3px 8px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
   background: rgba(255, 255, 255, 0.03);
+
+  font-size: 10px;
+  font-weight: 700;
 }
 
-.channel-card:hover .channel-category {
-  border-color: rgba(108, 124, 255, 0.35);
+/* Favorite button */
+
+.favorite-btn {
+  z-index: 4;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  border: 1px solid var(--line);
+
+  background: rgba(10, 14, 22, 0.78);
+  color: var(--muted);
+
+  font-size: 19px;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--panel2);
+}
+
+.favorite-btn.active {
+  color: #ffd166;
+  background: rgba(255, 209, 102, 0.12);
+  border-color: rgba(255, 209, 102, 0.35);
+}
+
+.favorite-btn:active {
+  transform: scale(0.95);
+}
+
+/* Watch hint */
+
+.channel-card::after {
+  content: "▶ Watch";
+
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  background: var(--panel2);
+  color: var(--text);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  opacity: 0;
+  transform: translateY(5px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.channel-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keyboard focus */
+
+.channel-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-color: var(--accent);
+}
+
+.channel-card:focus-visible .channel-logo {
+  transform: scale(1.025);
+}
+
+/* Light theme */
+
+body.light .channel-card {
+  background: var(--panel);
+}
+
+body.light .channel-logo {
+  border-color: var(--line);
+  background: var(--panel2);
 }
 
 body.light .channel-category {
   background: rgba(0, 0, 0, 0.025);
 }
 
-/* Keep the Watch hint from covering channel metadata */
-.channel-card::after {
-  pointer-events: none;
+body.light .favorite-btn {
+  background: rgba(255, 255, 255, 0.85);
 }
 
-/* Slightly tighter cards on small screens */
+/* Mobile */
+
 @media (max-width: 750px) {
   .channel-card {
-    min-height: 155px;
+    min-height: 175px;
     padding: 15px;
+  }
+
+  .channel-logo {
+    height: 100px;
+    margin-bottom: 15px;
+  }
+
+  .channel-logo img {
+    height: 78px;
   }
 }
 
 @media (max-width: 450px) {
   .channel-card {
-    min-height: 150px;
+    min-height: 165px;
+  }
+
+  .channel-logo {
+    height: 105px;
   }
 }
 /* ===== Player Retry Control ===== */
