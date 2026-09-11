@@ -798,28 +798,71 @@ body:not(.light) .channel-logo img {
   left: 20px;
   bottom: 20px;
 }
-/* ===== Channel Status ===== */
+/* ===== Channel Live Status ===== */
 
 .channel-status {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
 
+  width: fit-content;
   margin-top: 8px;
+  padding: 4px 8px;
 
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--muted);
+  border: 1px solid rgba(34, 197, 94, 0.22);
+  border-radius: 999px;
+
+  background: rgba(34, 197, 94, 0.07);
+
+  color: #6ee7a0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .status-dot {
   width: 7px;
   height: 7px;
+  flex-shrink: 0;
 
   border-radius: 50%;
   background: #22c55e;
 
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.08),
+    0 0 9px rgba(34, 197, 94, 0.75);
+
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(0.82);
+  }
+}
+
+/* Light theme */
+
+body.light .channel-status {
+  color: #15803d;
+  border-color: rgba(21, 128, 61, 0.2);
+  background: rgba(21, 128, 61, 0.06);
+}
+
+/* Respect reduced-motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
 }
 /* ===== Now Playing Polish ===== */
 
