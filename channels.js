@@ -83,7 +83,7 @@ const CHANNELS = [
     country: "Japan",
     countryCode: "🇯🇵",
     logo: "NHK",
-    logoUrl: "https://cdn.simpleicons.org/nhk",
+   logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/NHK_World.svg/320px-NHK_World.svg.png",
     stream: "https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8"
   },
 
