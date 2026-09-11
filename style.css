@@ -1728,23 +1728,19 @@ body.light .search-empty-icon {
 }
 /* ===== Active Category & Country Filters ===== */
 
-.category-filter:has(option:checked:not([value="all"])),
-#countryFilter:has(option:checked:not([value="all"])) {
+.category-filter.filter-active,
+#countryFilter.filter-active {
   border-color: var(--accent);
   background: rgba(108, 124, 255, 0.08);
   box-shadow: 0 0 0 3px rgba(108, 124, 255, 0.08);
-}
-
-/* Make the active filter text stand out */
-.category-filter:has(option:checked:not([value="all"])),
-#countryFilter:has(option:checked:not([value="all"])) {
   color: var(--text);
   font-weight: 700;
 }
 
 /* Light theme */
-body.light .category-filter:has(option:checked:not([value="all"])),
-body.light #countryFilter:has(option:checked:not([value="all"])) {
+
+body.light .category-filter.filter-active,
+body.light #countryFilter.filter-active {
   background: rgba(108, 124, 255, 0.06);
 }
 // ===== Active Filter Styling =====
