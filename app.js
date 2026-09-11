@@ -21,7 +21,7 @@ const playbackErrorMessage = $("playbackErrorMessage");
 const playlistFileInput = $("playlistFile");
 const playlistStatus = $("playlistStatus");
 const importedPlaylistsContainer = $("importedPlaylists");
-
+const choosePlaylistButton = $("choosePlaylistButton");
 let hls = null;
 let currentChannel = null;
 let currentChannelIndex = -1;
