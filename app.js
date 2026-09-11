@@ -559,15 +559,79 @@ function renderChannels() {
       )
     );
 
-  grid.innerHTML =
-    results.map(channelCard).join("");
+  /* -------------------------------------------------------
+     Results count
+  ------------------------------------------------------- */
 
-  empty.hidden =
-    results.length !== 0;
+  let resultsInfo =
+    $("resultsInfo");
+
+  if (!resultsInfo) {
+    resultsInfo =
+      document.createElement("div");
+
+    resultsInfo.id = "resultsInfo";
+    resultsInfo.className = "results-info";
+
+    grid.parentNode.insertBefore(
+      resultsInfo,
+      grid
+    );
+  }
+
+  const hasFilters =
+    search ||
+    category !== "all" ||
+    country !== "all";
+
+  if (hasFilters) {
+    resultsInfo.innerHTML = `
+      <span class="results-dot"></span>
+      <span>
+        Showing
+        <strong>${results.length}</strong>
+        channel${results.length === 1 ? "" : "s"}
+      </span>
+    `;
+
+    resultsInfo.hidden = false;
+  } else {
+    resultsInfo.hidden = true;
+  }
+
+  /* -------------------------------------------------------
+     Render results
+  ------------------------------------------------------- */
+
+  if (results.length > 0) {
+    grid.innerHTML =
+      results
+        .map(channelCard)
+        .join("");
+
+    empty.hidden = true;
+
+  } else {
+    grid.innerHTML = "";
+
+    empty.hidden = true;
+
+    grid.innerHTML = `
+      <div class="search-empty">
+        <div class="search-empty-icon">⌕</div>
+
+        <h3>No channels found</h3>
+
+        <p>
+          Try a different search term or
+          change your filters.
+        </p>
+      </div>
+    `;
+  }
 
   bindChannelEvents(grid);
 }
-
 function renderFavorites() {
   const grid = $("favoriteGrid");
   const empty = $("favoriteEmpty");
