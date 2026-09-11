@@ -406,9 +406,8 @@ main{
 }
 
 body:not(.light) .channel-logo img {
-  filter: brightness(1.25) contrast(1.1);
+  filter: brightness(1.7) contrast(1.2);
 }
-
 .channel-name{
   font-weight:750;
   font-size:16px;
