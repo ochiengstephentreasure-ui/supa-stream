@@ -638,15 +638,15 @@ const CHANNELS = [
   logoUrl: "",
   stream: "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8"
 },
-  {
-  id: "parlamentsfernsehen-1",
-  name: "Parlamentsfernsehen 1",
+ {
+  id: "24-horas",
+  name: "24 Horas",
   category: "News",
-  country: "Germany",
-  countryCode: "DE",
-  logo: "PF1",
+  country: "Spain",
+  countryCode: "ES",
+  logo: "24H",
   logoUrl: "",
-  stream: "https://bttv-live-z.r53.cdn.tv1.eu/13014bundestag-hk1/_definst_/live/video/hk1_de.smil/playlist.m3u8"
+  stream: "https://ztnr.rtve.es/ztnr/1694255.m3u8"
 }
 ];
 
