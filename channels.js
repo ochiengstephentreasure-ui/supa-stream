@@ -138,7 +138,7 @@ const CHANNELS = [
     country: "India",
     countryCode: "🇮🇳",
     logo: "JT",
-    logoUrl: "",
+    logoUrl: "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Janta%20TV.png",
     stream: "https://live.jswk.online/IK_RTPM/live/index.m3u8"
   },
 
@@ -215,7 +215,7 @@ const CHANNELS = [
     country: "India",
     countryCode: "🇮🇳",
     logo: "9XM",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/9XMHindiMusicTelevisionChannelLogo.jpg",
     stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
   },
 
@@ -281,7 +281,7 @@ const CHANNELS = [
     country: "Australia",
     countryCode: "🇦🇺",
     logo: "TU",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Trace_Urban_logo_2010.svg",
     stream: "https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8"
   },
 
@@ -325,7 +325,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "🇺🇸",
     logo: "SG",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/ulGKX30.png",
     stream: "https://sportsgrid-plex.amagi.tv/playlist.m3u8"
   },
 
@@ -358,7 +358,7 @@ const CHANNELS = [
     country: "Ecuador",
     countryCode: "🇪🇨",
     logo: "OTV",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Oromar_logo.png",
     stream: "https://stream.oromar.tv/hls/oromartv_hi/index.m3u8"
   },
 
@@ -578,7 +578,7 @@ const CHANNELS = [
     country: "Spain",
     countryCode: "🇪🇸",
     logo: "RM",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Realmadrid_Television_Logo.svg",
     stream: "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8"
   },
 
@@ -633,7 +633,7 @@ const CHANNELS = [
     country: "Qatar",
     countryCode: "QA",
     logo: "AJM",
-    logoUrl: "",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/en/9/90/Al_Jazeera_Mubasher_logo.png",
     stream: "https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8"
   },
 
