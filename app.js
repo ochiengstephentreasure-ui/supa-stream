@@ -18,17 +18,13 @@ const playbackError = $("playbackError");
 const playbackErrorTitle = $("playbackErrorTitle");
 const playbackErrorMessage = $("playbackErrorMessage");
 
-const playlistFileInput = $("playlistFile");
-const playlistStatus = $("playlistStatus");
-const importedPlaylistsContainer = $("importedPlaylists");
-const choosePlaylistButton = $("choosePlaylistButton");
+
 let hls = null;
 let currentChannel = null;
 let currentChannelIndex = -1;
 
 const FAVORITES_KEY = "supa-stream-favorites";
 const RECENTLY_WATCHED_KEY = "supa-stream-recently-watched";
-const IMPORTED_PLAYLISTS_KEY = "supa-stream-imported-playlists";
 const MAX_RECENTLY_WATCHED = 8;
 
 /* =========================================================
