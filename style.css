@@ -1747,3 +1747,35 @@ body.light .category-filter:has(option:checked:not([value="all"])),
 body.light #countryFilter:has(option:checked:not([value="all"])) {
   background: rgba(108, 124, 255, 0.06);
 }
+// ===== Active Filter Styling =====
+
+function updateFilterState() {
+  const category = $("categoryFilter");
+  const country = $("countryFilter");
+
+  if (category) {
+    category.classList.toggle(
+      "filter-active",
+      category.value !== "all"
+    );
+  }
+
+  if (country) {
+    country.classList.toggle(
+      "filter-active",
+      country.value !== "all"
+    );
+  }
+}
+
+$("categoryFilter")?.addEventListener(
+  "change",
+  updateFilterState
+);
+
+$("countryFilter")?.addEventListener(
+  "change",
+  updateFilterState
+);
+
+updateFilterState();
