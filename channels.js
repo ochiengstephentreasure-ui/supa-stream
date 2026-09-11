@@ -607,6 +607,16 @@ const CHANNELS = [
   logo: "CBS",
   logoUrl: "",
   stream: "https://cbsn-us-vtt.cbsnstream.cbsnews.com/out/v1/ef868690d34144509eda696884bf1619/master.m3u8"
+},
+  {
+  id: "rtp-africa",
+  name: "RTP Africa",
+  category: "News",
+  country: "Portugal",
+  countryCode: "PT",
+  logo: "RTP",
+  logoUrl: "",
+  stream: "https://streaming-live.rtp.pt/liverepeater/smil:rtpafrica.smil/playlist.m3u8"
 }
 ];
 
