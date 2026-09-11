@@ -598,15 +598,15 @@ const CHANNELS = [
     logoUrl: "",
     stream: "https://peer2.tdiradio.com/static/streaming-playlists/hls/4207de1d-52e8-4591-ad9e-218069b864d1/0.m3u8"
   },
-  {
-  id: "btv-uganda",
-  name: "BTV",
-  category: "Entertainment",
-  country: "Uganda",
-  countryCode: "UG",
-  logo: "BT",
+{
+  id: "cbs-news-24-7",
+  name: "CBS News 24/7",
+  category: "News",
+  country: "United States",
+  countryCode: "US",
+  logo: "CBS",
   logoUrl: "",
-  stream: "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8"
+  stream: "https://cbsn-us-vtt.cbsnstream.cbsnews.com/out/v1/ef868690d34144509eda696884bf1619/master.m3u8"
 }
 ];
 
