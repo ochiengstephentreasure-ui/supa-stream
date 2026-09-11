@@ -2226,3 +2226,13 @@ body.light #countryFilter.filter-active {
       1 !important;
   }
 }
+/* TEMPORARY LOGO DIAGNOSTIC */
+.channel-logo img {
+  display: block !important;
+  width: 88% !important;
+  height: 82px !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
