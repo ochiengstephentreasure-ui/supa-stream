@@ -563,7 +563,149 @@ const CHANNELS = [
   logo: "NET",
   logoUrl: "",
   stream: "https://unlimited1-us.dps.live/nettv/nettv.smil/playlist.m3u8"
-}
+},
+    {
+    id: "africa24-english",
+    name: "Africa 24 English",
+    category: "News",
+    country: "France",
+    countryCode: "🇫🇷",
+    logo: "A24",
+    logoUrl: "",
+    stream: "https://edge20.vedge.infomaniak.com/livecast/ik:africa24english/manifest.m3u8"
+  },
+
+  {
+    id: "horse-and-country-tv",
+    name: "Horse & Country TV",
+    category: "Sports",
+    country: "Australia",
+    countryCode: "🇦🇺",
+    logo: "H&C",
+    logoUrl: "",
+    stream: "https://hnc-free-viewlift.amagi.tv/HNC_AUSTRALIA.m3u8"
+  },
+
+  {
+    id: "real-madrid-tv",
+    name: "Real Madrid TV",
+    category: "Sports",
+    country: "Spain",
+    countryCode: "🇪🇸",
+    logo: "RM",
+    logoUrl: "",
+    stream: "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8"
+  },
+
+  {
+    id: "mbc-masr",
+    name: "MBC Masr",
+    category: "Entertainment",
+    country: "Egypt",
+    countryCode: "🇪🇬",
+    logo: "MBC",
+    logoUrl: "",
+    stream: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr/956eac069c78a35d47245db6cdbb1575/index.m3u8"
+  },
+
+  {
+    id: "coptic-tv",
+    name: "Coptic TV",
+    category: "Entertainment",
+    country: "Egypt",
+    countryCode: "🇪🇬",
+    logo: "CTV",
+    logoUrl: "",
+    stream: "https://ctv.icopts.app/CTV/index.fmp4.m3u8"
+  },
+
+  {
+    id: "oxygen-music",
+    name: "Oxygen Music",
+    category: "Entertainment",
+    country: "Hungary",
+    countryCode: "🇭🇺",
+    logo: "OM",
+    logoUrl: "",
+    stream: "https://oxygenmusic.hu:2443/hls/oxygenmusic.m3u8"
+  },
+
+  {
+    id: "nhk-world-premium",
+    name: "NHK World Premium",
+    category: "Entertainment",
+    country: "Japan",
+    countryCode: "🇯🇵",
+    logo: "NHK",
+    logoUrl: "",
+    stream: "https://media-tyo.hls.nhkworld.jp/hls/wp/live/master.m3u8"
+  },
+
+  {
+    id: "weathernews",
+    name: "Weathernews",
+    category: "News",
+    country: "Japan",
+    countryCode: "🇯🇵",
+    logo: "WN",
+    logoUrl: "",
+    stream: "https://rch01e-alive-hls.akamaized.net/38fb45b25cdb05a1/out/v1/4e907bfabc684a1dae10df8431a84d21/index.m3u8"
+  },
+
+  {
+    id: "arirang-tv-un",
+    name: "Arirang TV UN",
+    category: "News",
+    country: "South Korea",
+    countryCode: "🇰🇷",
+    logo: "AR",
+    logoUrl: "",
+    stream: "https://amdlive-ch02-ctnd-com.akamaized.net/arirang_2ch/smil:arirang_2ch.smil/playlist.m3u8"
+  },
+
+  {
+    id: "voice-of-lebanon",
+    name: "Voice of Lebanon",
+    category: "News",
+    country: "Lebanon",
+    countryCode: "🇱🇧",
+    logo: "VOL",
+    logoUrl: "",
+    stream: "https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8"
+  },
+
+  {
+    id: "future-tv",
+    name: "Future TV",
+    category: "Entertainment",
+    country: "Lebanon",
+    countryCode: "🇱🇧",
+    logo: "FTV",
+    logoUrl: "",
+    stream: "https://live.kwikmotion.com/futurelive/ftv.smil/playlist.m3u8"
+  },
+
+  {
+    id: "kalu-tv",
+    name: "Kalu TV",
+    category: "Entertainment",
+    country: "Colombia",
+    countryCode: "🇨🇴",
+    logo: "KTV",
+    logoUrl: "",
+    stream: "https://tv.kaludecolombia.com/memfs/800a956d-5ada-4bf1-ac15-0d11e689179c.m3u8"
+  },
+
+  {
+    id: "radio-karolina-tv",
+    name: "Radio Karolina TV",
+    category: "Entertainment",
+    country: "Serbia",
+    countryCode: "🇷🇸",
+    logo: "RK",
+    logoUrl: "",
+    stream: "https://peer2.tdiradio.com/static/streaming-playlists/hls/4207de1d-52e8-4591-ad9e-218069b864d1/0.m3u8"
+  }
 ];
 
 
