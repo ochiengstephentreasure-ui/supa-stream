@@ -648,16 +648,7 @@ const CHANNELS = [
   logoUrl: "",
   stream: "https://ztnr.rtve.es/ztnr/1694255.m3u8"
 },
-  {
-  id: "nasa-tv-public",
-  name: "NASA TV Public",
-  category: "Entertainment",
-  country: "United States",
-  countryCode: "US",
-  logo: "NASA",
-  logoUrl: "",
-  stream: "https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master_2000.m3u8"
-}
+  
 ];
 
 
