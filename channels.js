@@ -627,6 +627,16 @@ const CHANNELS = [
   logo: "AJM",
   logoUrl: "",
   stream: "https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8"
+},
+  {
+  id: "voa-tv-persian",
+  name: "VOA TV Persian",
+  category: "News",
+  country: "United States",
+  countryCode: "US",
+  logo: "VOA",
+  logoUrl: "",
+  stream: "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8"
 }
 ];
 
