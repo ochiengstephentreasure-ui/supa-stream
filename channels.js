@@ -597,7 +597,17 @@ const CHANNELS = [
     logo: "RK",
     logoUrl: "",
     stream: "https://peer2.tdiradio.com/static/streaming-playlists/hls/4207de1d-52e8-4591-ad9e-218069b864d1/0.m3u8"
-  }
+  },
+  {
+  id: "btv-uganda",
+  name: "BTV",
+  category: "Entertainment",
+  country: "Uganda",
+  countryCode: "UG",
+  logo: "BT",
+  logoUrl: "",
+  stream: "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8"
+}
 ];
 
 
