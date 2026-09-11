@@ -605,7 +605,7 @@ const CHANNELS = [
   country: "United States",
   countryCode: "US",
   logo: "CBS",
-  logoUrl: "",
+  logoUrl: "https://www.cbsnews.com/favicon.ico",
   stream: "https://cbsn-us-vtt.cbsnstream.cbsnews.com/out/v1/ef868690d34144509eda696884bf1619/master.m3u8"
 },
 {
