@@ -608,15 +608,15 @@ const CHANNELS = [
   logoUrl: "",
   stream: "https://cbsn-us-vtt.cbsnstream.cbsnews.com/out/v1/ef868690d34144509eda696884bf1619/master.m3u8"
 },
-  {
-  id: "rtp-africa",
-  name: "RTP Africa",
+{
+  id: "france-24",
+  name: "France 24",
   category: "News",
-  country: "Portugal",
-  countryCode: "PT",
-  logo: "RTP",
+  country: "France",
+  countryCode: "FR",
+  logo: "F24",
   logoUrl: "",
-  stream: "https://streaming-live.rtp.pt/liverepeater/smil:rtpafrica.smil/playlist.m3u8"
+  stream: "https://live.france24.com/hls/live/2037222/F24_AR_HI_HLS/master_5000.m3u8"
 }
 ];
 
