@@ -617,6 +617,16 @@ const CHANNELS = [
   logo: "F24",
   logoUrl: "",
   stream: "https://live.france24.com/hls/live/2037222/F24_AR_HI_HLS/master_5000.m3u8"
+},
+  {
+  id: "al-jazeera-mubasher",
+  name: "Al Jazeera Mubasher",
+  category: "News",
+  country: "Qatar",
+  countryCode: "QA",
+  logo: "AJM",
+  logoUrl: "",
+  stream: "https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8"
 }
 ];
 
