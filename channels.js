@@ -50,7 +50,7 @@ const CHANNELS = [
     country: "Armenia",
     countryCode: "🇦🇲",
     logo: "A1",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Armenian_Public_TV_logo_(2021).svg",
     stream: "https://amtv.tulixcdn.com/amtv2/am2abr/index.m3u8"
   },
 
@@ -61,7 +61,7 @@ const CHANNELS = [
     country: "Colombia",
     countryCode: "🇨🇴",
     logo: "RED+",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_Red_%2B_TV_2026.svg",
     stream: "https://inforedvos.lcdn.claro.net.co/Content/HLS_HLS_DIR/Live/channel(REDMASHDWEB)/master.m3u8"
   },
 
@@ -72,7 +72,7 @@ const CHANNELS = [
     country: "Spain",
     countryCode: "🇪🇸",
     logo: "24H",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/24h_2026.svg",
     stream: "https://ztnr.rtve.es/ztnr/1694255.m3u8"
   },
 
@@ -83,7 +83,7 @@ const CHANNELS = [
     country: "Japan",
     countryCode: "🇯🇵",
     logo: "NHK",
-   logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/NHK_World.svg/320px-NHK_World.svg.png",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/NHK_World.svg",
     stream: "https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8"
   },
 
@@ -94,7 +94,7 @@ const CHANNELS = [
     country: "South Korea",
     countryCode: "🇰🇷",
     logo: "AR",
-    logoUrl: "https://cdn.simpleicons.org/arirang",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arirang_logo.png",
     stream: "https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8"
   },
 
@@ -116,7 +116,7 @@ const CHANNELS = [
     country: "United Kingdom",
     countryCode: "🇬🇧",
     logo: "GB",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/GB-News-Logo.png",
     stream: "https://hlspackager.akamaized.net/live/DB/GB_NEWS/HLS/GB_NEWS.m3u8"
   },
 
@@ -127,7 +127,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "🇺🇸",
     logo: "B",
-    logoUrl: "https://cdn.simpleicons.org/bloomberg",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bloomberg_Television_logo.svg",
     stream: "https://bloomberg.com/media-manifest/streams/asia.m3u8"
   },
 
@@ -160,7 +160,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "🇺🇸",
     logo: "ABC",
-    logoUrl: "https://cdn.simpleicons.org/abc",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Abc-news-logo.png",
     stream: "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8"
   },
 
@@ -171,7 +171,7 @@ const CHANNELS = [
     country: "Germany",
     countryCode: "🇩🇪",
     logo: "DW",
-    logoUrl: "https://cdn.simpleicons.org/dw",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Deutsche_Welle_Logo.svg",
     stream: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8"
   },
 
@@ -182,7 +182,7 @@ const CHANNELS = [
     country: "Qatar",
     countryCode: "🇶🇦",
     logo: "AJ",
-    logoUrl: "https://cdn.simpleicons.org/aljazeera",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Aljazeera_eng.svg",
     stream: "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8"
   },
 
@@ -336,7 +336,7 @@ const CHANNELS = [
     country: "Spain",
     countryCode: "🇪🇸",
     logo: "CSA",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Canal_Sur_Andaluc%C3%ADa.png",
     stream: "https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8"
   },
 
@@ -380,7 +380,7 @@ const CHANNELS = [
     country: "United Kingdom",
     countryCode: "🇬🇧",
     logo: "QVC",
-    logoUrl: "https://cdn.simpleicons.org/qvc",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Qvc_logo.svg",
     stream: "https://qvcuk-live.akamaized.net/hls/live/2097112/qvc/master.m3u8"
   },
 
@@ -391,7 +391,7 @@ const CHANNELS = [
     country: "United Kingdom",
     countryCode: "🇬🇧",
     logo: "SNW",
-    logoUrl: "https://cdn.simpleicons.org/skynews",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sky_News_2026.svg",
     stream: "https://distro001-gb-hls1-prd.delivery.skycdp.com/easel_cdn/ngrp:weather_loop.stream_all/playlist.m3u8"
   },
 
@@ -402,7 +402,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "🇺🇸",
     logo: "CMC",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/California_Music_Channel_Logo_(cropped).png",
     stream: "https://cmc-cmctv-cineverse.amagi.tv/playlist.m3u8"
   },
 
@@ -622,7 +622,7 @@ const CHANNELS = [
     country: "France",
     countryCode: "FR",
     logo: "F24",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/France_24_logo_(2013).svg",
     stream: "https://live.france24.com/hls/live/2037222/F24_AR_HI_HLS/master_5000.m3u8"
   },
 
@@ -655,7 +655,7 @@ const CHANNELS = [
     country: "Spain",
     countryCode: "ES",
     logo: "24H",
-    logoUrl: "",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/24h_2026.svg",
     stream: "https://ztnr.rtve.es/ztnr/1694255.m3u8"
   }
 ];
