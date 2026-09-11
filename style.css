@@ -1726,3 +1726,24 @@ body.light .search-empty-icon {
     padding: 55px 16px;
   }
 }
+/* ===== Active Category & Country Filters ===== */
+
+.category-filter:has(option:checked:not([value="all"])),
+#countryFilter:has(option:checked:not([value="all"])) {
+  border-color: var(--accent);
+  background: rgba(108, 124, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(108, 124, 255, 0.08);
+}
+
+/* Make the active filter text stand out */
+.category-filter:has(option:checked:not([value="all"])),
+#countryFilter:has(option:checked:not([value="all"])) {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Light theme */
+body.light .category-filter:has(option:checked:not([value="all"])),
+body.light #countryFilter:has(option:checked:not([value="all"])) {
+  background: rgba(108, 124, 255, 0.06);
+}
