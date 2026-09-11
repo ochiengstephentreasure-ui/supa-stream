@@ -3,294 +3,579 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="Supa-stream — live TV streaming hub">
+
+  <meta
+    name="theme-color"
+    content="#080b12"
+  >
+
+  <meta
+    name="description"
+    content="Supa-stream — live TV streaming hub"
+  >
+
   <title>Supa-stream — Live TV</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="icon"
+    href="favicon.svg"
+    type="image/svg+xml"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
 
 <body>
 
+  <!-- =========================
+       TOP NAVIGATION
+  ========================== -->
+
   <header class="topbar">
-    <a class="brand" href="#" aria-label="Supa-stream home">
+
+    <a
+      class="brand"
+      href="#"
+      aria-label="Supa-stream home"
+    >
       <span class="brand-mark">S</span>
-      <span>Supa<span>-stream</span></span>
+
+      <span>
+        Supa<span>-stream</span>
+      </span>
     </a>
 
     <button
-  class="menu-btn"
-  id="menuToggle"
-  type="button"
-  aria-label="Open navigation menu"
-  aria-expanded="false"
->
-  ☰
-</button>
+      class="menu-btn"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
 
-<nav class="nav" id="mainNav">
-  <a href="#live">Live TV</a>
-  <a href="#channels">Channels</a>
-  <a href="#favorites">Favorites</a>
-  <a href="#recently-watched">Recently watched</a>
-</nav>
-    <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+    <nav
+      class="nav"
+      id="mainNav"
+    >
+      <a href="#live">Live TV</a>
+      <a href="#channels">Channels</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#recently-watched">Recently watched</a>
+    </nav>
+
+    <button
+      class="icon-btn"
+      id="themeToggle"
+      type="button"
+      aria-label="Toggle theme"
+      title="Toggle theme"
+    >
       ☾
     </button>
+
   </header>
+
 
   <main>
 
-    <section class="hero" id="live">
+    <!-- =========================
+         HERO / LIVE PLAYER
+    ========================== -->
+
+    <section
+      class="hero"
+      id="live"
+    >
 
       <div class="hero-copy">
+
         <span class="live-badge">
-          <i></i> LIVE TV
+          <i></i>
+          LIVE TV
         </span>
 
-        <h1>Watch live.<br><span>Stay connected.</span></h1>
+        <h1>
+          Watch live.<br>
+          <span>Stay connected.</span>
+        </h1>
 
         <p>
-          Your simple hub for live television, news, entertainment,
-          sports and more.
+          Your simple hub for live television, news,
+          entertainment, sports and more.
         </p>
 
         <div class="hero-actions">
-          <button class="primary-btn" id="startWatching">
+
+          <button
+            class="primary-btn"
+            id="startWatching"
+            type="button"
+          >
             ▶ Start watching
           </button>
 
-          <a class="secondary-btn" href="#channels">
+          <a
+            class="secondary-btn"
+            href="#channels"
+          >
             Browse channels
           </a>
+
         </div>
+
       </div>
 
+
+      <!-- =========================
+           PLAYER
+      ========================== -->
+
       <div class="hero-screen">
-       <div class="screen-frame">
 
-  <video
-    id="videoPlayer"
-    controls
-    playsinline
-    preload="metadata"
-    poster=""
-  ></video>
+        <div class="screen-frame">
 
-  <button
-    class="fullscreen-btn"
-    id="fullscreenBtn"
-    type="button"
-    aria-label="Enter fullscreen"
-    title="Fullscreen"
-  >
-    ⛶
-  </button>
-<div class="channel-nav">
-  <button
-    class="channel-nav-btn"
-    id="previousChannel"
-    type="button"
-    aria-label="Previous channel"
-    title="Previous channel"
-  >
-    ◀
-  </button>
+          <video
+            id="videoPlayer"
+            controls
+            playsinline
+            preload="metadata"
+            poster=""
+          ></video>
 
-  <button
-    class="channel-nav-btn"
-    id="nextChannel"
-    type="button"
-    aria-label="Next channel"
-    title="Next channel"
-  >
-    ▶
-  </button>
-</div>
-          <div class="player-overlay" id="playerOverlay">
-            <div class="play-icon">▶</div>
-            <p>Select a channel to begin</p>
+
+          <!-- Fullscreen -->
+
+          <button
+            class="fullscreen-btn"
+            id="fullscreenBtn"
+            type="button"
+            aria-label="Enter fullscreen"
+            title="Fullscreen"
+          >
+            ⛶
+          </button>
+
+
+          <!-- Previous / Next -->
+
+          <div class="channel-nav">
+
+            <button
+              class="channel-nav-btn"
+              id="previousChannel"
+              type="button"
+              aria-label="Previous channel"
+              title="Previous channel"
+            >
+              ◀
+            </button>
+
+            <button
+              class="channel-nav-btn"
+              id="nextChannel"
+              type="button"
+              aria-label="Next channel"
+              title="Next channel"
+            >
+              ▶
+            </button>
+
           </div>
 
-          <div class="player-status" id="playerStatus">
+
+          <!-- Player overlay -->
+
+          <div
+            class="player-overlay"
+            id="playerOverlay"
+          >
+            <div class="play-icon">
+              ▶
+            </div>
+
+            <p>
+              Select a channel to begin
+            </p>
+          </div>
+
+
+          <!-- Player status -->
+
+          <div
+            class="player-status"
+            id="playerStatus"
+          >
             Ready
           </div>
-         
-<div class="playback-error" id="playbackError" hidden>
-  <div class="playback-error-icon">!</div>
 
-  <h3 id="playbackErrorTitle">Stream unavailable</h3>
 
-  <p id="playbackErrorMessage">
-    This channel could not be played right now.
-  </p>
+          <!-- Playback error -->
 
-  <button
-    class="retry-btn"
-    id="retryPlayback"
-    type="button"
-  >
-    ↻ Retry playback
-  </button>
-</div>
+          <div
+            class="playback-error"
+            id="playbackError"
+            hidden
+          >
 
-       <div class="now-playing">
+            <div class="playback-error-icon">
+              !
+            </div>
 
-  <div class="now-channel">
+            <h3 id="playbackErrorTitle">
+              Stream unavailable
+            </h3>
 
-    <div class="now-logo" id="nowLogo">
-      TV
-    </div>
+            <p id="playbackErrorMessage">
+              This channel could not be played right now.
+            </p>
 
-    <div class="now-details">
-      <span class="muted">NOW PLAYING</span>
+            <button
+              class="retry-btn"
+              id="retryPlayback"
+              type="button"
+            >
+              ↻ Retry playback
+            </button>
 
-      <h2 id="nowTitle">
-        No channel selected
-      </h2>
+          </div>
 
-      <p id="nowMeta">
-        Select a channel to begin
-      </p>
-    </div>
 
-  </div>
+          <!-- =========================
+               NOW PLAYING
+          ========================== -->
 
-  <span class="live-dot" id="liveIndicator">
-    ● OFFLINE
-  </span>
+          <div class="now-playing">
 
-</div>
+            <div class="now-channel">
 
-</div>
+              <div
+                class="now-logo"
+                id="nowLogo"
+                aria-hidden="true"
+              >
+                TV
+              </div>
 
-</div> 
+              <div class="now-details">
 
-</section> 
+                <span class="muted">
+                  NOW PLAYING
+                </span>
 
-    <section class="content-section" id="channels">
+                <h2 id="nowTitle">
+                  No channel selected
+                </h2>
 
-     <div class="section-heading">
-  <div>
-    <span class="eyebrow">EXPLORE</span>
-    <h2>Live channels</h2>
-  </div>
-</div>
+                <p id="nowMeta">
+                  Select a channel to begin
+                </p>
+
+              </div>
+
+            </div>
+
+            <span
+              class="live-dot"
+              id="liveIndicator"
+            >
+              ● OFFLINE
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHANNELS
+    ========================== -->
+
+    <section
+      class="content-section"
+      id="channels"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="eyebrow">
+            EXPLORE
+          </span>
+
+          <h2>
+            Live channels
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <!-- Channel filters -->
 
       <div class="channel-tools">
 
-  <label class="search-box">
-    <span>⌕</span>
-    <input
-      type="search"
-      id="channelSearch"
-      placeholder="Search channels..."
-      autocomplete="off"
-    >
-  </label>
+        <label class="search-box">
 
-  <select id="categoryFilter" class="category-filter">
-    <option value="all">All categories</option>
-  </select>
+          <span aria-hidden="true">
+            ⌕
+          </span>
 
-  <select id="countryFilter" class="category-filter">
-    <option value="all">All countries</option>
-  </select>
+          <input
+            type="search"
+            id="channelSearch"
+            placeholder="Search channels..."
+            autocomplete="off"
+            aria-label="Search channels"
+          >
 
-  <button
-    type="button"
-    id="clearFilters"
-    class="clear-filters"
-  >
-    Clear filters
-  </button>
+        </label>
 
-</div>
 
-      <div id="channelGrid" class="channel-grid">
+        <select
+          id="categoryFilter"
+          class="category-filter"
+          aria-label="Filter by category"
+        >
+          <option value="all">
+            All categories
+          </option>
+        </select>
+
+
+        <select
+          id="countryFilter"
+          class="category-filter"
+          aria-label="Filter by country"
+        >
+          <option value="all">
+            All countries
+          </option>
+        </select>
+
+
+        <button
+          type="button"
+          id="clearFilters"
+          class="clear-filters"
+        >
+          Clear filters
+        </button>
+
+      </div>
+
+
+      <!-- Channel grid -->
+
+      <div
+        id="channelGrid"
+        class="channel-grid"
+      >
         <!-- Channels are inserted by app.js -->
       </div>
 
-      <div id="emptyState" class="empty-state" hidden>
-        <div>📺</div>
-        <h3>No channels found</h3>
-        <p>Try another search or category.</p>
+
+      <!-- Empty state -->
+
+      <div
+        id="emptyState"
+        class="empty-state"
+        hidden
+      >
+
+        <div>
+          📺
+        </div>
+
+        <h3>
+          No channels found
+        </h3>
+
+        <p>
+          Try another search or category.
+        </p>
+
       </div>
 
     </section>
 
 
-      <section class="content-section" id="favorites">
+    <!-- =========================
+         FAVORITES
+    ========================== -->
+
+    <section
+      class="content-section"
+      id="favorites"
+    >
 
       <div class="section-heading">
+
         <div>
-          <span class="eyebrow">YOUR LIST</span>
-          <h2>Favorites</h2>
+
+          <span class="eyebrow">
+            YOUR LIST
+          </span>
+
+          <h2>
+            Favorites
+          </h2>
+
         </div>
+
       </div>
 
-      <div id="favoriteGrid" class="channel-grid">
+
+      <div
+        id="favoriteGrid"
+        class="channel-grid"
+      >
         <!-- Favorite channels -->
       </div>
 
-      <div id="favoriteEmpty" class="empty-state">
-        <div>♡</div>
-        <h3>No favorites yet</h3>
+
+      <div
+        id="favoriteEmpty"
+        class="empty-state"
+      >
+
+        <div>
+          ♡
+        </div>
+
+        <h3>
+          No favorites yet
+        </h3>
+
         <p>
-          Add channels to your favorites and they'll appear here.
+          Add channels to your favorites and they'll
+          appear here.
         </p>
+
       </div>
 
     </section>
 
 
-    <section class="content-section" id="recently-watched">
+    <!-- =========================
+         RECENTLY WATCHED
+    ========================== -->
+
+    <section
+      class="content-section"
+      id="recently-watched"
+    >
 
       <div class="section-heading">
+
         <div>
-          <span class="eyebrow">YOUR HISTORY</span>
-          <h2>🕘 Recently watched</h2>
+
+          <span class="eyebrow">
+            YOUR HISTORY
+          </span>
+
+          <h2>
+            🕘 Recently watched
+          </h2>
+
         </div>
+
       </div>
 
-      <div id="recentGrid" class="channel-grid">
+
+      <div
+        id="recentGrid"
+        class="channel-grid"
+      >
         <!-- Recently watched channels -->
       </div>
 
-      <div id="recentEmpty" class="empty-state">
-        <div>🕘</div>
 
-        <h3>No recently watched channels</h3>
+      <div
+        id="recentEmpty"
+        class="empty-state"
+      >
+
+        <div>
+          🕘
+        </div>
+
+        <h3>
+          No recently watched channels
+        </h3>
 
         <p>
-          Channels you select will appear here for quick access.
+          Channels you select will appear here
+          for quick access.
         </p>
+
       </div>
 
     </section>
 
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer class="footer">
+
     <div>
-      <strong>Supa-stream</strong>
-      <span> — Safe live TV hub</span>
+
+      <strong>
+        Supa-stream
+      </strong>
+
+      <span>
+        — Safe live TV hub
+      </span>
+
     </div>
 
     <div>
-      <span>Live streaming platform</span>
+
+      <span>
+        Live streaming platform
+      </span>
+
     </div>
+
   </footer>
 
 
+  <!-- =========================
+       TOAST
+  ========================== -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =========================
+       SCRIPTS
+  ========================== -->
+
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.15/dist/hls.min.js"></script>
+
   <script src="channels.js"></script>
+
   <script src="app.js"></script>
-<div
-  id="toast"
-  class="toast"
-  role="status"
-  aria-live="polite"
-></div>
+
 </body>
 </html>
