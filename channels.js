@@ -83,7 +83,7 @@ const CHANNELS = [
     country: "Japan",
     countryCode: "🇯🇵",
     logo: "NHK",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/nhk",
     stream: "https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8"
   },
 
@@ -94,7 +94,7 @@ const CHANNELS = [
     country: "South Korea",
     countryCode: "🇰🇷",
     logo: "AR",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/arirang",
     stream: "https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8"
   },
 
@@ -127,7 +127,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "🇺🇸",
     logo: "B",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/bloomberg",
     stream: "https://bloomberg.com/media-manifest/streams/asia.m3u8"
   },
 
@@ -160,7 +160,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "🇺🇸",
     logo: "ABC",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/abc",
     stream: "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8"
   },
 
@@ -171,7 +171,7 @@ const CHANNELS = [
     country: "Germany",
     countryCode: "🇩🇪",
     logo: "DW",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/dw",
     stream: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8"
   },
 
@@ -182,7 +182,7 @@ const CHANNELS = [
     country: "Qatar",
     countryCode: "🇶🇦",
     logo: "AJ",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/aljazeera",
     stream: "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8"
   },
 
@@ -208,159 +208,160 @@ const CHANNELS = [
     stream: "https://oitnhls.wns.live/hls/stream.m3u8"
   },
 
-{
-  id: "9xm",
-  name: "9XM",
-  category: "Entertainment",
-  country: "India",
-  countryCode: "🇮🇳",
-  logo: "9XM",
-  logoUrl: "",
-  stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
-},
-  
   {
-  id: "3abn-kids-network",
-  name: "3ABN Kids Network",
-  category: "Entertainment",
-  country: "United States",
-  countryCode: "🇺🇸",
-  logo: "3K",
-  logoUrl: "",
-  stream: "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8"
-},
-  
-  {
-  id: "afarin-baxcha",
-  name: "Afarin Baxcha",
-  category: "Entertainment",
-  country: "Iran",
-  countryCode: "🇮🇷",
-  logo: "AB",
-  logoUrl: "",
-  stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
-},
+    id: "9xm",
+    name: "9XM",
+    category: "Entertainment",
+    country: "India",
+    countryCode: "🇮🇳",
+    logo: "9XM",
+    logoUrl: "",
+    stream: "https://9xjio.wiseplayout.com/9XM/master.m3u8"
+  },
 
   {
-  id: "ebs-hd",
-  name: "EBS HD",
-  category: "Entertainment",
-  country: "Ethiopia",
-  countryCode: "🇪🇹",
-  logo: "EBS",
-  logoUrl: "",
-  stream: "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8"
-},
-  {
-  id: "aruba-tv",
-  name: "Aruba.TV",
-  category: "Entertainment",
-  country: "Aruba",
-  countryCode: "🇦🇼",
-  logo: "ATV",
-  logoUrl: "",
-  stream: "https://cdn01.setar.aw/Canal49/canal49/playlist.m3u8"
-},
-  
-  {
-  id: "tv-exitos",
-  name: "TV Éxitos",
-  category: "Entertainment",
-  country: "Dominican Republic",
-  countryCode: "🇩🇴",
-  logo: "TVE",
-  logoUrl: "",
-  stream: "https://streaming.grupomediosdelnorte.com:19360/tvexitos/tvexitos.m3u8"
-},
-  
-  {
-  id: "trace-urban-australia",
-  name: "Trace Urban",
-  category: "Entertainment",
-  country: "Australia",
-  countryCode: "🇦🇺",
-  logo: "TU",
-  logoUrl: "",
-  stream: "https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8"
-},
-  
-{
-  id: "rtv-zenica",
-  name: "RTV Zenica",
-  category: "News",
-  country: "Bosnia and Herzegovina",
-  countryCode: "🇧🇦",
-  logo: "RTV",
-  logoUrl: "",
-  stream: "https://stream.rtvze.ba/live/123/123.m3u8"
-},
-  
-{
-  id: "canal-3-la-pampa",
-  name: "Canal 3 La Pampa",
-  category: "News",
-  country: "Argentina",
-  countryCode: "🇦🇷",
-  logo: "C3",
-  logoUrl: "",
-  stream: "https://stream.arcast.com.ar/c3lapampa/ngrp:c3lapampa_all/playlist.m3u8"
-},
-  
-  {
-  id: "konya-olay-tv",
-  name: "Konya Olay TV",
-  category: "News",
-  country: "Türkiye",
-  countryCode: "🇹🇷",
-  logo: "KOT",
-  logoUrl: "",
-  stream: "https://live.artidijitalmedya.com/artidijital_konyaolaytv/konyaolaytv/playlist.m3u8"
-},
-  
-  {
-  id: "sportsgrid",
-  name: "SportsGrid",
-  category: "Sports",
-  country: "United States",
-  countryCode: "🇺🇸",
-  logo: "SG",
-  logoUrl: "",
-  stream: "https://sportsgrid-plex.amagi.tv/playlist.m3u8"
-},
-  
-{
-  id: "canal-sur-andalucia",
-  name: "Canal Sur Andalucía",
-  category: "News",
-  country: "Spain",
-  countryCode: "🇪🇸",
-  logo: "CSA",
-  logoUrl: "",
-  stream: "https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8"
-},
+    id: "3abn-kids-network",
+    name: "3ABN Kids Network",
+    category: "Entertainment",
+    country: "United States",
+    countryCode: "🇺🇸",
+    logo: "3K",
+    logoUrl: "",
+    stream: "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8"
+  },
 
-{
-  id: "al-mayadeen",
-  name: "Al Mayadeen",
-  category: "News",
-  country: "Lebanon",
-  countryCode: "🇱🇧",
-  logo: "AM",
-  logoUrl: "",
-  stream: "https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8"
-},
-  
   {
-  id: "oromar-tv",
-  name: "Oromar TV",
-  category: "News",
-  country: "Ecuador",
-  countryCode: "🇪🇨",
-  logo: "OTV",
-  logoUrl: "",
-  stream: "https://stream.oromar.tv/hls/oromartv_hi/index.m3u8"
-},
-  
+    id: "afarin-baxcha",
+    name: "Afarin Baxcha",
+    category: "Entertainment",
+    country: "Iran",
+    countryCode: "🇮🇷",
+    logo: "AB",
+    logoUrl: "",
+    stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
+  },
+
+  {
+    id: "ebs-hd",
+    name: "EBS HD",
+    category: "Entertainment",
+    country: "Ethiopia",
+    countryCode: "🇪🇹",
+    logo: "EBS",
+    logoUrl: "",
+    stream: "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8"
+  },
+
+  {
+    id: "aruba-tv",
+    name: "Aruba.TV",
+    category: "Entertainment",
+    country: "Aruba",
+    countryCode: "🇦🇼",
+    logo: "ATV",
+    logoUrl: "",
+    stream: "https://cdn01.setar.aw/Canal49/canal49/playlist.m3u8"
+  },
+
+  {
+    id: "tv-exitos",
+    name: "TV Éxitos",
+    category: "Entertainment",
+    country: "Dominican Republic",
+    countryCode: "🇩🇴",
+    logo: "TVE",
+    logoUrl: "",
+    stream: "https://streaming.grupomediosdelnorte.com:19360/tvexitos/tvexitos.m3u8"
+  },
+
+  {
+    id: "trace-urban-australia",
+    name: "Trace Urban",
+    category: "Entertainment",
+    country: "Australia",
+    countryCode: "🇦🇺",
+    logo: "TU",
+    logoUrl: "",
+    stream: "https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8"
+  },
+
+  {
+    id: "rtv-zenica",
+    name: "RTV Zenica",
+    category: "News",
+    country: "Bosnia and Herzegovina",
+    countryCode: "🇧🇦",
+    logo: "RTV",
+    logoUrl: "",
+    stream: "https://stream.rtvze.ba/live/123/123.m3u8"
+  },
+
+  {
+    id: "canal-3-la-pampa",
+    name: "Canal 3 La Pampa",
+    category: "News",
+    country: "Argentina",
+    countryCode: "🇦🇷",
+    logo: "C3",
+    logoUrl: "",
+    stream: "https://stream.arcast.com.ar/c3lapampa/ngrp:c3lapampa_all/playlist.m3u8"
+  },
+
+  {
+    id: "konya-olay-tv",
+    name: "Konya Olay TV",
+    category: "News",
+    country: "Türkiye",
+    countryCode: "🇹🇷",
+    logo: "KOT",
+    logoUrl: "",
+    stream: "https://live.artidijitalmedya.com/artidijital_konyaolaytv/konyaolaytv/playlist.m3u8"
+  },
+
+  {
+    id: "sportsgrid",
+    name: "SportsGrid",
+    category: "Sports",
+    country: "United States",
+    countryCode: "🇺🇸",
+    logo: "SG",
+    logoUrl: "",
+    stream: "https://sportsgrid-plex.amagi.tv/playlist.m3u8"
+  },
+
+  {
+    id: "canal-sur-andalucia",
+    name: "Canal Sur Andalucía",
+    category: "News",
+    country: "Spain",
+    countryCode: "🇪🇸",
+    logo: "CSA",
+    logoUrl: "",
+    stream: "https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8"
+  },
+
+  {
+    id: "al-mayadeen",
+    name: "Al Mayadeen",
+    category: "News",
+    country: "Lebanon",
+    countryCode: "🇱🇧",
+    logo: "AM",
+    logoUrl: "",
+    stream: "https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8"
+  },
+
+  {
+    id: "oromar-tv",
+    name: "Oromar TV",
+    category: "News",
+    country: "Ecuador",
+    countryCode: "🇪🇨",
+    logo: "OTV",
+    logoUrl: "",
+    stream: "https://stream.oromar.tv/hls/oromartv_hi/index.m3u8"
+  },
+
   {
     id: "fifa-plus",
     name: "FIFA+",
@@ -368,7 +369,7 @@ const CHANNELS = [
     country: "United Kingdom",
     countryCode: "🇬🇧",
     logo: "F+",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/fifa",
     stream: "https://a62dad94.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0ZJRkFQbHVzRW5nbGlzaF9ITFM/playlist.m3u8"
   },
 
@@ -379,7 +380,7 @@ const CHANNELS = [
     country: "United Kingdom",
     countryCode: "🇬🇧",
     logo: "QVC",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/qvc",
     stream: "https://qvcuk-live.akamaized.net/hls/live/2097112/qvc/master.m3u8"
   },
 
@@ -390,7 +391,7 @@ const CHANNELS = [
     country: "United Kingdom",
     countryCode: "🇬🇧",
     logo: "SNW",
-    logoUrl: "",
+    logoUrl: "https://cdn.simpleicons.org/skynews",
     stream: "https://distro001-gb-hls1-prd.delivery.skycdp.com/easel_cdn/ngrp:weather_loop.stream_all/playlist.m3u8"
   },
 
@@ -437,124 +438,128 @@ const CHANNELS = [
     logoUrl: "",
     stream: "https://rds3.desdeparaguay.net/gotv/gotv/playlist.m3u8"
   },
-  
-{
-  id: "shop-channel-japan",
-  name: "Shop Channel",
-  category: "Shopping",
-  country: "Japan",
-  countryCode: "🇯🇵",
-  logo: "SHOP",
-  logoUrl: "",
-  stream: "https://stream3.shopch.jp/HLS/master.m3u8"
-},
-  
-{
-  id: "bukedde-tv-1",
-  name: "Bukedde TV 1",
-  category: "Entertainment",
-  country: "Uganda",
-  countryCode: "🇺🇬",
-  logo: "BTV",
-  logoUrl: "",
-  stream: "https://stream.hydeinnovations.com/bukedde1flussonic/index.m3u8"
-},
-  
-{
-  id: "tv-west-uganda",
-  name: "TV West",
-  category: "Entertainment",
-  country: "Uganda",
-  countryCode: "🇺🇬",
-  logo: "TVW",
-  logoUrl: "",
-  stream: "https://stream.hydeinnovations.com/tvwest-flussonic/index.m3u8"
-},
 
-{
-  id: "watan-tv",
-  name: "Watan TV",
-  category: "News",
-  country: "Egypt",
-  countryCode: "🇪🇬",
-  logo: "WATAN",
-  logoUrl: "",
-  stream: "https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8"
-},
-{
-  id: "television-canaria",
-  name: "Televisión Canaria",
-  category: "News",
-  country: "Spain",
-  countryCode: "🇪🇸",
-  logo: "TV CAN",
-  logoUrl: "",
-  stream: "https://d1oyt3v08gcy18.cloudfront.net/index-events.m3u8"
-},
-{
-  id: "rtk-3",
-  name: "RTK 3",
-  category: "News",
-  country: "Kosovo",
-  countryCode: "🇽🇰",
-  logo: "RTK 3",
-  logoUrl: "",
-  stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-livestream/rtk3/index.m3u8"
-},
-{
-  id: "tv-arta",
-  name: "TV Arta",
-  category: "Entertainment",
-  country: "Kosovo",
-  countryCode: "🇽🇰",
-  logo: "ARTA",
-  logoUrl: "",
-  stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-live/mps-vgx-u9p-qv1/index.m3u8"
-},
+  {
+    id: "shop-channel-japan",
+    name: "Shop Channel",
+    category: "Shopping",
+    country: "Japan",
+    countryCode: "🇯🇵",
+    logo: "SHOP",
+    logoUrl: "",
+    stream: "https://stream3.shopch.jp/HLS/master.m3u8"
+  },
 
-{
-  id: "bfm2",
-  name: "BFM2",
-  category: "News",
-  country: "France",
-  countryCode: "🇫🇷",
-  logo: "BFM2",
-  logoUrl: "",
-  stream: "https://d1ib1gsg71oarf.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-scp7wda722jph/BFM2_FR.m3u8"
-},
-  
-{
-  id: "otv-lebanon",
-  name: "OTV",
-  category: "Entertainment",
-  country: "Lebanon",
-  countryCode: "🇱🇧",
-  logo: "OTV",
-  logoUrl: "",
-  stream: "https://otv.hibridcdn.net/otv/tv_abr/playlist.m3u8"
-},
-{
-  id: "cna-albania",
-  name: "CNA",
-  category: "News",
-  country: "Albania",
-  countryCode: "🇦🇱",
-  logo: "CNA",
-  logoUrl: "",
-  stream: "https://live1.mediadesk.al/cnatvlive.m3u8"
-},
+  {
+    id: "bukedde-tv-1",
+    name: "Bukedde TV 1",
+    category: "Entertainment",
+    country: "Uganda",
+    countryCode: "🇺🇬",
+    logo: "BTV",
+    logoUrl: "",
+    stream: "https://stream.hydeinnovations.com/bukedde1flussonic/index.m3u8"
+  },
 
-{
-  id: "canal-26-argentina",
-  name: "Canal 26",
-  category: "News",
-  country: "Argentina",
-  countryCode: "🇦🇷",
-  logo: "C26",
-  logoUrl: "",
-  stream: "https://stream-gtlc.telecentro.net.ar/hls/canal26hls/main.m3u8"
-},
-  
+  {
+    id: "tv-west-uganda",
+    name: "TV West",
+    category: "Entertainment",
+    country: "Uganda",
+    countryCode: "🇺🇬",
+    logo: "TVW",
+    logoUrl: "",
+    stream: "https://stream.hydeinnovations.com/tvwest-flussonic/index.m3u8"
+  },
+
+  {
+    id: "watan-tv",
+    name: "Watan TV",
+    category: "News",
+    country: "Egypt",
+    countryCode: "🇪🇬",
+    logo: "WATAN",
+    logoUrl: "",
+    stream: "https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8"
+  },
+
+  {
+    id: "television-canaria",
+    name: "Televisión Canaria",
+    category: "News",
+    country: "Spain",
+    countryCode: "🇪🇸",
+    logo: "TV CAN",
+    logoUrl: "",
+    stream: "https://d1oyt3v08gcy18.cloudfront.net/index-events.m3u8"
+  },
+
+  {
+    id: "rtk-3",
+    name: "RTK 3",
+    category: "News",
+    country: "Kosovo",
+    countryCode: "🇽🇰",
+    logo: "RTK 3",
+    logoUrl: "",
+    stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-livestream/rtk3/index.m3u8"
+  },
+
+  {
+    id: "tv-arta",
+    name: "TV Arta",
+    category: "Entertainment",
+    country: "Kosovo",
+    countryCode: "🇽🇰",
+    logo: "ARTA",
+    logoUrl: "",
+    stream: "https://gjirafa-video-live.gjirafa.net/gjvideo-live/mps-vgx-u9p-qv1/index.m3u8"
+  },
+
+  {
+    id: "bfm2",
+    name: "BFM2",
+    category: "News",
+    country: "France",
+    countryCode: "🇫🇷",
+    logo: "BFM2",
+    logoUrl: "",
+    stream: "https://d1ib1gsg71oarf.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-scp7wda722jph/BFM2_FR.m3u8"
+  },
+
+  {
+    id: "otv-lebanon",
+    name: "OTV",
+    category: "Entertainment",
+    country: "Lebanon",
+    countryCode: "🇱🇧",
+    logo: "OTV",
+    logoUrl: "",
+    stream: "https://otv.hibridcdn.net/otv/tv_abr/playlist.m3u8"
+  },
+
+  {
+    id: "cna-albania",
+    name: "CNA",
+    category: "News",
+    country: "Albania",
+    countryCode: "🇦🇱",
+    logo: "CNA",
+    logoUrl: "",
+    stream: "https://live1.mediadesk.al/cnatvlive.m3u8"
+  },
+
+  {
+    id: "canal-26-argentina",
+    name: "Canal 26",
+    category: "News",
+    country: "Argentina",
+    countryCode: "🇦🇷",
+    logo: "C26",
+    logoUrl: "",
+    stream: "https://stream-gtlc.telecentro.net.ar/hls/canal26hls/main.m3u8"
+  },
+
   {
     id: "horse-and-country-tv",
     name: "Horse & Country TV",
@@ -598,58 +603,59 @@ const CHANNELS = [
     logoUrl: "",
     stream: "https://peer2.tdiradio.com/static/streaming-playlists/hls/4207de1d-52e8-4591-ad9e-218069b864d1/0.m3u8"
   },
-{
-  id: "cbs-news-24-7",
-  name: "CBS News 24/7",
-  category: "News",
-  country: "United States",
-  countryCode: "US",
-  logo: "CBS",
-  logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/CBS_News_247_logo.svg",
-  stream: "https://cbsn-us-vtt.cbsnstream.cbsnews.com/out/v1/ef868690d34144509eda696884bf1619/master.m3u8"
-},
-{
-  id: "france-24",
-  name: "France 24",
-  category: "News",
-  country: "France",
-  countryCode: "FR",
-  logo: "F24",
-  logoUrl: "",
-  stream: "https://live.france24.com/hls/live/2037222/F24_AR_HI_HLS/master_5000.m3u8"
-},
+
   {
-  id: "al-jazeera-mubasher",
-  name: "Al Jazeera Mubasher",
-  category: "News",
-  country: "Qatar",
-  countryCode: "QA",
-  logo: "AJM",
-  logoUrl: "",
-  stream: "https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8"
-},
+    id: "cbs-news-24-7",
+    name: "CBS News 24/7",
+    category: "News",
+    country: "United States",
+    countryCode: "US",
+    logo: "CBS",
+    logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/CBS_News_247_logo.svg",
+    stream: "https://cbsn-us-vtt.cbsnstream.cbsnews.com/out/v1/ef868690d34144509eda696884bf1619/master.m3u8"
+  },
+
   {
-  id: "voa-tv-persian",
-  name: "VOA TV Persian",
-  category: "News",
-  country: "United States",
-  countryCode: "US",
-  logo: "VOA",
-  logoUrl: "",
-  stream: "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8"
-},
- {
-  id: "24-horas",
-  name: "24 Horas",
-  category: "News",
-  country: "Spain",
-  countryCode: "ES",
-  logo: "24H",
-  logoUrl: "",
-  stream: "https://ztnr.rtve.es/ztnr/1694255.m3u8"
-},
-  
+    id: "france-24",
+    name: "France 24",
+    category: "News",
+    country: "France",
+    countryCode: "FR",
+    logo: "F24",
+    logoUrl: "",
+    stream: "https://live.france24.com/hls/live/2037222/F24_AR_HI_HLS/master_5000.m3u8"
+  },
+
+  {
+    id: "al-jazeera-mubasher",
+    name: "Al Jazeera Mubasher",
+    category: "News",
+    country: "Qatar",
+    countryCode: "QA",
+    logo: "AJM",
+    logoUrl: "",
+    stream: "https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8"
+  },
+
+  {
+    id: "voa-tv-persian",
+    name: "VOA TV Persian",
+    category: "News",
+    country: "United States",
+    countryCode: "US",
+    logo: "VOA",
+    logoUrl: "",
+    stream: "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8"
+  },
+
+  {
+    id: "24-horas",
+    name: "24 Horas",
+    category: "News",
+    country: "Spain",
+    countryCode: "ES",
+    logo: "24H",
+    logoUrl: "",
+    stream: "https://ztnr.rtve.es/ztnr/1694255.m3u8"
+  }
 ];
-
-
-
