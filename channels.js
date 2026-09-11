@@ -644,7 +644,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "US",
     logo: "VOA",
-    logoUrl: "https://placehold.co/160x160/png?text=VOA%20PERSIAN",
+    logoUrl: "https://i.imgur.com/TmqComb.png",
     stream: "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8"
   },
 
