@@ -1,5 +1,9 @@
 const $ = id => document.getElementById(id);
 
+/* =========================================================
+   DOM REFERENCES
+========================================================= */
+
 const player = $("videoPlayer");
 const overlay = $("playerOverlay");
 const statusBox = $("playerStatus");
@@ -7,12 +11,20 @@ const nowTitle = $("nowTitle");
 const liveIndicator = $("liveIndicator");
 const nowLogo = $("nowLogo");
 const nowMeta = $("nowMeta");
+
 const countryFilter = $("countryFilter");
+const categoryFilter = $("categoryFilter");
+const channelSearch = $("channelSearch");
+const clearFiltersBtn = $("clearFilters");
+
 const menuToggle = $("menuToggle");
 const mainNav = $("mainNav");
+
 const previousChannelBtn = $("previousChannel");
 const nextChannelBtn = $("nextChannel");
+
 const fullscreenBtn = $("fullscreenBtn");
+
 const retryPlaybackBtn = $("retryPlayback");
 const playbackError = $("playbackError");
 const playbackErrorTitle = $("playbackErrorTitle");
@@ -24,11 +36,29 @@ let currentChannelIndex = -1;
 
 const FAVORITES_KEY = "supa-stream-favorites";
 const RECENTLY_WATCHED_KEY = "supa-stream-recently-watched";
+const THEME_KEY = "supa-stream-theme";
+
 const MAX_RECENTLY_WATCHED = 8;
+
 
 /* =========================================================
    HELPERS
 ========================================================= */
+
+function escapeHTML(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function setStatus(text) {
+  if (statusBox) {
+    statusBox.textContent = text;
+  }
+}
 
 function showRetryButton(show) {
   if (!retryPlaybackBtn || !playbackError) return;
@@ -39,26 +69,154 @@ function showRetryButton(show) {
 function showPlaybackError(title, message) {
   if (!playbackError) return;
 
-  playbackErrorTitle.textContent = title;
-  playbackErrorMessage.textContent = message;
+  if (playbackErrorTitle) {
+    playbackErrorTitle.textContent = title;
+  }
+
+  if (playbackErrorMessage) {
+    playbackErrorMessage.textContent = message;
+  }
 
   showRetryButton(true);
 }
 
-function setStatus(text) {
-  if (!statusBox) return;
-
-  statusBox.textContent = text;
+function scrollToPlayer() {
+  document
+    .querySelector(".hero-screen")
+    ?.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
 }
 
-function escapeHTML(value) {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+
+/* =========================================================
+   LOGO SYSTEM
+========================================================= */
+
+/*
+   This is the important fix.
+
+   If a channel has a working logoUrl:
+   -> show the real image.
+
+   If logoUrl is empty:
+   -> show the channel's text logo.
+
+   If logoUrl exists but the image fails:
+   -> automatically replace it with the text logo.
+
+   Therefore a broken external logo can NEVER leave
+   a broken-image icon on the card.
+*/
+
+function logoFallbackHTML(channel) {
+  const text = escapeHTML(
+    channel.logo ||
+    channel.name?.slice(0, 3) ||
+    "TV"
+  );
+
+  return `
+    <span
+      class="logo-fallback"
+      aria-hidden="true"
+    >
+      ${text}
+    </span>
+  `;
 }
+
+function channelLogoHTML(channel) {
+  const logoText = escapeHTML(
+    channel.logo ||
+    channel.name?.slice(0, 3) ||
+    "TV"
+  );
+
+  const logoUrl =
+    typeof channel.logoUrl === "string"
+      ? channel.logoUrl.trim()
+      : "";
+
+  /*
+     No logo URL:
+     immediately use text fallback.
+  */
+
+  if (!logoUrl) {
+    return logoFallbackHTML(channel);
+  }
+
+  /*
+     Logo URL exists:
+     try to load the real image.
+  */
+
+  return `
+    <img
+      src="${escapeHTML(logoUrl)}"
+      alt="${escapeHTML(channel.name)} logo"
+      width="160"
+      height="160"
+      loading="lazy"
+      decoding="async"
+      data-logo-fallback="${logoText}"
+      onerror="
+        this.onerror = null;
+        this.replaceWith(
+          Object.assign(
+            document.createElement('span'),
+            {
+              className: 'logo-fallback',
+              textContent: this.dataset.logoFallback || 'TV',
+              ariaHidden: 'true'
+            }
+          )
+        );
+      "
+    >
+  `;
+}
+
+function updateNowPlayingLogo(channel) {
+  if (!nowLogo) return;
+
+  const logoUrl =
+    typeof channel.logoUrl === "string"
+      ? channel.logoUrl.trim()
+      : "";
+
+  if (!logoUrl) {
+    nowLogo.innerHTML =
+      logoFallbackHTML(channel);
+    return;
+  }
+
+  nowLogo.innerHTML = `
+    <img
+      src="${escapeHTML(logoUrl)}"
+      alt="${escapeHTML(channel.name)} logo"
+      width="64"
+      height="64"
+      decoding="async"
+    >
+  `;
+
+  const image = nowLogo.querySelector("img");
+
+  if (image) {
+    image.addEventListener(
+      "error",
+      () => {
+        nowLogo.innerHTML =
+          logoFallbackHTML(channel);
+      },
+      { once: true }
+    );
+  }
+}
+
 
 /* =========================================================
    FAVORITES
@@ -66,19 +224,28 @@ function escapeHTML(value) {
 
 function getFavorites() {
   try {
-    return JSON.parse(
-      localStorage.getItem(FAVORITES_KEY)
-    ) || [];
+    const saved =
+      JSON.parse(
+        localStorage.getItem(FAVORITES_KEY)
+      );
+
+    return Array.isArray(saved)
+      ? saved
+      : [];
   } catch {
     return [];
   }
 }
 
 function saveFavorites(list) {
-  localStorage.setItem(
-    FAVORITES_KEY,
-    JSON.stringify(list)
-  );
+  try {
+    localStorage.setItem(
+      FAVORITES_KEY,
+      JSON.stringify(list)
+    );
+  } catch {
+    // Ignore storage errors.
+  }
 }
 
 function isFavorite(id) {
@@ -86,20 +253,22 @@ function isFavorite(id) {
 }
 
 function toggleFavorite(id) {
-  let favorites = getFavorites();
-
   const channel = CHANNELS.find(
-    channelItem => channelItem.id === id
+    item => item.id === id
   );
 
   if (!channel) return;
 
+  let favorites = getFavorites();
+
   let message;
 
   if (favorites.includes(id)) {
-    favorites = favorites.filter(
-      x => x !== id
-    );
+    favorites =
+      favorites.filter(
+        favoriteId =>
+          favoriteId !== id
+      );
 
     message =
       `${channel.name} removed from favorites`;
@@ -118,15 +287,19 @@ function toggleFavorite(id) {
   showToast(message);
 }
 
+
 /* =========================================================
    RECENTLY WATCHED
 ========================================================= */
 
 function getRecentlyWatched() {
   try {
-    const saved = JSON.parse(
-      localStorage.getItem(RECENTLY_WATCHED_KEY)
-    );
+    const saved =
+      JSON.parse(
+        localStorage.getItem(
+          RECENTLY_WATCHED_KEY
+        )
+      );
 
     return Array.isArray(saved)
       ? saved
@@ -137,27 +310,35 @@ function getRecentlyWatched() {
 }
 
 function saveRecentlyWatched(list) {
-  localStorage.setItem(
-    RECENTLY_WATCHED_KEY,
-    JSON.stringify(list)
-  );
+  try {
+    localStorage.setItem(
+      RECENTLY_WATCHED_KEY,
+      JSON.stringify(list)
+    );
+  } catch {
+    // Ignore storage errors.
+  }
 }
 
 function addRecentlyWatched(id) {
   if (!id) return;
 
-  let recent = getRecentlyWatched();
+  let recent =
+    getRecentlyWatched();
 
-  recent = recent.filter(
-    channelId => channelId !== id
-  );
+  recent =
+    recent.filter(
+      channelId =>
+        channelId !== id
+    );
 
   recent.unshift(id);
 
-  recent = recent.slice(
-    0,
-    MAX_RECENTLY_WATCHED
-  );
+  recent =
+    recent.slice(
+      0,
+      MAX_RECENTLY_WATCHED
+    );
 
   saveRecentlyWatched(recent);
 
@@ -170,23 +351,30 @@ function renderRecentlyWatched() {
 
   if (!grid || !empty) return;
 
-  const recentIds = getRecentlyWatched();
+  const recentIds =
+    getRecentlyWatched();
 
-  const channels = recentIds
-    .map(id =>
-      CHANNELS.find(
-        channel => channel.id === id
+  const channels =
+    recentIds
+      .map(id =>
+        CHANNELS.find(
+          channel =>
+            channel.id === id
+        )
       )
-    )
-    .filter(Boolean);
+      .filter(Boolean);
 
   grid.innerHTML =
-    channels.map(channelCard).join("");
+    channels
+      .map(channelCard)
+      .join("");
 
-  empty.hidden = channels.length !== 0;
+  empty.hidden =
+    channels.length !== 0;
 
   bindChannelEvents(grid);
 }
+
 
 /* =========================================================
    TOAST
@@ -200,14 +388,17 @@ function showToast(message) {
   if (!toast) return;
 
   toast.textContent = message;
+
   toast.classList.add("show");
 
   clearTimeout(toastTimer);
 
-  toastTimer = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2200);
+  toastTimer =
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2200);
 }
+
 
 /* =========================================================
    PLAYER
@@ -219,49 +410,64 @@ function stopPlayer() {
     hls = null;
   }
 
+  if (!player) return;
+
   player.pause();
+
   player.removeAttribute("src");
+
   player.load();
 }
 
 function playChannel(channel) {
-  if (!channel || !channel.stream) return;
+  if (
+    !channel ||
+    !channel.stream ||
+    !player
+  ) {
+    return;
+  }
 
   currentChannel = channel;
 
-  addRecentlyWatched(channel.id);
-
   currentChannelIndex =
     CHANNELS.findIndex(
-      channelItem =>
-        channelItem.id === channel.id
+      item =>
+        item.id === channel.id
     );
+
+  addRecentlyWatched(channel.id);
 
   stopPlayer();
 
   showRetryButton(false);
 
-  nowTitle.textContent = channel.name;
-
-  nowMeta.textContent =
-    `${channel.category} · ${channel.country}`;
-
-  if (channel.logoUrl) {
-    nowLogo.innerHTML =
-      `<img src="${escapeHTML(channel.logoUrl)}" alt="${escapeHTML(channel.name)} logo" width="64" height="64">`;
-  } else {
-    nowLogo.textContent =
-      channel.logo || "TV";
+  if (nowTitle) {
+    nowTitle.textContent =
+      channel.name;
   }
 
-  liveIndicator.textContent =
-    "● CONNECTING";
+  if (nowMeta) {
+    nowMeta.textContent =
+      `${channel.category} · ${channel.country}`;
+  }
 
-  liveIndicator.classList.remove(
-    "active"
-  );
+  updateNowPlayingLogo(channel);
 
-  overlay.classList.remove("hidden");
+  if (liveIndicator) {
+    liveIndicator.textContent =
+      "● CONNECTING";
+
+    liveIndicator.classList.remove(
+      "active"
+    );
+  }
+
+  if (overlay) {
+    overlay.classList.remove(
+      "hidden"
+    );
+  }
 
   setStatus(
     `Connecting to ${channel.name}...`
@@ -269,8 +475,9 @@ function playChannel(channel) {
 
   const url = channel.stream;
 
+
   /* -------------------------------------------------------
-     Native HLS support
+     Native HLS
   ------------------------------------------------------- */
 
   if (
@@ -283,16 +490,22 @@ function playChannel(channel) {
     player.addEventListener(
       "loadedmetadata",
       () => {
-        player.play().catch(() => {});
+        player
+          .play()
+          .catch(() => {});
       },
       { once: true }
     );
 
+    return;
+  }
+
+
   /* -------------------------------------------------------
-     HLS.js support
+     HLS.js
   ------------------------------------------------------- */
 
-  } else if (
+  if (
     window.Hls &&
     Hls.isSupported()
   ) {
@@ -302,13 +515,16 @@ function playChannel(channel) {
       backBufferLength: 30
     });
 
-    hls.loadSource(url);
     hls.attachMedia(player);
+
+    hls.loadSource(url);
 
     hls.on(
       Hls.Events.MANIFEST_PARSED,
       () => {
-        player.play().catch(() => {});
+        player
+          .play()
+          .catch(() => {});
       }
     );
 
@@ -327,7 +543,10 @@ function playChannel(channel) {
 
           hls.startLoad();
 
-        } else if (
+          return;
+        }
+
+        if (
           data.type ===
           Hls.ErrorTypes.MEDIA_ERROR
         ) {
@@ -337,92 +556,120 @@ function playChannel(channel) {
 
           hls.recoverMediaError();
 
-        } else {
-          setStatus(
-            "Stream unavailable"
-          );
+          return;
+        }
 
+        setStatus(
+          "Stream unavailable"
+        );
+
+        if (liveIndicator) {
           liveIndicator.textContent =
             "● OFFLINE";
 
           liveIndicator.classList.remove(
             "active"
           );
-
-          showRetryButton(true);
-
-          hls.destroy();
-          hls = null;
         }
-      }
-    );
 
-  } else {
-    setStatus(
-      "HLS is not supported"
+        showPlaybackError(
+          "Stream unavailable",
+          `${channel.name} could not be played right now.`
+        );
+
+        hls.destroy();
+        hls = null;
+      }
     );
 
     return;
   }
+
+
+  /* -------------------------------------------------------
+     Unsupported browser
+  ------------------------------------------------------- */
+
+  setStatus(
+    "HLS is not supported by this browser."
+  );
+
+  showPlaybackError(
+    "HLS not supported",
+    "Your browser cannot play this type of live stream."
+  );
 }
+
 
 /* =========================================================
    PLAYER EVENTS
 ========================================================= */
 
-player.addEventListener(
-  "playing",
-  () => {
-    overlay.classList.add("hidden");
+if (player) {
+  player.addEventListener(
+    "playing",
+    () => {
+      if (overlay) {
+        overlay.classList.add(
+          "hidden"
+        );
+      }
 
-    setStatus("LIVE");
+      setStatus("LIVE");
 
-    liveIndicator.textContent =
-      "● LIVE";
+      if (liveIndicator) {
+        liveIndicator.textContent =
+          "● LIVE";
 
-    liveIndicator.classList.add(
-      "active"
-    );
+        liveIndicator.classList.add(
+          "active"
+        );
+      }
 
-    showRetryButton(false);
-  }
-);
+      showRetryButton(false);
+    }
+  );
 
-player.addEventListener(
-  "waiting",
-  () => {
-    setStatus(
-      `Buffering ${currentChannel?.name || "stream"}...`
-    );
-  }
-);
+  player.addEventListener(
+    "waiting",
+    () => {
+      setStatus(
+        `Buffering ${
+          currentChannel?.name ||
+          "stream"
+        }...`
+      );
+    }
+  );
 
-player.addEventListener(
-  "error",
-  () => {
-    setStatus(
-      currentChannel
-        ? `${currentChannel.name} is currently unavailable`
-        : "Playback unavailable"
-    );
+  player.addEventListener(
+    "error",
+    () => {
+      const name =
+        currentChannel?.name ||
+        "This channel";
 
-    liveIndicator.textContent =
-      "● OFFLINE";
+      setStatus(
+        `${name} is currently unavailable`
+      );
 
-    liveIndicator.classList.remove(
-      "active"
-    );
+      if (liveIndicator) {
+        liveIndicator.textContent =
+          "● OFFLINE";
 
-    showRetryButton(true);
+        liveIndicator.classList.remove(
+          "active"
+        );
+      }
 
-    showPlaybackError(
-      "Stream unavailable",
-      currentChannel
-        ? `${currentChannel.name} could not be played right now.`
-        : "This channel could not be played right now."
-    );
-  }
-);
+      showPlaybackError(
+        "Stream unavailable",
+        `${name} could not be played right now.`
+      );
+    }
+  );
+}
+
 
 /* =========================================================
    CHANNEL FILTERING
@@ -437,8 +684,10 @@ function channelMatches(
   const text = [
     channel.name,
     channel.category,
-    channel.country
+    channel.country,
+    channel.logo
   ]
+    .filter(Boolean)
     .join(" ")
     .toLowerCase();
 
@@ -458,6 +707,7 @@ function channelMatches(
   );
 }
 
+
 /* =========================================================
    CHANNEL CARDS
 ========================================================= */
@@ -476,56 +726,60 @@ function channelCard(channel) {
     >
 
       <button
-        class="favorite-btn ${favorite ? "active" : ""}"
+        class="favorite-btn ${
+          favorite ? "active" : ""
+        }"
         data-favorite="${escapeHTML(channel.id)}"
-        aria-label="${favorite ? "Remove from favorites" : "Add to favorites"}"
+        aria-label="${
+          favorite
+            ? "Remove from favorites"
+            : "Add to favorites"
+        }"
+        type="button"
       >
         ${favorite ? "★" : "☆"}
       </button>
 
+
       <div class="channel-logo">
-        ${
-          channel.logoUrl
-            ? `
-              <img
-                src="${escapeHTML(channel.logoUrl)}"
-                alt="${escapeHTML(channel.name)} logo"
-                width="160"
-                height="160"
-                loading="lazy"
-              >
-            `
-            : `
-              <span>
-                ${escapeHTML(channel.logo || "TV")}
-              </span>
-            `
-        }
+        ${channelLogoHTML(channel)}
       </div>
+
 
       <div class="channel-name">
         ${escapeHTML(channel.name)}
       </div>
+
 
       <div class="channel-status">
         <span class="status-dot"></span>
         <span>Live stream</span>
       </div>
 
+
       <div class="channel-meta">
+
         <span class="channel-country">
-          ${escapeHTML(channel.countryCode || "🌐")}
-          ${escapeHTML(channel.country)}
+          ${escapeHTML(
+            channel.countryCode || "🌐"
+          )}
+          ${escapeHTML(
+            channel.country || "Unknown"
+          )}
         </span>
 
         <span class="channel-category">
-          ${escapeHTML(channel.category)}
+          ${escapeHTML(
+            channel.category || "General"
+          )}
         </span>
+
       </div>
 
     </article>
   `;
 }
+
 
 /* =========================================================
    RENDER CHANNELS
@@ -538,26 +792,45 @@ function renderChannels() {
   if (!grid || !empty) return;
 
   const search =
-    $("channelSearch")
-      .value
-      .trim()
-      .toLowerCase();
+    channelSearch
+      ? channelSearch.value
+          .trim()
+          .toLowerCase()
+      : "";
 
   const category =
-    $("categoryFilter").value;
+    categoryFilter
+      ? categoryFilter.value
+      : "all";
 
- const country =
-  $("countryFilter").value;
+  const country =
+    countryFilter
+      ? countryFilter.value
+      : "all";
 
-$("categoryFilter").classList.toggle(
-  "filter-active",
-  category !== "all"
-);
 
-$("countryFilter").classList.toggle(
-  "filter-active",
-  country !== "all"
-);
+  /* -------------------------------------------------------
+     Active filter styling
+  ------------------------------------------------------- */
+
+  if (categoryFilter) {
+    categoryFilter.classList.toggle(
+      "filter-active",
+      category !== "all"
+    );
+  }
+
+  if (countryFilter) {
+    countryFilter.classList.toggle(
+      "filter-active",
+      country !== "all"
+    );
+  }
+
+
+  /* -------------------------------------------------------
+     Filter channels
+  ------------------------------------------------------- */
 
   const results =
     CHANNELS.filter(channel =>
@@ -569,6 +842,7 @@ $("countryFilter").classList.toggle(
       )
     );
 
+
   /* -------------------------------------------------------
      Results count
   ------------------------------------------------------- */
@@ -578,10 +852,15 @@ $("countryFilter").classList.toggle(
 
   if (!resultsInfo) {
     resultsInfo =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
 
-    resultsInfo.id = "resultsInfo";
-    resultsInfo.className = "results-info";
+    resultsInfo.id =
+      "resultsInfo";
+
+    resultsInfo.className =
+      "results-info";
 
     grid.parentNode.insertBefore(
       resultsInfo,
@@ -590,17 +869,22 @@ $("countryFilter").classList.toggle(
   }
 
   const hasFilters =
-    search ||
+    Boolean(search) ||
     category !== "all" ||
     country !== "all";
 
   if (hasFilters) {
     resultsInfo.innerHTML = `
       <span class="results-dot"></span>
+
       <span>
         Showing
         <strong>${results.length}</strong>
-        channel${results.length === 1 ? "" : "s"}
+        channel${
+          results.length === 1
+            ? ""
+            : "s"
+        }
       </span>
     `;
 
@@ -609,11 +893,12 @@ $("countryFilter").classList.toggle(
     resultsInfo.hidden = true;
   }
 
+
   /* -------------------------------------------------------
      Render results
   ------------------------------------------------------- */
 
-  if (results.length > 0) {
+  if (results.length) {
     grid.innerHTML =
       results
         .map(channelCard)
@@ -628,20 +913,30 @@ $("countryFilter").classList.toggle(
 
     grid.innerHTML = `
       <div class="search-empty">
-        <div class="search-empty-icon">⌕</div>
+
+        <div class="search-empty-icon">
+          ⌕
+        </div>
 
         <h3>No channels found</h3>
 
         <p>
-          Try a different search term or
-          change your filters.
+          Try a different search term
+          or change your filters.
         </p>
+
       </div>
     `;
   }
 
   bindChannelEvents(grid);
 }
+
+
+/* =========================================================
+   FAVORITES RENDERING
+========================================================= */
+
 function renderFavorites() {
   const grid = $("favoriteGrid");
   const empty = $("favoriteEmpty");
@@ -654,17 +949,22 @@ function renderFavorites() {
   const channels =
     CHANNELS.filter(
       channel =>
-        favorites.includes(channel.id)
+        favorites.includes(
+          channel.id
+        )
     );
 
   grid.innerHTML =
-    channels.map(channelCard).join("");
+    channels
+      .map(channelCard)
+      .join("");
 
   empty.hidden =
     channels.length !== 0;
 
   bindChannelEvents(grid);
 }
+
 
 /* =========================================================
    CHANNEL EVENTS
@@ -673,21 +973,22 @@ function renderFavorites() {
 function bindChannelEvents(container) {
   if (!container) return;
 
+
+  /* -------------------------------------------------------
+     Channel cards
+  ------------------------------------------------------- */
+
   container
-    .querySelectorAll("[data-channel]")
+    .querySelectorAll(
+      "[data-channel]"
+    )
     .forEach(card => {
 
       const openChannel = () => {
-        if (
-          document.activeElement === card
-        ) {
-          card.blur();
-        }
-
         const channel =
           CHANNELS.find(
-            x =>
-              x.id ===
+            item =>
+              item.id ===
               card.dataset.channel
           );
 
@@ -695,13 +996,11 @@ function bindChannelEvents(container) {
 
         playChannel(channel);
 
-        document
-          .querySelector(".hero-screen")
-          ?.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
+        card.blur();
+
+        scrollToPlayer();
       };
+
 
       card.addEventListener(
         "click",
@@ -717,6 +1016,7 @@ function bindChannelEvents(container) {
           openChannel();
         }
       );
+
 
       card.addEventListener(
         "keydown",
@@ -734,14 +1034,22 @@ function bindChannelEvents(container) {
             event.key === " "
           ) {
             event.preventDefault();
+
             openChannel();
           }
         }
       );
     });
 
+
+  /* -------------------------------------------------------
+     Favorite buttons
+  ------------------------------------------------------- */
+
   container
-    .querySelectorAll("[data-favorite]")
+    .querySelectorAll(
+      "[data-favorite]"
+    )
     .forEach(button => {
 
       button.addEventListener(
@@ -764,121 +1072,164 @@ function bindChannelEvents(container) {
     });
 }
 
+
 /* =========================================================
    FILTER OPTIONS
 ========================================================= */
 
 function populateCategories() {
-  const select =
-    $("categoryFilter");
+  if (!categoryFilter) return;
 
-  if (!select) return;
+  const categories =
+    [
+      ...new Set(
+        CHANNELS
+          .map(
+            channel =>
+              channel.category
+          )
+          .filter(Boolean)
+      )
+    ].sort(
+      (a, b) =>
+        a.localeCompare(b)
+    );
 
-  const categories = [
-    ...new Set(
-      CHANNELS
-        .map(channel =>
-          channel.category
-        )
-        .filter(Boolean)
-    )
-  ].sort();
-
-  select.innerHTML =
-    `<option value="all">All categories</option>` +
+  categoryFilter.innerHTML =
+    `
+      <option value="all">
+        All categories
+      </option>
+    ` +
     categories
       .map(
         category =>
-          `<option value="${escapeHTML(category)}">${escapeHTML(category)}</option>`
+          `
+            <option value="${escapeHTML(
+              category
+            )}">
+              ${escapeHTML(category)}
+            </option>
+          `
       )
       .join("");
 }
 
 function populateCountries() {
-  const select =
-    $("countryFilter");
+  if (!countryFilter) return;
 
-  if (!select) return;
+  const countries =
+    [
+      ...new Set(
+        CHANNELS
+          .map(
+            channel =>
+              channel.country
+          )
+          .filter(Boolean)
+      )
+    ].sort(
+      (a, b) =>
+        a.localeCompare(b)
+    );
 
-  const countries = [
-    ...new Set(
-      CHANNELS
-        .map(channel =>
-          channel.country
-        )
-        .filter(Boolean)
-    )
-  ].sort();
-
-  select.innerHTML =
-    `<option value="all">All countries</option>` +
+  countryFilter.innerHTML =
+    `
+      <option value="all">
+        All countries
+      </option>
+    ` +
     countries
       .map(
         country =>
-          `<option value="${escapeHTML(country)}">${escapeHTML(country)}</option>`
+          `
+            <option value="${escapeHTML(
+              country
+            )}">
+              ${escapeHTML(country)}
+            </option>
+          `
       )
       .join("");
 }
 
+
 /* =========================================================
-   SEARCH / FILTERS
+   SEARCH / FILTER EVENTS
 ========================================================= */
 
-$("channelSearch").addEventListener(
-  "input",
-  renderChannels
-);
+if (channelSearch) {
+  channelSearch.addEventListener(
+    "input",
+    renderChannels
+  );
+}
 
-$("categoryFilter").addEventListener(
-  "change",
-  renderChannels
-);
+if (categoryFilter) {
+  categoryFilter.addEventListener(
+    "change",
+    renderChannels
+  );
+}
 
-countryFilter.addEventListener(
-  "change",
-  renderChannels
-);
+if (countryFilter) {
+  countryFilter.addEventListener(
+    "change",
+    renderChannels
+  );
+}
 
-$("clearFilters").addEventListener(
-  "click",
-  () => {
-    $("channelSearch").value = "";
-    $("categoryFilter").value = "all";
-    countryFilter.value = "all";
+if (clearFiltersBtn) {
+  clearFiltersBtn.addEventListener(
+    "click",
+    () => {
+      if (channelSearch) {
+        channelSearch.value = "";
+      }
 
-    renderChannels();
-  }
-);
+      if (categoryFilter) {
+        categoryFilter.value =
+          "all";
+      }
+
+      if (countryFilter) {
+        countryFilter.value =
+          "all";
+      }
+
+      renderChannels();
+    }
+  );
+}
+
 
 /* =========================================================
    START WATCHING
 ========================================================= */
 
-$("startWatching").addEventListener(
-  "click",
-  () => {
-    const first =
-      CHANNELS[0];
+const startWatching =
+  $("startWatching");
 
-    if (first) {
+if (startWatching) {
+  startWatching.addEventListener(
+    "click",
+    () => {
+      const first =
+        CHANNELS[0];
+
+      if (!first) return;
+
       playChannel(first);
 
-      document
-        .querySelector(".hero-screen")
-        ?.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
+      scrollToPlayer();
     }
-  }
-);
+  );
+}
+
 
 /* =========================================================
    THEME
 ========================================================= */
-
-const THEME_KEY =
-  "supa-stream-theme";
 
 const themeToggle =
   $("themeToggle");
@@ -892,7 +1243,9 @@ function updateThemeButton() {
     );
 
   themeToggle.textContent =
-    isLight ? "☀" : "☾";
+    isLight
+      ? "☀"
+      : "☾";
 
   themeToggle.setAttribute(
     "aria-label",
@@ -909,84 +1262,98 @@ function updateThemeButton() {
   );
 }
 
-const savedTheme =
-  localStorage.getItem(
-    THEME_KEY
-  );
+try {
+  const savedTheme =
+    localStorage.getItem(
+      THEME_KEY
+    );
 
-if (savedTheme === "light") {
-  document.body.classList.add(
-    "light"
-  );
+  if (savedTheme === "light") {
+    document.body.classList.add(
+      "light"
+    );
+  }
+} catch {
+  // Ignore storage errors.
 }
 
 updateThemeButton();
 
-themeToggle.addEventListener(
-  "click",
-  () => {
-    document.body.classList.toggle(
-      "light"
-    );
-
-    const theme =
-      document.body.classList.contains(
+if (themeToggle) {
+  themeToggle.addEventListener(
+    "click",
+    () => {
+      document.body.classList.toggle(
         "light"
-      )
-        ? "light"
-        : "dark";
+      );
 
-    localStorage.setItem(
-      THEME_KEY,
-      theme
-    );
+      const theme =
+        document.body.classList.contains(
+          "light"
+        )
+          ? "light"
+          : "dark";
 
-    updateThemeButton();
-  }
-);
+      try {
+        localStorage.setItem(
+          THEME_KEY,
+          theme
+        );
+      } catch {
+        // Ignore storage errors.
+      }
+
+      updateThemeButton();
+    }
+  );
+}
+
 
 /* =========================================================
    CHANNEL NAVIGATION
 ========================================================= */
 
-previousChannelBtn.addEventListener(
-  "click",
-  () => {
-    const channels =
-      CHANNELS;
+if (previousChannelBtn) {
+  previousChannelBtn.addEventListener(
+    "click",
+    () => {
+      if (!CHANNELS.length) return;
 
-    if (!channels.length) return;
+      currentChannelIndex =
+        currentChannelIndex <= 0
+          ? CHANNELS.length - 1
+          : currentChannelIndex - 1;
 
-    currentChannelIndex =
-      currentChannelIndex <= 0
-        ? channels.length - 1
-        : currentChannelIndex - 1;
+      playChannel(
+        CHANNELS[
+          currentChannelIndex
+        ]
+      );
+    }
+  );
+}
 
-    playChannel(
-      channels[currentChannelIndex]
-    );
-  }
-);
+if (nextChannelBtn) {
+  nextChannelBtn.addEventListener(
+    "click",
+    () => {
+      if (!CHANNELS.length) return;
 
-nextChannelBtn.addEventListener(
-  "click",
-  () => {
-    const channels =
-      CHANNELS;
+      currentChannelIndex =
+        currentChannelIndex >=
+        CHANNELS.length - 1
+          ? 0
+          : currentChannelIndex + 1;
 
-    if (!channels.length) return;
+      playChannel(
+        CHANNELS[
+          currentChannelIndex
+        ]
+      );
+    }
+  );
+}
 
-    currentChannelIndex =
-      currentChannelIndex >=
-      channels.length - 1
-        ? 0
-        : currentChannelIndex + 1;
-
-    playChannel(
-      channels[currentChannelIndex]
-    );
-  }
-);
 
 /* =========================================================
    KEYBOARD CONTROLS
@@ -995,13 +1362,18 @@ nextChannelBtn.addEventListener(
 document.addEventListener(
   "keydown",
   event => {
+    const target =
+      event.target;
+
     const tag =
-      event.target.tagName.toLowerCase();
+      target?.tagName
+        ?.toLowerCase();
 
     if (
       tag === "input" ||
       tag === "select" ||
-      tag === "textarea"
+      tag === "textarea" ||
+      target?.isContentEditable
     ) {
       return;
     }
@@ -1011,7 +1383,10 @@ document.addEventListener(
       event.key === "ArrowUp"
     ) {
       event.preventDefault();
-      previousChannelBtn.click();
+
+      previousChannelBtn?.click();
+
+      return;
     }
 
     if (
@@ -1019,14 +1394,23 @@ document.addEventListener(
       event.key === "ArrowDown"
     ) {
       event.preventDefault();
-      nextChannelBtn.click();
+
+      nextChannelBtn?.click();
+
+      return;
     }
 
-    if (event.code === "Space") {
+    if (
+      event.code === "Space"
+    ) {
       event.preventDefault();
 
+      if (!player) return;
+
       if (player.paused) {
-        player.play().catch(() => {});
+        player
+          .play()
+          .catch(() => {});
       } else {
         player.pause();
       }
@@ -1034,145 +1418,180 @@ document.addEventListener(
   }
 );
 
+
+/* =========================================================
+   FULLSCREEN
+========================================================= */
+
+function updateFullscreenButton() {
+  if (!fullscreenBtn) return;
+
+  const isFullscreen =
+    Boolean(
+      document.fullscreenElement
+    );
+
+  fullscreenBtn.textContent =
+    isFullscreen
+      ? "✕"
+      : "⛶";
+
+  fullscreenBtn.setAttribute(
+    "aria-label",
+    isFullscreen
+      ? "Exit fullscreen"
+      : "Enter fullscreen"
+  );
+
+  fullscreenBtn.setAttribute(
+    "title",
+    isFullscreen
+      ? "Exit fullscreen"
+      : "Fullscreen"
+  );
+}
+
+if (fullscreenBtn) {
+  fullscreenBtn.addEventListener(
+    "click",
+    async () => {
+      const screen =
+        document.querySelector(
+          ".screen-frame"
+        );
+
+      if (!screen) return;
+
+      try {
+        if (
+          !document.fullscreenElement
+        ) {
+          await screen.requestFullscreen();
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch {
+        showToast(
+          "Fullscreen is not available"
+        );
+      }
+
+      updateFullscreenButton();
+    }
+  );
+}
+
+document.addEventListener(
+  "fullscreenchange",
+  updateFullscreenButton
+);
+
+updateFullscreenButton();
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+if (
+  menuToggle &&
+  mainNav
+) {
+  menuToggle.addEventListener(
+    "click",
+    () => {
+      const isOpen =
+        mainNav.classList.toggle(
+          "open"
+        );
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close navigation menu"
+          : "Open navigation menu"
+      );
+
+      menuToggle.textContent =
+        isOpen
+          ? "✕"
+          : "☰";
+    }
+  );
+
+  mainNav
+    .querySelectorAll("a")
+    .forEach(link => {
+      link.addEventListener(
+        "click",
+        () => {
+          mainNav.classList.remove(
+            "open"
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+          );
+
+          menuToggle.textContent =
+            "☰";
+        }
+      );
+    });
+}
+
+
+/* =========================================================
+   RETRY PLAYBACK
+========================================================= */
+
+if (retryPlaybackBtn) {
+  retryPlaybackBtn.addEventListener(
+    "click",
+    () => {
+      if (!currentChannel) return;
+
+      showRetryButton(false);
+
+      setStatus(
+        `Retrying ${currentChannel.name}...`
+      );
+
+      if (liveIndicator) {
+        liveIndicator.textContent =
+          "● CONNECTING";
+
+        liveIndicator.classList.remove(
+          "active"
+        );
+      }
+
+      playChannel(
+        currentChannel
+      );
+    }
+  );
+}
+
+
 /* =========================================================
    INITIAL RENDER
 ========================================================= */
 
 populateCategories();
 populateCountries();
+
 renderRecentlyWatched();
 renderChannels();
 renderFavorites();
-
-/* =========================================================
-   FULLSCREEN
-========================================================= */
-
-fullscreenBtn.addEventListener(
-  "click",
-  async () => {
-    const screen =
-      document.querySelector(
-        ".screen-frame"
-      );
-
-    try {
-      if (!document.fullscreenElement) {
-        await screen.requestFullscreen();
-
-        fullscreenBtn.textContent = "✕";
-
-        fullscreenBtn.setAttribute(
-          "aria-label",
-          "Exit fullscreen"
-        );
-
-        fullscreenBtn.setAttribute(
-          "title",
-          "Exit fullscreen"
-        );
-      } else {
-        await document.exitFullscreen();
-
-        fullscreenBtn.textContent =
-          "⛶";
-
-        fullscreenBtn.setAttribute(
-          "aria-label",
-          "Enter fullscreen"
-        );
-
-        fullscreenBtn.setAttribute(
-          "title",
-          "Fullscreen"
-        );
-      }
-    } catch {
-      showToast(
-        "Fullscreen is not available"
-      );
-    }
-  }
-);
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-menuToggle.addEventListener(
-  "click",
-  () => {
-    const isOpen =
-      mainNav.classList.toggle(
-        "open"
-      );
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
-
-    menuToggle.setAttribute(
-      "aria-label",
-      isOpen
-        ? "Close navigation menu"
-        : "Open navigation menu"
-    );
-
-    menuToggle.textContent =
-      isOpen ? "✕" : "☰";
-  }
-);
-
-mainNav
-  .querySelectorAll("a")
-  .forEach(link => {
-    link.addEventListener(
-      "click",
-      () => {
-        mainNav.classList.remove(
-          "open"
-        );
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menuToggle.setAttribute(
-          "aria-label",
-          "Open navigation menu"
-        );
-
-        menuToggle.textContent = "☰";
-      }
-    );
-  });
-
-/* =========================================================
-   RETRY PLAYBACK
-========================================================= */
-
-retryPlaybackBtn.addEventListener(
-  "click",
-  () => {
-    if (!currentChannel) return;
-
-    showRetryButton(false);
-
-    setStatus(
-      `Retrying ${currentChannel.name}...`
-    );
-
-    liveIndicator.textContent =
-      "● CONNECTING";
-
-    liveIndicator.classList.remove(
-      "active"
-    );
-
-    playChannel(
-      currentChannel
-    );
-  }
-);
