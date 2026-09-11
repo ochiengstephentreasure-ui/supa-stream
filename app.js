@@ -1225,6 +1225,14 @@ function importPlaylistFile(file) {
 
   reader.readAsText(file);
 }
+if (choosePlaylistButton && playlistFileInput) {
+  choosePlaylistButton.addEventListener(
+    "click",
+    () => {
+      playlistFileInput.click();
+    }
+  );
+}
 
 if (playlistFileInput) {
   playlistFileInput.addEventListener(
