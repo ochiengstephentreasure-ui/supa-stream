@@ -546,8 +546,18 @@ function renderChannels() {
   const category =
     $("categoryFilter").value;
 
-  const country =
-    $("countryFilter").value;
+ const country =
+  $("countryFilter").value;
+
+$("categoryFilter").classList.toggle(
+  "filter-active",
+  category !== "all"
+);
+
+$("countryFilter").classList.toggle(
+  "filter-active",
+  country !== "all"
+);
 
   const results =
     CHANNELS.filter(channel =>
