@@ -658,16 +658,6 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
   stream: "https://live-20minutestv.digiteka.com/1961167769/index.m3u8"
 },
 {
-  id: "cbc-egypt",
-  name: "CBC",
-  category: "Entertainment",
-  country: "Egypt",
-  countryCode: "🇪🇬",
-  logo: "CBC",
-  logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/CBC_Logo.png",
-  stream: "https://flu.systemnet.tv/CBC/index.m3u8"
-},
-{
   id: "ebs-plus-1",
   name: "EBS+ 1",
   category: "Education",
@@ -697,5 +687,47 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
   logoUrl: "https://tbs.seoul.kr/images/common/logo.png",
   stream: "https://cdntv.tbs.seoul.kr/tbs/tbs_tv_web.smil/playlist.m3u8"
 },
+{
+  id: "masmusica-fm",
+  name: "MasMusica FM",
+  category: "Entertainment",
+  country: "Colombia",
+  countryCode: "🇨🇴",
+  logo: "MM",
+  logoUrl: "",
+  stream: "https://movil.ejeserver.com/live/masmusica.m3u8"
+},
 
+{
+  id: "rtc-television-uraba",
+  name: "RTC Televisión Urabá",
+  category: "News",
+  country: "Colombia",
+  countryCode: "🇨🇴",
+  logo: "RTC",
+  logoUrl: "",
+  stream: "https://cdn.amelbasoluciones.co:8081/rtcurabalive/index.m3u8"
+},
+
+{
+  id: "televizija-m",
+  name: "Televizija M",
+  category: "Entertainment",
+  country: "Bosnia and Herzegovina",
+  countryCode: "🇧🇦",
+  logo: "TVM",
+  logoUrl: "",
+  stream: "https://live.tv-m.net/hls/stream.m3u8"
+},
+
+{
+  id: "canal-5-del-pueblo",
+  name: "Canal 5 Del Pueblo",
+  category: "Entertainment",
+  country: "Argentina",
+  countryCode: "🇦🇷",
+  logo: "C5",
+  logoUrl: "",
+  stream: "https://stmv4.voxtvhd.com.br/canal5pueblo/canal5pueblo/playlist.m3u8"
+}
 ];
