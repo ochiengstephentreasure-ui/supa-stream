@@ -687,16 +687,6 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
   logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Logo_completo_TeleElx.png",
   stream: "https://tvdirecto.teleelx.es/stream/teleelx.m3u8"
 },
-  {
-  id: "joax-dtv",
-  name: "JOAX-DTV",
-  category: "Entertainment",
-  country: "Japan",
-  countryCode: "🇯🇵",
-  logo: "NTV",
-  logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nippon_TV_logo_2014.svg/2560px-Nippon_TV_logo_2014.svg.png",
-  stream: "https://ntv5.mov3.co/hls/ntv.m3u8"
-},
 {
   id: "tbs-seoul",
   name: "TBS Seoul",
@@ -707,34 +697,5 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
   logoUrl: "https://tbs.seoul.kr/images/common/logo.png",
   stream: "https://cdntv.tbs.seoul.kr/tbs/tbs_tv_web.smil/playlist.m3u8"
 },
-{
-  id: "acw-ug-tv",
-  name: "ACW UG TV",
-  category: "Entertainment",
-  country: "Uganda",
-  countryCode: "🇺🇬",
-  logo: "ACW",
-  logoUrl: "https://i.imgur.com/8pzEmC.jpeg",
-  stream: "https://live.acwugtv.com/hls/stream.m3u8"
-},
-{
-  id: "lana-tv",
-  name: "Lana TV",
-  category: "Entertainment",
-  country: "Lebanon",
-  countryCode: "🇱🇧",
-  logo: "LANA",
-  logoUrl: "https://www.lyngsat.com/logo/tv/ll/lana-tv-lb.png",
-  stream: "https://cdn.streamlane.tv/hls/ltv/master.m3u8"
-},
-{
-  id: "mtv-lebanon",
-  name: "MTV Lebanon",
-  category: "Entertainment",
-  country: "Lebanon",
-  countryCode: "🇱🇧",
-  logo: "MTV",
-  logoUrl: "https://i.imgur.com/6R1jFJO.jpg",
-  stream: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mtv-lebanon/b8ebb2a5affb812f1541712adde10e26/index.m3u8"
-}
+
 ];
