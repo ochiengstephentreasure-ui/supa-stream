@@ -567,7 +567,7 @@ const CHANNELS = [
     country: "Australia",
     countryCode: "🇦🇺",
     logo: "H&C",
-    logoUrl: "",
+   logoUrl: "https://upload.wikimedia.org/wikipedia/en/8/86/Horseandcountry.PNG",
     stream: "https://hnc-free-viewlift.amagi.tv/HNC_AUSTRALIA.m3u8"
   },
 
