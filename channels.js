@@ -248,7 +248,7 @@ const CHANNELS = [
     country: "Ethiopia",
     countryCode: "🇪🇹",
     logo: "EBS",
-    logoUrl: "",
+  logoUrl: "/assets/logos/ebs-tv.png",
     stream: "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8"
   },
 
