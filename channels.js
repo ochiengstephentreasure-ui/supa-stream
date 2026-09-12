@@ -28,7 +28,7 @@ const CHANNELS = [
     country: "Finland",
     countryCode: "🇫🇮",
     logo: "5M",
-    logoUrl: "",
+   logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5c/5-Minute_Crafts_logo.png",
     stream: "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8"
   },
 
