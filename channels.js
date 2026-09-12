@@ -657,5 +657,55 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
     logo: "24H",
     logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/24h_2026.svg",
     stream: "https://ztnr.rtve.es/ztnr/1694255.m3u8"
-  }
+  },
+  {
+  id: "20-minutes-tv",
+  name: "20 Minutes TV",
+  category: "News",
+  country: "France",
+  countryCode: "🇫🇷",
+  logo: "20M",
+  logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/20_Minutes_TV_IDF_logo_%282023%29.png/960px-20_Minutes_TV_IDF_logo_%282023%29.png",
+  stream: "https://live-20minutestv.digiteka.com/1961167769/index.m3u8"
+},
+{
+  id: "a-punt",
+  name: "A Punt",
+  category: "News",
+  country: "Spain",
+  countryCode: "🇪🇸",
+  logo: "AP",
+  logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Logotip_d%27%C3%80_Punt_%282017-%29.svg/960px-Logotip_d%27%C3%80_Punt_%282017-%29.svg.png",
+  stream: "https://bcovlive-a.akamaihd.net/8499d938ef904e39b58a4adec2ddeada/eu-west-1/6057955885001/playlist_dvr.m3u8"
+},
+{
+  id: "cbc-egypt",
+  name: "CBC",
+  category: "Entertainment",
+  country: "Egypt",
+  countryCode: "🇪🇬",
+  logo: "CBC",
+  logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/CBC_Logo.png",
+  stream: "https://flu.systemnet.tv/CBC/index.m3u8"
+},
+{
+  id: "ebs-plus-1",
+  name: "EBS+ 1",
+  category: "Education",
+  country: "South Korea",
+  countryCode: "🇰🇷",
+  logo: "EBS+1",
+  logoUrl: "https://i.imgur.com/aCeuhon.png",
+  stream: "https://ebsonair.ebs.co.kr/plus1familypc/familypc1m/playlist.m3u8"
+},
+{
+  id: "salt-tv",
+  name: "Salt TV",
+  category: "Entertainment",
+  country: "Uganda",
+  countryCode: "🇺🇬",
+  logo: "SALT",
+  logoUrl: "https://i.imgur.com/AK9nE6Y.png",
+  stream: "https://stream.salttelevision.com/hls/stream.m3u8"
+}
 ];
