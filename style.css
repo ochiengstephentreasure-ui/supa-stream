@@ -490,9 +490,6 @@ main {
   object-fit: contain;
 }
 
-
-/* Player overlay */
-
 .player-overlay {
   position: absolute;
   inset: 0;
@@ -543,9 +540,6 @@ main {
   color: #c9d0dc;
   font-size: 13px;
 }
-
-
-/* Player status */
 
 .player-status {
   position: absolute;
@@ -884,9 +878,6 @@ main {
   font-size: 13px;
 }
 
-
-/* Retry button */
-
 .retry-btn {
   position: absolute;
   left: 50%;
@@ -1093,9 +1084,6 @@ main {
     0 0 0 3px rgba(108, 124, 255, 0.12);
 }
 
-
-/* Active category/country filter */
-
 .category-filter.filter-active,
 #countryFilter.filter-active {
   border-color: var(--accent);
@@ -1110,9 +1098,6 @@ main {
 
   font-weight: 700;
 }
-
-
-/* Clear filters */
 
 .clear-filters {
   padding: 0 15px;
@@ -1232,9 +1217,6 @@ main {
     background var(--transition);
 }
 
-
-/* Live badge */
-
 .channel-card::before {
   content: "LIVE";
 
@@ -1260,9 +1242,6 @@ main {
 
   pointer-events: none;
 }
-
-
-/* Watch hint */
 
 .channel-card::after {
   content: "▶ Watch";
@@ -1352,9 +1331,9 @@ main {
 }
 
 
-/* ---------------------------------------------------------
-   REAL CHANNEL LOGOS
---------------------------------------------------------- */
+/* =========================================================
+   CHANNEL LOGO IMAGE
+========================================================= */
 
 .channel-logo img {
   width: 88%;
@@ -1362,13 +1341,15 @@ main {
 
   display: block;
 
+  max-width: 100%;
+  max-height: 100%;
+
   object-fit: contain;
   object-position: center;
 
   opacity: 1;
   visibility: visible;
 
-  /* Do not alter the original logo artwork */
   filter: none;
 
   transition:
@@ -1376,9 +1357,31 @@ main {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
+   CNA ALBANIA
+   CNA source image contains extra empty space.
+   Enlarge only the visible CNA artwork.
+========================================================= */
+
+.channel-logo img[src*="codeit.al"] {
+  width: 100%;
+  height: 100%;
+
+  transform: scale(1.30);
+}
+
+
+/* Keep CNA enlargement controlled on hover */
+
+.channel-card:hover
+.channel-logo img[src*="codeit.al"] {
+  transform: scale(1.35);
+}
+
+
+/* =========================================================
    LOGO FALLBACK
---------------------------------------------------------- */
+========================================================= */
 
 .logo-fallback {
   width: 100%;
@@ -1402,9 +1405,9 @@ main {
 }
 
 
-/* ---------------------------------------------------------
-   HOVER EFFECT
---------------------------------------------------------- */
+/* =========================================================
+   CHANNEL LOGO HOVER
+========================================================= */
 
 .channel-card:hover .channel-logo {
   transform: scale(1.025);
@@ -1413,14 +1416,15 @@ main {
     rgba(108, 124, 255, 0.25);
 }
 
-.channel-card:hover .channel-logo img {
+.channel-card:hover
+.channel-logo img:not([src*="codeit.al"]) {
   transform: scale(1.04);
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    LIGHT THEME
---------------------------------------------------------- */
+========================================================= */
 
 body.light .channel-logo {
   border-color: var(--line);
@@ -1431,6 +1435,7 @@ body.light .channel-logo {
 body.light .channel-logo img {
   filter: none;
 }
+
 
 /* =========================================================
    CHANNEL NAME
@@ -1667,9 +1672,6 @@ body.light .channel-logo img {
 
   font-size: 13px;
 }
-
-
-/* Search empty */
 
 .search-empty {
   grid-column: 1 / -1;
@@ -2098,7 +2100,7 @@ body.light #countryFilter.filter-active {
   .now-details h2 {
     font-size: 18px;
   }
-
+  
   .footer {
     flex-direction: column;
 
@@ -2225,14 +2227,4 @@ body.light #countryFilter.filter-active {
     animation-iteration-count:
       1 !important;
   }
-}
-/* TEMPORARY LOGO DIAGNOSTIC */
-.channel-logo img {
-  display: block !important;
-  width: 88% !important;
-  height: 82px !important;
-  object-fit: contain !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  filter: none !important;
 }
