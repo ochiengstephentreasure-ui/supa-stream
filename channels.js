@@ -105,7 +105,7 @@ const CHANNELS = [
     country: "Uganda",
     countryCode: "🇺🇬",
     logo: "BBS",
-    logoUrl: "",
+    logoUrl: "https://seeklogo.com/images/B/bbs-terefayina-logo-7C8C1D0E1E-seeklogo.com.png",
     stream: "https://bbstv.ug/hls/ch01/index.m3u8"
   },
 
