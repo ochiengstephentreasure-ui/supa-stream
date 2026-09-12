@@ -644,7 +644,7 @@ const CHANNELS = [
     country: "United States",
     countryCode: "US",
     logo: "VOA",
-    logoUrl: "",
+   logoUrl: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Voice_of_America_logo.svg",
     stream: "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8"
   },
 
