@@ -696,38 +696,5 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
   logo: "MM",
   logoUrl: "",
   stream: "https://movil.ejeserver.com/live/masmusica.m3u8"
-},
-
-{
-  id: "rtc-television-uraba",
-  name: "RTC Televisión Urabá",
-  category: "News",
-  country: "Colombia",
-  countryCode: "🇨🇴",
-  logo: "RTC",
-  logoUrl: "",
-  stream: "https://cdn.amelbasoluciones.co:8081/rtcurabalive/index.m3u8"
-},
-
-{
-  id: "televizija-m",
-  name: "Televizija M",
-  category: "Entertainment",
-  country: "Bosnia and Herzegovina",
-  countryCode: "🇧🇦",
-  logo: "TVM",
-  logoUrl: "",
-  stream: "https://live.tv-m.net/hls/stream.m3u8"
-},
-
-{
-  id: "canal-5-del-pueblo",
-  name: "Canal 5 Del Pueblo",
-  category: "Entertainment",
-  country: "Argentina",
-  countryCode: "🇦🇷",
-  logo: "C5",
-  logoUrl: "",
-  stream: "https://stmv4.voxtvhd.com.br/canal5pueblo/canal5pueblo/playlist.m3u8"
 }
 ];
