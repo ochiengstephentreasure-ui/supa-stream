@@ -149,7 +149,7 @@ const CHANNELS = [
     country: "Myanmar",
     countryCode: "🇲🇲",
     logo: "MN",
-    logoUrl: "",
+   logoUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Mrtvnews.png",
     stream: "https://mrtvott.com/cache/MRTV-NEWS-HD/master.m3u8"
   },
 
