@@ -193,7 +193,7 @@ const CHANNELS = [
     country: "Ghana",
     countryCode: "🇬🇭",
     logo: "OTV",
-    logoUrl: "",
+   logoUrl: "https://i.imgur.com/7XKQW5Y.png",
     stream: "https://5dcabf026b188.streamlock.net/OceansTV/livestream/playlist.m3u8"
   },
 
