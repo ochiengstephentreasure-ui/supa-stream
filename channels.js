@@ -523,7 +523,7 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
     country: "France",
     countryCode: "🇫🇷",
     logo: "BFM2",
-    logoUrl: "",
+    logoUrl: "https://fr.themedialeader.com/wp-content/uploads/2024/08/BFM2.jpg",
     stream: "https://d1ib1gsg71oarf.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-scp7wda722jph/BFM2_FR.m3u8"
   },
 
