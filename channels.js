@@ -237,7 +237,7 @@ const CHANNELS = [
     country: "Iran",
     countryCode: "🇮🇷",
     logo: "AB",
-    logoUrl: "",
+  logoUrl: "https://i.postimg.cc/4xRkBDRx/Afarin-Baxcha-200.png",
     stream: "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8"
   },
 
