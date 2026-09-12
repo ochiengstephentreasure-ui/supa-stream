@@ -39,7 +39,7 @@ const CHANNELS = [
     country: "Cyprus",
     countryCode: "🇨🇾",
     logo: "ADA",
-    logoUrl: "",
+   logoUrl: "https://i.imgur.com/LPQfdz2.png",
     stream: "https://yayin1.canlitv.fun/live/kibrisadatv.stream/playlist.m3u8"
   },
 
