@@ -545,7 +545,7 @@ const CHANNELS = [
     country: "Albania",
     countryCode: "🇦🇱",
     logo: "CNA",
-    logoUrl: "",
+   logoUrl: "https://codeit.al/wp-content/uploads/2020/08/cna.png",
     stream: "https://live1.mediadesk.al/cnatvlive.m3u8"
   },
 
