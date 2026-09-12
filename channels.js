@@ -21,16 +21,16 @@ const CHANNELS = [
     stream: "https://test-streams.mux.dev/test_001/stream.m3u8"
   },
 
-  {
-    id: "5-minute-craft",
-    name: "5-Minute Craft",
-    category: "Entertainment",
-    country: "Finland",
-    countryCode: "🇫🇮",
-    logo: "5M",
-   logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5c/5-Minute_Crafts_logo.png",
-    stream: "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8"
-  },
+{
+  id: "5-minute-craft",
+  name: "5-Minute Craft",
+  category: "Entertainment",
+  country: "Finland",
+  countryCode: "🇫🇮",
+  logo: "5M",
+  logoUrl: "",
+  stream: "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8"
+},
 
   {
     id: "ada-tv",
