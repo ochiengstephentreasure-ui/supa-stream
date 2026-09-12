@@ -676,5 +676,55 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
   logo: "EBS+1",
   logoUrl: "https://i.imgur.com/aCeuhon.png",
   stream: "https://ebsonair.ebs.co.kr/plus1familypc/familypc1m/playlist.m3u8"
+},
+  {
+  id: "tele-elx",
+  name: "Tele Elx",
+  category: "News",
+  country: "Spain",
+  countryCode: "🇪🇸",
+  logo: "TELX",
+  logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Logo_completo_TeleElx.png",
+  stream: "https://tvdirecto.teleelx.es/stream/teleelx.m3u8"
+},
+{
+  id: "mbc-1-egypt",
+  name: "MBC 1 Egypt",
+  category: "Entertainment",
+  country: "Egypt",
+  countryCode: "🇪🇬",
+  logo: "MBC",
+  logoUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1e/MBC_1_Logo.svg",
+  stream: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8"
+},
+{
+  id: "fehervar-tv",
+  name: "Fehérvár TV",
+  category: "News",
+  country: "Hungary",
+  countryCode: "🇭🇺",
+  logo: "FTV",
+  logoUrl: "",
+  stream: "https://cloudfront44.lexanetwork.com:1344/freerelay/fehervartv.sdp/playlist.m3u8"
+},
+{
+  id: "gran-tv",
+  name: "Gran TV",
+  category: "News",
+  country: "Hungary",
+  countryCode: "🇭🇺",
+  logo: "GRAN",
+  logoUrl: "",
+  stream: "https://stream.medialive.hu/gran/grantvlive/playlist.m3u8"
+},
+{
+  id: "qvc-japan",
+  name: "QVC",
+  category: "Shopping",
+  country: "Japan",
+  countryCode: "🇯🇵",
+  logo: "QVC",
+  logoUrl: "https://i.imgur.com/6TWUVrh.png",
+  stream: "https://d1flvb4iqlercm.cloudfront.net/live/live_1080p_2nd.m3u8"
 }
 ];
