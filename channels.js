@@ -589,7 +589,7 @@ const CHANNELS = [
     country: "Lebanon",
     countryCode: "🇱🇧",
     logo: "VOL",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/f8WcqRY.png",
     stream: "https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8"
   },
 
