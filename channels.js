@@ -534,7 +534,7 @@ const CHANNELS = [
     country: "Lebanon",
     countryCode: "🇱🇧",
     logo: "OTV",
-    logoUrl: "",
+   logoUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_wordmark_OTV_(Lebanon)_2025.svg",
     stream: "https://otv.hibridcdn.net/otv/tv_abr/playlist.m3u8"
   },
 
