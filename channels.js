@@ -270,7 +270,7 @@ const CHANNELS = [
     country: "Dominican Republic",
     countryCode: "🇩🇴",
     logo: "TVE",
-    logoUrl: "",
+logoUrl: "https://i.imgur.com/ahz7X7u.png",
     stream: "https://streaming.grupomediosdelnorte.com:19360/tvexitos/tvexitos.m3u8"
   },
 
