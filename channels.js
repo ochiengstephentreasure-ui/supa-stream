@@ -600,7 +600,7 @@ const CHANNELS = [
     country: "Serbia",
     countryCode: "🇷🇸",
     logo: "RK",
-    logoUrl: "",
+   logoUrl: "https://i.imgur.com/g2HpLX1.png",
     stream: "https://peer2.tdiradio.com/static/streaming-playlists/hls/4207de1d-52e8-4591-ad9e-218069b864d1/0.m3u8"
   },
 
