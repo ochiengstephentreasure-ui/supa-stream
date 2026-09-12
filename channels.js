@@ -468,7 +468,7 @@ const CHANNELS = [
     country: "Uganda",
     countryCode: "🇺🇬",
     logo: "TVW",
-    logoUrl: "",
+    logoUrl: "https://i.imgur.com/EiJzkIz.png",
     stream: "https://stream.hydeinnovations.com/tvwest-flussonic/index.m3u8"
   },
 
