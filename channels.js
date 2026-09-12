@@ -687,44 +687,54 @@ logoUrl: "https://i.imgur.com/ahz7X7u.png",
   logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Logo_completo_TeleElx.png",
   stream: "https://tvdirecto.teleelx.es/stream/teleelx.m3u8"
 },
-{
-  id: "mbc-1-egypt",
-  name: "MBC 1 Egypt",
+  {
+  id: "joax-dtv",
+  name: "JOAX-DTV",
   category: "Entertainment",
-  country: "Egypt",
-  countryCode: "🇪🇬",
-  logo: "MBC",
-  logoUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1e/MBC_1_Logo.svg",
-  stream: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8"
-},
-{
-  id: "fehervar-tv",
-  name: "Fehérvár TV",
-  category: "News",
-  country: "Hungary",
-  countryCode: "🇭🇺",
-  logo: "FTV",
-  logoUrl: "",
-  stream: "https://cloudfront44.lexanetwork.com:1344/freerelay/fehervartv.sdp/playlist.m3u8"
-},
-{
-  id: "gran-tv",
-  name: "Gran TV",
-  category: "News",
-  country: "Hungary",
-  countryCode: "🇭🇺",
-  logo: "GRAN",
-  logoUrl: "",
-  stream: "https://stream.medialive.hu/gran/grantvlive/playlist.m3u8"
-},
-{
-  id: "qvc-japan",
-  name: "QVC",
-  category: "Shopping",
   country: "Japan",
   countryCode: "🇯🇵",
-  logo: "QVC",
-  logoUrl: "https://i.imgur.com/6TWUVrh.png",
-  stream: "https://d1flvb4iqlercm.cloudfront.net/live/live_1080p_2nd.m3u8"
+  logo: "NTV",
+  logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nippon_TV_logo_2014.svg/2560px-Nippon_TV_logo_2014.svg.png",
+  stream: "https://ntv5.mov3.co/hls/ntv.m3u8"
+},
+{
+  id: "tbs-seoul",
+  name: "TBS Seoul",
+  category: "News",
+  country: "South Korea",
+  countryCode: "🇰🇷",
+  logo: "TBS",
+  logoUrl: "https://tbs.seoul.kr/images/common/logo.png",
+  stream: "https://cdntv.tbs.seoul.kr/tbs/tbs_tv_web.smil/playlist.m3u8"
+},
+{
+  id: "acw-ug-tv",
+  name: "ACW UG TV",
+  category: "Entertainment",
+  country: "Uganda",
+  countryCode: "🇺🇬",
+  logo: "ACW",
+  logoUrl: "https://i.imgur.com/8pzEmC.jpeg",
+  stream: "https://live.acwugtv.com/hls/stream.m3u8"
+},
+{
+  id: "lana-tv",
+  name: "Lana TV",
+  category: "Entertainment",
+  country: "Lebanon",
+  countryCode: "🇱🇧",
+  logo: "LANA",
+  logoUrl: "https://www.lyngsat.com/logo/tv/ll/lana-tv-lb.png",
+  stream: "https://cdn.streamlane.tv/hls/ltv/master.m3u8"
+},
+{
+  id: "mtv-lebanon",
+  name: "MTV Lebanon",
+  category: "Entertainment",
+  country: "Lebanon",
+  countryCode: "🇱🇧",
+  logo: "MTV",
+  logoUrl: "https://i.imgur.com/6R1jFJO.jpg",
+  stream: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mtv-lebanon/b8ebb2a5affb812f1541712adde10e26/index.m3u8"
 }
 ];
